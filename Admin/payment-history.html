@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment History - Admin</title>
+  <link rel="stylesheet" href="admin-mobile-system.css">
+  <link rel="stylesheet" href="iphone-admin-frame.css">
+  <link rel="stylesheet" href="admin-premium.css">
+  <link rel="stylesheet" href="payment-history.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+  <div class="iphone-shell">
+    <div class="iphone-screen">
+      <div class="iphone-camera" aria-hidden="true"></div>
+      <div class="iphone-app">
+        <div class="app-container">
+          <header class="top-header">
+            <button class="back-btn" id="backButton" type="button" aria-label="Back"><i class="fa-solid fa-arrow-left"></i></button>
+            <div class="header-content">
+              <p>ADMIN PORTAL</p>
+              <h1>Payment History</h1>
+            </div>
+          </header>
+          <main class="payment-history-main">
+            <section class="payment-history-heading">
+              <span>PAYMENTS</span>
+              <h2>Payment History</h2>
+              <p>All payment records for the selected user.</p>
+            </section>
+            <section id="paymentHistoryList" class="payment-history-list" aria-live="polite"></section>
+          </main>
+          <nav class="bottom-nav" aria-label="Admin navigation">
+            <a href="admin-dashboard.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+            <a class="active" href="admin-payments.html"><i class="fa-solid fa-credit-card"></i><span>Payments</span></a>
+            <a href="admin-routes.html"><i class="fa-solid fa-route"></i><span>Management</span></a>
+            <a href="admin-profile.html"><i class="fa-solid fa-ellipsis"></i><span>More</span></a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="payment-history.js"></script>
+<script src="admin-phone-status.js"></script>
+<script src="admin-back-navigation.js"></script>
+</body>
+</html>

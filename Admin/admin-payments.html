@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b4f98">
+  <title>Payments - Online Bus Pass Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="admin-mobile-system.css">
+  <link rel="stylesheet" href="iphone-admin-frame.css">
+  <link rel="stylesheet" href="admin-mobile-system.css">
+  <link rel="stylesheet" href="admin-premium.css">
+  <link rel="stylesheet" href="admin-payments.css">
+</head>
+<body>
+  <div class="iphone-shell">
+    <div class="iphone-screen">
+      <div class="iphone-camera" aria-hidden="true"></div>
+      <div class="iphone-app">
+        <div class="app-container payments-app-container">
+          <header class="top-header">
+            <button class="back-btn" id="backButton" type="button" aria-label="Back to dashboard"><i class="fa-solid fa-arrow-left"></i></button>
+            <div class="header-content">
+              <p>ONLINE BUS PASS • MANAGEMENT SYSTEM</p>
+              <h1>Payments</h1>
+            </div>
+            <button class="notification-btn" id="notificationButton" type="button" aria-label="Open notifications" title="Notifications"><i class="fa-regular fa-bell"></i></button>
+          </header>
+
+          <main class="admin-screen-main payments-main" data-screen="payments" id="paymentsMain">
+            <section class="payments-heading">
+              <span class="payments-eyebrow">ADMINISTRATION</span>
+              <h2>Payments</h2>
+              <p>Review transactions and payment status.</p>
+            </section>
+
+            <section class="payment-stats" aria-label="Payment summary">
+              <button class="payment-stat revenue-stat" type="button" data-stat-filter="success" aria-label="Show successful payments">
+                <span class="payment-stat-icon"><i class="fa-solid fa-indian-rupee-sign"></i></span>
+                <span class="payment-stat-label">Total Revenue</span>
+                <strong id="totalRevenue">₹0</strong>
+                <small>Collected payments</small>
+              </button>
+              <button class="payment-stat successful-stat" type="button" data-stat-filter="success" aria-label="Show successful payments">
+                <span class="payment-stat-icon"><i class="fa-solid fa-check"></i></span>
+                <span class="payment-stat-label">Successful</span>
+                <strong id="successfulCount">0</strong>
+                <small>Completed transactions</small>
+              </button>
+              <button class="payment-stat pending-stat" type="button" data-stat-filter="pending" aria-label="Show pending payments">
+                <span class="payment-stat-icon"><i class="fa-regular fa-clock"></i></span>
+                <span class="payment-stat-label">Pending</span>
+                <strong id="pendingCount">0</strong>
+                <small>Awaiting confirmation</small>
+              </button>
+            </section>
+
+            <div class="payments-toolbar">
+              <label class="payment-search" for="screenSearch">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input id="screenSearch" type="search" placeholder="Search transaction or applicant" autocomplete="off" aria-label="Search transaction or applicant">
+                <button class="clear-search" id="clearSearch" type="button" aria-label="Clear search" hidden><i class="fa-solid fa-xmark"></i></button>
+              </label>
+              <button class="payment-filter-trigger" type="button" id="screenFilter" aria-label="Open payment filters" aria-haspopup="dialog" aria-expanded="false"><i class="fa-solid fa-sliders"></i></button>
+            </div>
+
+            <div class="payment-tabs" id="screenTabs" role="tablist" aria-label="Payment status filter">
+              <button type="button" class="active" role="tab" aria-selected="true" data-filter="all">All</button>
+              <button type="button" role="tab" aria-selected="false" data-filter="success">Successful</button>
+              <button type="button" role="tab" aria-selected="false" data-filter="pending">Pending</button>
+              <button type="button" role="tab" aria-selected="false" data-filter="failed">Failed</button>
+            </div>
+
+            <div class="payment-list-heading">
+              <div><h3>Recent Transactions</h3><p id="paymentResultCount">Loading payment records…</p></div>
+              <button type="button" class="refresh-payments" id="refreshPayments" aria-label="Refresh payment records" title="Refresh"><i class="fa-solid fa-rotate-right"></i></button>
+            </div>
+            <div id="screenList" class="payment-record-list" aria-live="polite" aria-busy="true"></div>
+            <div id="screenEmpty" class="payment-empty" hidden>
+              <span class="payment-empty-icon"><i class="fa-solid fa-receipt"></i></span>
+              <strong>No payment records found</strong>
+              <span>Try changing the search text or filters. Records are loaded from the existing application data.</span>
+              <button type="button" id="resetPaymentFilters">Reset search & filters</button>
+            </div>
+            <div id="paymentLoadError" class="payment-load-error" hidden><i class="fa-solid fa-triangle-exclamation"></i><span>Payment records couldn't be loaded. Check that the local server is running, then refresh.</span><button type="button" id="retryPayments">Try again</button></div>
+          </main>
+
+          <nav class="bottom-nav" aria-label="Admin navigation">
+            <a href="admin-dashboard.html" data-nav="home"><i class="fa-solid fa-house"></i><span>Home</span></a>
+            <a href="admin-applications.html" data-nav="applications"><i class="fa-regular fa-file-lines"></i><span>Applications</span></a>
+            <a href="admin-routes.html" data-nav="management"><i class="fa-solid fa-users-gear"></i><span>Management</span></a>
+            <a href="admin-profile.html" data-nav="more"><i class="fa-solid fa-ellipsis"></i><span>More</span></a>
+          </nav>
+
+          <div class="payment-modal-backdrop" id="paymentFilterBackdrop" hidden>
+            <section class="payment-filter-dialog" role="dialog" aria-modal="true" aria-labelledby="paymentFilterTitle" aria-describedby="paymentFilterDescription">
+              <div class="filter-dialog-grabber" aria-hidden="true"></div>
+              <div class="filter-dialog-heading"><div><span class="payments-eyebrow">REFINE RESULTS</span><h2 id="paymentFilterTitle">Filter Payments</h2><p id="paymentFilterDescription">Choose the records you want to review.</p></div><button type="button" id="closePaymentFilter" class="filter-close" aria-label="Close filters"><i class="fa-solid fa-xmark"></i></button></div>
+              <form id="paymentFilterForm">
+                <label class="filter-field"><span>Payment status</span><select id="filterStatus" name="status"><option value="all">All statuses</option><option value="success">Successful</option><option value="pending">Pending</option><option value="failed">Failed</option></select></label>
+                <div class="filter-date-grid"><label class="filter-field"><span>From date</span><input type="date" id="filterFromDate" name="fromDate"></label><label class="filter-field"><span>To date</span><input type="date" id="filterToDate" name="toDate"></label></div>
+                <div class="filter-date-grid"><label class="filter-field"><span>Min amount (₹)</span><input type="number" min="0" step="1" id="filterMinAmount" name="minAmount" placeholder="No minimum"></label><label class="filter-field"><span>Max amount (₹)</span><input type="number" min="0" step="1" id="filterMaxAmount" name="maxAmount" placeholder="No maximum"></label></div>
+                <label class="filter-field"><span>Sort results</span><select id="filterSort" name="sort"><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="highest">Amount: high to low</option><option value="lowest">Amount: low to high</option></select></label>
+                <p class="filter-validation" id="filterValidation" role="alert" hidden>Please check the date range and amount limits.</p>
+                <div class="filter-dialog-actions"><button type="button" class="filter-reset" id="clearPaymentFilters">Clear all</button><button type="submit" class="filter-apply">Apply filters <i class="fa-solid fa-arrow-right"></i></button></div>
+              </form>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="admin-payments.js"></script>
+  <script src="admin-phone-status.js"></script>
+</body>
+</html>

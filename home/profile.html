@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - BusPass</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../user-phone-frame.css">
+    <link rel="stylesheet" href="../user-design-system.css">
+    <script defer src="../user-phone-frame.js"></script>
+    <link rel="stylesheet" href="../user-premium.css">
+</head>
+<body>
+<main class="mobile-screen">
+    <header class="profile-header">
+        <button class="back-btn" type="button" onclick="goHome()" aria-label="Go to dashboard"><i class="fa-solid fa-arrow-left"></i></button>
+        <button class="header-logout-btn" type="button" onclick="logout()" aria-label="Logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+        <span class="official-mark"><i class="fa-solid fa-shield-halved"></i> BUSPASS SERVICES</span>
+        <section class="profile-identity">
+            <div class="profile-avatar" id="profileAvatar">
+                <span id="profileInitial">U</span>
+                <img id="profilePhoto" alt="Profile photo" hidden>
+                <button class="profile-photo-edit" id="profilePhotoButton" type="button" aria-label="Change profile photo">
+                    <i class="fa-solid fa-camera"></i>
+                </button>
+                <input id="profilePhotoInput" type="file" accept="image/png,image/jpeg,image/webp" hidden>
+            </div>
+            <div class="profile-identity-copy"><p class="profile-kicker">MY ACCOUNT</p><h1 class="profile-name">User</h1><p class="profile-email">--</p></div>
+            <button class="profile-edit-quick" type="button" onclick="openEditProfile()"><i class="fa-solid fa-pen"></i> Edit Profile</button>
+        </section>
+    </header>
+
+    <section class="account-summary">
+        <div><span>Mobile Number</span><strong class="profile-mobile">--</strong></div>
+        <div><span>Pass Category</span><strong id="passCategory">Not selected</strong></div>
+        <div><span>Account Status</span><strong class="verified"><i class="fa-solid fa-circle-check"></i> Verified</strong></div>
+    </section>
+
+    <section class="profile-section">
+        <div class="section-heading"><h2>Account Settings</h2><span>Manage your information</span></div>
+        <button class="option-card" type="button" onclick="openEditProfile()"><span class="option-icon blue"><i class="fa-regular fa-user"></i></span><span class="option-copy"><strong>Personal Information</strong><small>Update name, mobile and email</small></span><i class="fa-solid fa-chevron-right arrow"></i></button>
+        <button class="option-card" type="button" onclick="openPassDetails()"><span class="option-icon green"><i class="fa-regular fa-id-card"></i></span><span class="option-copy"><strong>My Pass Details</strong><small id="passActionText">View your current pass</small></span><i class="fa-solid fa-chevron-right arrow"></i></button>
+        <button class="option-card" type="button" onclick="changePassword()"><span class="option-icon blue"><i class="fa-solid fa-lock"></i></span><span class="option-copy"><strong>Password &amp; Security</strong><small>Reset your account password</small></span><i class="fa-solid fa-chevron-right arrow"></i></button>
+    </section>
+
+    <section class="profile-section">
+        <div class="section-heading"><h2>Preferences &amp; Support</h2><span>Stay connected with BusPass</span></div>
+        <div class="option-card notification-row"><span class="option-icon green"><i class="fa-regular fa-bell"></i></span><span class="option-copy"><strong>Application Notifications</strong><small id="notificationText">Get pass status updates</small></span><label class="switch" aria-label="Toggle notifications"><input id="notificationToggle" type="checkbox" onchange="toggleNotifications(this.checked)"><span></span></label></div>
+        <button class="option-card" type="button" onclick="helpSupport()"><span class="option-icon blue"><i class="fa-solid fa-headset"></i></span><span class="option-copy"><strong>Help &amp; Support</strong><small>Call the Online Bus Pass passenger helpline</small></span><i class="fa-solid fa-chevron-right arrow"></i></button>
+        <button class="option-card logout" type="button" onclick="logout()"><span class="option-icon logout-icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span><span class="option-copy"><strong>Logout</strong><small>Sign out from this device</small></span><i class="fa-solid fa-chevron-right arrow"></i></button>
+    </section>
+
+    <nav class="bottom-nav">
+        <button class="nav-item" type="button" onclick="goHome()"><i class="fa-solid fa-house nav-icon"></i><span>Home</span></button>
+        <button class="nav-item" type="button" onclick="goMyPass()"><i class="fa-regular fa-clipboard nav-icon"></i><span>My Pass</span></button>
+        <button class="nav-item" type="button" onclick="goHistory()"><i class="fa-solid fa-clock-rotate-left nav-icon"></i><span>History</span></button>
+        <button class="nav-item selected" type="button"><i class="fa-solid fa-user nav-icon"></i><span>Profile</span></button>
+    </nav>
+</main>
+
+<div class="modal-backdrop" id="editModal" hidden>
+    <form class="edit-modal" id="profileForm" onsubmit="saveProfile(event)">
+        <div class="modal-heading"><div><span>PROFILE DETAILS</span><h2>Edit Personal Information</h2></div><button type="button" onclick="closeEditProfile()" aria-label="Close">×</button></div>
+        <label>Full Name<input id="editFullName" type="text" autocomplete="off" required></label>
+        <label>Mobile Number<input id="editMobile" type="tel" inputmode="numeric" maxlength="10" autocomplete="off" required></label>
+        <label>Email Address<input id="editEmail" type="email" autocomplete="off" required></label>
+        <p class="form-message" id="formMessage"></p>
+        <div class="modal-actions"><button type="button" class="cancel-btn" onclick="closeEditProfile()">Cancel</button><button type="submit" class="save-btn">Save Changes</button></div>
+    </form>
+</div>
+<script src="../popup.js"></script>
+<script src="profile.js"></script>
+</body>
+</html>

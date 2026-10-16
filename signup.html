@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - BusPass</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="user-phone-frame.css">
+    <link rel="stylesheet" href="user-design-system.css">
+    <script defer src="user-phone-frame.js"></script>
+    <link rel="stylesheet" href="user-premium.css">
+    <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <div class="blue-header"></div>
+
+        <section class="logo">
+            <img src="image/buslogo.jpg" alt="BusPass Logo">
+            <h1>Online Bus Pass</h1>
+            <p>Travel Smart <span aria-hidden="true">|</span> Save More</p>
+        </section>
+
+        <div class="bus-image">
+            <img src="image/bus.jpg" alt="City bus">
+        </div>
+
+        <section class="signup-card">
+
+            <div class="welcome-label">
+                <i class="fa-solid fa-sparkles"></i>
+                START YOUR SMART JOURNEY
+            </div>
+
+            <h2>Create Account</h2>
+            <span>Join BusPass and start your journey</span>
+
+            <form id="signupForm" novalidate>
+
+                <!-- FULL NAME -->
+                <div class="input-box">
+                    <i class="fa-regular fa-user left-icon"></i>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        placeholder="Full Name"
+                        autocomplete="name"
+                    >
+                </div>
+
+                <p class="error-message" id="fullNameError"></p>
+
+
+                <!-- MOBILE -->
+                <div class="input-box">
+                    <i class="fa-solid fa-mobile-screen-button left-icon"></i>
+
+                    <input
+                        type="tel"
+                        id="mobile"
+                        maxlength="10"
+                        placeholder="Mobile Number"
+                        autocomplete="tel"
+                    >
+                </div>
+
+                <p class="error-message" id="mobileError"></p>
+
+
+                <!-- EMAIL -->
+                <div class="input-box">
+                    <i class="fa-regular fa-envelope left-icon"></i>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Email Address"
+                        autocomplete="email"
+                    >
+                </div>
+
+                <p class="error-message" id="emailError"></p>
+
+
+                <!-- DOB -->
+                <div class="input-box">
+                    <i class="fa-regular fa-calendar left-icon"></i>
+
+                    <input
+                        type="date"
+                        id="dob"
+                        aria-label="Date of Birth"
+                    >
+                </div>
+
+                <p class="error-message" id="dobError"></p>
+
+
+                <!-- PASSWORD -->
+                <div class="input-box">
+                    <i class="fa-solid fa-lock left-icon"></i>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Password"
+                        autocomplete="new-password"
+                    >
+
+                    <i
+                        class="fa-regular fa-eye-slash eye"
+                        data-toggle="password"
+                        role="button"
+                        tabindex="0"
+                        title="Show password"
+                        aria-label="Show password"
+                    ></i>
+                </div>
+
+                <p class="error-message" id="passwordError"></p>
+
+
+                <!-- CONFIRM PASSWORD -->
+                <div class="input-box">
+                    <i class="fa-solid fa-lock left-icon"></i>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Confirm Password"
+                        autocomplete="new-password"
+                    >
+
+                    <i
+                        class="fa-regular fa-eye-slash eye"
+                        data-toggle="confirmPassword"
+                        role="button"
+                        tabindex="0"
+                        title="Show confirm password"
+                        aria-label="Show confirm password"
+                    ></i>
+                </div>
+
+                <p class="error-message" id="confirmPasswordError"></p>
+
+
+                <!-- TERMS -->
+                <label class="terms-row" for="terms">
+
+                    <input type="checkbox" id="terms">
+
+                    <span>
+                        I agree to the
+                        <a href="#">Terms &amp; Conditions</a>
+                        and
+                        <a href="#">Privacy Policy</a>
+                    </span>
+
+                </label>
+
+
+                <!-- SIGNUP BUTTON -->
+                <button type="submit" class="signup-btn">
+
+                    <span>Create Account</span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </form>
+
+
+            <div class="divider">
+                <span>OR</span>
+            </div>
+
+
+            <a class="login-link" href="login.html">
+                Already have an account?
+                <strong>Login</strong>
+            </a>
+
+        </section>
+
+    </main>
+
+    <script src="popup.js"></script>
+    <script src="signup.js"></script>
+
+</body>
+</html>

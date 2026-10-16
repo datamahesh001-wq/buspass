@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0a4e95">
+  <title>User Details - Online Bus Pass Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="admin-mobile-system.css"><link rel="stylesheet" href="iphone-admin-frame.css"><link rel="stylesheet" href="admin-premium.css"><link rel="stylesheet" href="admin-user-details.css">
+</head>
+<body>
+  <div class="iphone-shell"><div class="iphone-screen"><div class="iphone-camera" aria-hidden="true"></div><div class="iphone-app"><div class="app-container user-details-container">
+    <header class="top-header user-details-header"><button class="back-btn" id="backButton" type="button" aria-label="Back to user management"><i class="fa-solid fa-arrow-left"></i></button><div class="header-content"><p>USER DIRECTORY</p><h1>User Details</h1></div><button class="notification-btn" id="notificationButton" type="button" aria-label="Notifications"><i class="fa-regular fa-bell"></i></button></header>
+    <main class="admin-screen-main user-details-main">
+      <section id="userDetailsLoading" class="user-details-state"><span class="user-detail-spinner"><i class="fa-solid fa-circle-notch fa-spin"></i></span><strong>Loading user profile</strong><p>Fetching the selected applicant's latest record.</p></section>
+      <section id="userDetailsError" class="user-details-state" hidden><span class="user-detail-spinner error"><i class="fa-solid fa-triangle-exclamation"></i></span><strong id="userDetailsErrorTitle">User details unavailable</strong><p id="userDetailsErrorText">The selected user record could not be loaded.</p><button id="retryUserDetails" type="button">Try Again</button><a href="admin-user-management.html">Back to User Management</a></section>
+      <div id="userDetailsContent" hidden>
+        <section class="profile-summary-hero">
+          <span class="profile-spark spark-one"></span><span class="profile-spark spark-two"></span>
+          <div class="profile-hero-top"><span class="profile-avatar" id="profileAvatar"><i class="fa-solid fa-user-graduate"></i></span><span id="profileStatus" class="detail-status-pill"><i class="fa-solid fa-circle-check"></i> ACTIVE</span></div>
+          <span class="profile-type-tag" id="profileType">STUDENT PROFILE</span>
+          <h2 id="profileName">User Name</h2>
+          <div class="profile-id-line"><span id="profileApplicantId">Applicant ID</span><button id="copyApplicantId" type="button" aria-label="Copy applicant ID" title="Copy applicant ID"><i class="fa-regular fa-copy"></i></button></div>
+          <div id="copyUserFeedback" class="copy-user-feedback" role="status" hidden>Applicant ID copied</div>
+          <div class="profile-hero-quick"><a id="callUserButton" href="#" class="profile-quick-link"><i class="fa-solid fa-phone"></i><span>Call</span></a><a id="emailUserButton" href="#" class="profile-quick-link"><i class="fa-regular fa-envelope"></i><span>Email</span></a><a id="reviewApplicationButton" href="admin-applications.html" class="profile-quick-link"><i class="fa-solid fa-file-lines"></i><span>Application</span></a></div>
+        </section>
+
+        <section class="user-detail-section contact-section"><div class="user-detail-section-heading"><span class="detail-section-icon blue"><i class="fa-regular fa-address-card"></i></span><div><h3>Contact Information</h3><p>Applicant's saved contact details</p></div></div>
+          <div class="user-detail-grid"><div class="user-detail-field full"><span>Mobile number</span><strong id="detailMobile">Not available</strong></div><div class="user-detail-field full"><span>Email address</span><strong id="detailEmail">Not available</strong></div><div class="user-detail-field full"><span>Residential address</span><strong id="detailAddress">Not recorded</strong></div></div>
+        </section>
+
+        <section class="user-detail-section identity-section"><div class="user-detail-section-heading"><span class="detail-section-icon teal"><i class="fa-solid fa-id-card"></i></span><div><h3>Profile & Institution</h3><p>Identity and school or employer details</p></div></div>
+          <div class="user-detail-grid"><div class="user-detail-field"><span>Applicant type</span><strong id="detailType">Student</strong></div><div class="user-detail-field"><span>Account status</span><strong id="detailStatus">Not available</strong></div><div class="user-detail-field full"><span id="detailOrganisationLabel">College / Institution</span><strong id="detailOrganisation">Not recorded</strong></div><div class="user-detail-field"><span>Application ID</span><strong id="detailApplicationId">Not available</strong></div><div class="user-detail-field"><span>Application date</span><strong id="detailApplicationDate">Not available</strong></div></div>
+        </section>
+
+        <section class="user-detail-section travel-section"><div class="user-detail-section-heading"><span class="detail-section-icon amber"><i class="fa-solid fa-route"></i></span><div><h3>Travel & Pass</h3><p>Route and current pass-plan details</p></div></div>
+          <div class="user-route-card"><div class="user-route-stops"><span class="route-node origin"><i class="fa-solid fa-circle-dot"></i></span><span class="route-place"><small>FROM</small><strong id="detailFromStop">Not recorded</strong></span></div><div class="user-route-connector"><span></span><i class="fa-solid fa-arrow-down"></i></div><div class="user-route-stops"><span class="route-node destination"><i class="fa-solid fa-location-dot"></i></span><span class="route-place"><small>TO</small><strong id="detailToStop">Not recorded</strong></span></div></div>
+          <div class="user-detail-grid"><div class="user-detail-field"><span>Pass type</span><strong id="detailPassType">Not available</strong></div><div class="user-detail-field"><span>Plan name</span><strong id="detailPlanName">Not available</strong></div><div class="user-detail-field"><span>Plan amount</span><strong id="detailPlanAmount">Not recorded</strong></div><div class="user-detail-field"><span>Pass ID</span><strong id="detailPassId">Not issued</strong></div><div class="user-detail-field"><span>Distance</span><strong id="detailDistance">Not recorded</strong></div><div class="user-detail-field"><span>Valid until</span><strong id="detailValidTo">Not recorded</strong></div></div>
+        </section>
+
+        <section class="user-detail-section payment-link-section"><div class="user-detail-section-heading"><span class="detail-section-icon violet"><i class="fa-solid fa-credit-card"></i></span><div><h3>Payment Snapshot</h3><p>Payment fields available in the linked application</p></div></div><div class="user-detail-grid"><div class="user-detail-field"><span>Payment status</span><strong id="detailPaymentStatus">Not recorded</strong></div><div class="user-detail-field"><span>Amount paid</span><strong id="detailAmountPaid">Not recorded</strong></div><div class="user-detail-field full"><span>Transaction ID</span><strong id="detailTransactionId">Not recorded</strong></div></div><a id="paymentDetailsButton" class="user-detail-action secondary" href="admin-payments.html"><i class="fa-solid fa-arrow-up-right-from-square"></i> Open Payment Details <i class="fa-solid fa-chevron-right"></i></a></section>
+
+        <div class="user-detail-actions"><a id="openFullApplication" class="user-detail-action primary" href="admin-applications.html"><i class="fa-solid fa-file-circle-check"></i> Review Full Application</a><a href="admin-user-management.html" class="user-detail-action secondary"><i class="fa-solid fa-users"></i> Back to User Management</a></div>
+        <p class="user-detail-footnote"><i class="fa-solid fa-shield-halved"></i> Details are read from the existing application data. Empty fields are shown as unavailable; no server or database records are modified by this screen.</p>
+      </div>
+    </main>
+    <nav class="bottom-nav user-details-nav" aria-label="Admin navigation"><a href="admin-dashboard.html" data-nav="home"><i class="fa-solid fa-house"></i><span>Home</span></a><a href="admin-applications.html" data-nav="applications"><i class="fa-regular fa-file-lines"></i><span>Applications</span></a><a href="admin-user-management.html" class="active" data-nav="management"><i class="fa-solid fa-users-gear"></i><span>Management</span></a><a href="admin-profile.html" data-nav="more"><i class="fa-solid fa-ellipsis"></i><span>More</span></a></nav>
+  </div></div></div></div>
+  <script src="admin-user-details.js"></script><script src="admin-phone-status.js"></script>
+</body>
+</html>

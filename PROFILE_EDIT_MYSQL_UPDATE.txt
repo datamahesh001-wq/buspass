@@ -1,0 +1,7 @@
+PROFILE EDIT UPDATE
+
+Profile -> Personal Information now updates the logged-in user's users row in MySQL and synchronizes full_name, mobile and email to the latest student_details or employee_details row.
+
+The current user's existing email/mobile can be saved again without a false duplicate error. A value that belongs to a different account is still rejected to preserve unique MySQL credentials and prevent ambiguous login accounts.
+
+Profile screen refreshes from /api/profile so saved MySQL values are shown after reload.

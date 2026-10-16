@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Pass Plans - BusPass</title>
+
+    <!-- CSS -->
+    <link
+        rel="stylesheet"
+        href="admin-pass-plans.css"
+    >
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="admin-gov-theme.css">
+  <link rel="stylesheet" href="iphone-admin-frame.css">
+  <link rel="stylesheet" href="admin-mobile-system.css">
+    <link rel="stylesheet" href="admin-premium.css">
+</head>
+
+<body>
+<div class="iphone-shell">
+  <div class="iphone-screen">
+    <div class="iphone-camera" aria-hidden="true"></div>
+    <div class="iphone-app">
+
+
+    <div class="app-container">
+
+
+        <!-- =====================================
+             TOP HEADER
+        ====================================== -->
+
+        <header class="top-header">
+
+            <!-- Menu Button -->
+
+            <button
+                class="menu-btn"
+                id="menuButton"
+                type="button"
+            >
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+            <!-- Header Title -->
+
+            <div class="header-title">
+
+                <h1>Bus Pass Plans</h1>
+
+            </div>
+
+
+            <!-- Add Plan Button -->
+
+            <button
+                class="add-plan-btn"
+                id="addPlanButton"
+                type="button"
+            >
+
+                <i class="fa-solid fa-plus"></i>
+
+                <span>Add Plan</span>
+
+            </button>
+
+        </header>
+
+
+        <!-- =====================================
+             MANAGEMENT TABS
+        ====================================== -->
+
+        <div class="management-tabs">
+
+            <button
+                class="management-tab"
+                data-tab="routes"
+                type="button"
+            >
+                Routes
+            </button>
+
+
+            <button
+                class="management-tab"
+                data-tab="busStops"
+                type="button"
+            >
+                Bus Stops
+            </button>
+
+
+            <button
+                class="management-tab active"
+                data-tab="passPlans"
+                type="button"
+            >
+                Pass Plans
+            </button>
+
+        </div>
+
+
+        <!-- =====================================
+             MAIN CONTENT
+        ====================================== -->
+
+        <main class="pass-plans-content">
+
+            <section
+                class="pass-plans-panel"
+                id="passPlansPanel"
+            >
+
+
+                <!-- PLAN 1 -->
+
+                <article
+                    class="pass-plan-card"
+                    data-plan-id="plan-1"
+                >
+
+                    <div class="plan-top-row">
+
+                        <h3 class="distance-range">
+                            11 - 20 KM
+                        </h3>
+
+
+                        <div class="plan-actions">
+
+                            <button
+                                class="edit-plan-btn"
+                                type="button"
+                                aria-label="Edit plan"
+                            >
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+
+
+                            <button
+                                class="delete-plan-btn"
+                                type="button"
+                                aria-label="Delete plan"
+                            >
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="plan-price-grid">
+
+                        <div class="price-item">
+
+                            <span>Monthly</span>
+
+                            <strong>₹ 450</strong>
+
+                        </div>
+
+
+                        <div class="price-item">
+
+                            <span>3 Months</span>
+
+                            <strong>₹ 1,200</strong>
+
+                        </div>
+
+
+                        <div class="price-item">
+
+                            <span>Half Yearly</span>
+
+                            <strong>₹ 2,300</strong>
+
+                        </div>
+
+
+                        <div class="price-item">
+
+                            <span>Yearly</span>
+
+                            <strong>₹ 4,500</strong>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PLAN 2 -->
+
+                <article
+                    class="pass-plan-card"
+                    data-plan-id="plan-2"
+                >
+
+                    <div class="plan-top-row">
+
+                        <h3 class="distance-range">
+                            21 - 30 KM
+                        </h3>
+
+
+                        <div class="plan-actions">
+
+                            <button
+                                class="edit-plan-btn"
+                                type="button"
+                                aria-label="Edit plan"
+                            >
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+
+
+                            <button
+                                class="delete-plan-btn"
+                                type="button"
+                                aria-label="Delete plan"
+                            >
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="plan-price-grid">
+
+                        <div class="price-item">
+
+                            <span>Monthly</span>
+
+                            <strong>₹ 600</strong>
+
+                        </div>
+
+
+                        <div class="price-item">
+
+                            <span>3 Months</span>
+
+                            <strong>₹ 1,600</strong>
+
+                        </div>
+
+
+                        <div class="price-item">
+
+                            <span>Half Yearly</span>
+
+                            <strong>₹ 3,300</strong>
+
+                        </div>
+
+
+                        <div class="price-item">
+
+                            <span>Yearly</span>
+
+                            <strong>₹ 6,000</strong>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PLAN 3 -->
+
+                <article
+                    class="pass-plan-card"
+                    data-plan-id="plan-3"
+                >
+
+                    <div class="plan-top-row">
+
+                        <h3 class="distance-range">
+                            31 - 50 KM
+                        </h3>
+
+
+                        <div class="plan-actions">
+
+                            <button
+                                class="edit-plan-btn"
+                                type="button"
+                                aria-label="Edit plan"
+                            >
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+
+
+                            <button
+                                class="delete-plan-btn"
+                                type="button"
+                                aria-label="Delete plan"
+                            >
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="plan-price-grid">
+
+                        <div class="price-item">
+
+                            <span>Monthly</span>
+
+                            <strong>₹ 800</strong>
+
+                        </div>
+
+
+                        <div class="price-item">
+
+                            <span>3 Months</span>
+
+                            <strong>₹ 2,100</strong>
+
+                        </div>
+
+
+                        <div class="price-item">
+
+                            <span>Half Yearly</span>
+
+                            <strong>₹ 4,000</strong>
+
+                        </div>
+
+
+                        <div class="price-item">
+
+                            <span>Yearly</span>
+
+                            <strong>₹ 8,000</strong>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PLAN 4 -->
+
+                <article
+                    class="pass-plan-card"
+                    data-plan-id="plan-4"
+                >
+
+                    <div class="plan-top-row">
+
+                        <h3 class="distance-range">
+                            50+ KM
+                        </h3>
+
+
+                        <div class="plan-actions">
+
+                            <button
+                                class="edit-plan-btn"
+                                type="button"
+                                aria-label="Edit plan"
+                            >
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+
+
+                            <button
+                                class="delete-plan-btn"
+                                type="button"
+                                aria-label="Delete plan"
+                            >
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="plan-price-grid">
+
+                        <div class="price-item">
+
+                            <span>Monthly</span>
+
+                            <strong>₹ 1,000</strong>
+
+                        </div>
+
+
+                        <div class="price-item">
+
+                            <span>3 Months</span>
+
+                            <strong>₹ 2,800</strong>
+
+                        </div>
+
+
+                        <div class="price-item">
+
+                            <span>Half Yearly</span>
+
+                            <strong>₹ 5,200</strong>
+
+                        </div>
+
+
+                        <div class="price-item">
+
+                            <span>Yearly</span>
+
+                            <strong>₹ 9,500</strong>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+            </section>
+
+        </main>
+
+
+        <!-- =====================================
+             ADD / EDIT PLAN MODAL
+        ====================================== -->
+
+        <div
+            class="modal-overlay"
+            id="planModal"
+        >
+
+            <div class="plan-modal-card">
+
+
+                <div class="modal-header">
+
+                    <div>
+
+                        <p>PASS PLAN MANAGEMENT</p>
+
+                        <h2 id="modalTitle">
+                            Add New Plan
+                        </h2>
+
+                    </div>
+
+
+                    <button
+                        class="close-modal-btn"
+                        id="closeModalButton"
+                        type="button"
+                    >
+
+                        <i class="fa-solid fa-xmark"></i>
+
+                    </button>
+
+                </div>
+
+
+                <form id="passPlanForm">
+
+
+                    <!-- Distance Range -->
+
+                    <div class="form-group">
+
+                        <label for="distanceRange">
+                            Distance Range
+                        </label>
+
+                        <input
+                            type="text"
+                            id="distanceRange"
+                            placeholder="Example: 11 - 20 KM"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Monthly -->
+
+                    <div class="form-group">
+
+                        <label for="monthlyPrice">
+                            Monthly Price
+                        </label>
+
+                        <input
+                            type="number"
+                            id="monthlyPrice"
+                            placeholder="Enter monthly price"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- 3 Months -->
+
+                    <div class="form-group">
+
+                        <label for="threeMonthsPrice">
+                            3 Months Price
+                        </label>
+
+                        <input
+                            type="number"
+                            id="threeMonthsPrice"
+                            placeholder="Enter 3 months price"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Half Yearly -->
+
+                    <div class="form-group">
+
+                        <label for="halfYearlyPrice">
+                            Half Yearly Price
+                        </label>
+
+                        <input
+                            type="number"
+                            id="halfYearlyPrice"
+                            placeholder="Enter half yearly price"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Yearly -->
+
+                    <div class="form-group">
+
+                        <label for="yearlyPrice">
+                            Yearly Price
+                        </label>
+
+                        <input
+                            type="number"
+                            id="yearlyPrice"
+                            placeholder="Enter yearly price"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Modal Buttons -->
+
+                    <div class="modal-actions">
+
+                        <button
+                            class="cancel-btn"
+                            id="cancelPlanButton"
+                            type="button"
+                        >
+                            Cancel
+                        </button>
+
+
+                        <button
+                            class="save-plan-btn"
+                            type="submit"
+                        >
+
+                            <i class="fa-solid fa-check"></i>
+
+                            Save Plan
+
+                        </button>
+
+                    </div>
+
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             DELETE MODAL
+        ====================================== -->
+
+        <div
+            class="modal-overlay"
+            id="deleteModal"
+        >
+
+            <div class="delete-modal-card">
+
+
+                <div class="delete-icon">
+
+                    <i class="fa-solid fa-trash"></i>
+
+                </div>
+
+
+                <h2>Delete Pass Plan?</h2>
+
+
+                <p>
+                    Are you sure you want to delete this
+                    pass plan? This action cannot be undone.
+                </p>
+
+
+                <div class="delete-modal-actions">
+
+                    <button
+                        class="cancel-delete-btn"
+                        id="cancelDeleteButton"
+                        type="button"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        class="confirm-delete-btn"
+                        id="confirmDeleteButton"
+                        type="button"
+                    >
+                        Delete
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             TOAST MESSAGE
+        ====================================== -->
+
+        <div
+            class="toast-message"
+            id="toastMessage"
+        >
+
+            <i
+                class="fa-solid fa-circle-check"
+                id="toastIcon"
+            ></i>
+
+            <span id="toastText"></span>
+
+        </div>
+
+
+        <!-- =====================================
+             BOTTOM NAVIGATION
+        ====================================== -->
+
+        <nav class="bottom-nav dashboard-nav" aria-label="Admin navigation">
+
+
+            <button
+                class="nav-item"
+                id="homeNav"
+                type="button"
+            >
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>Home</span>
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                id="applicationsNav"
+                type="button"
+            >
+
+                <i class="fa-regular fa-file-lines"></i>
+
+                <span>Applications</span>
+
+            </button>
+
+
+            <button
+                class="nav-item active"
+                id="managementNav"
+                type="button"
+            >
+
+                <i class="fa-solid fa-users-gear"></i>
+
+                <span>Management</span>
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                id="moreNav"
+                type="button"
+            >
+
+                <i class="fa-solid fa-bars"></i>
+
+                <span>More</span>
+
+            </button>
+
+
+        </nav>
+
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="admin-pass-plans.js"></script>
+
+    </div>
+  </div>
+</div>
+<script src="admin-phone-status.js"></script>
+</body>
+
+</html>

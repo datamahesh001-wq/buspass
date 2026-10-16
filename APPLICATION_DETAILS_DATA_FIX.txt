@@ -1,0 +1,22 @@
+BUS PASS MANAGEMENT SYSTEM - APPLICATION DETAILS DATA FIX
+
+Problem fixed:
+Admin Application Details was reading applicant profile/detail tables directly. If the user later changed profile/details, an older application could show different values. Each application now keeps its own submission snapshot.
+
+What changed:
+1. Added application_submission_details table.
+2. New applications save the exact student/employee details when the route/application is created.
+3. Re-application updates the new application's snapshot with the newly submitted details.
+4. Renewal copies the previous application's submitted details.
+5. Admin Application Details now prefers the application snapshot, so the selected application shows the details submitted for that application.
+6. Existing applications are automatically backfilled from the current user details once the backend starts. New applications will always use an application-specific snapshot.
+
+How to use:
+- Extract the ZIP normally.
+- Start the backend as before.
+- Start the VS Code Live Server/frontend as before.
+- The backend automatically creates the new table on MySQL connection.
+- No manual SQL command is required for the normal setup.
+
+Important:
+The old application records did not previously store historical copies of the applicant details. Therefore, for an old application whose user details were already changed before this fix, the exact old values cannot be recovered from the existing database. New applications are stored correctly per application.

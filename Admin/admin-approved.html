@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Approved Bus Pass - Admin</title>
+
+
+    <!-- Google Font -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- CSS Connection -->
+
+    <link
+        rel="stylesheet"
+        href="admin-approved.css"
+    >
+
+    <link rel="stylesheet" href="admin-gov-theme.css">
+  <link rel="stylesheet" href="iphone-admin-frame.css">
+  <link rel="stylesheet" href="admin-mobile-system.css">
+    <link rel="stylesheet" href="admin-premium.css">
+</head>
+
+
+<body>
+<div class="iphone-shell">
+  <div class="iphone-screen">
+    <div class="iphone-camera" aria-hidden="true"></div>
+    <div class="iphone-app">
+
+
+
+    <!-- =====================================
+         MAIN MOBILE APP CONTAINER
+    ====================================== -->
+
+    <div class="app-container">
+
+
+        <!-- =====================================
+             TOP HEADER
+        ====================================== -->
+
+        <header class="top-header">
+
+
+            <!-- Back Button -->
+
+            <button
+                class="back-btn"
+                id="backButton"
+                type="button"
+                aria-label="Go Back"
+            >
+
+                <i class="fa-solid fa-chevron-left"></i>
+
+            </button>
+
+
+            <!-- Header Title -->
+
+            <div class="header-title">
+
+                <p>APPROVED APPLICATION</p>
+
+                <h1>Government Bus Pass</h1>
+
+            </div>
+
+
+            <!-- More Button -->
+
+            <button
+                class="more-btn"
+                id="moreButton"
+                type="button"
+                aria-label="More Options"
+            >
+
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+
+            </button>
+
+
+        </header>
+
+
+        <!-- =====================================
+             MAIN CONTENT
+        ====================================== -->
+
+          <main class="approved-content" id="approvedContent">
+        <section class="approved-user-picker" id="approvedUserPicker" aria-label="Approved users">
+          <div class="approved-picker-head"><div><span class="eyebrow">ISSUED PASSES</span><h2>Approved users</h2></div><strong id="approvedUserCount">0</strong></div>
+          <div id="approvedUserList" class="approved-user-list"></div>
+          <p id="approvedUserEmpty" class="approved-user-empty" hidden>No approved passes available yet.</p>
+        </section>
+  <section class="admin-pass-view" id="adminPassView" aria-label="Bus pass management" hidden>
+    <div class="admin-pass-toolbar">
+      <div>
+        <span class="eyebrow">PASS MANAGEMENT</span>
+        <h2>Manage issued bus pass</h2>
+        <p>Review the same official pass the user receives and edit only the permitted pass fields.</p>
+      </div>
+      <button class="edit-pass-button" id="editPassButton" type="button">
+        <i class="fa-solid fa-pen"></i><span>Edit Pass</span>
+      </button>
+    </div>
+
+    <section class="govt-pass admin-govt-pass" aria-label="Issued government bus pass">
+      <span class="pass-watermark" aria-hidden="true"><i class="fa-solid fa-bus"></i></span>
+      <div class="pass-head">
+        <span class="pass-emblem"><img src="../image/buslogo.jpg" alt="Online Bus Pass emblem"></span>
+        <div class="pass-head-text">
+          <span class="telugu">ఆంధ్రప్రదేశ్ రాష్ట్ర రోడ్డు రవాణా సంస్థ</span>
+          <strong>ONLINE BUS PASS</strong>
+          <small>Digital Transport Service</small>
+        </div>
+      </div>
+
+      <div class="pass-title-strip">
+        <h3><i class="fa-solid fa-id-card"></i> <span id="adminPassType">BUS PASS</span></h3>
+        <span class="pass-status" id="passStatus"><i class="fa-solid fa-circle-check"></i> ACTIVE</span>
+      </div>
+
+      <div class="pass-body">
+        <figure class="holder-photo">
+          <img id="studentPhoto" alt="Pass holder photo">
+          <figcaption>HOLDER'S PHOTO</figcaption>
+        </figure>
+        <div class="pass-fields">
+          <div class="field pass-number-field"><span>Pass Number</span><strong id="passId">BP202600435</strong></div>
+          <div class="field"><span>Holder Name</span><strong id="studentName">Ramesh Kumar</strong></div>
+          <div class="field"><span>Institution</span><strong id="collegeName">Bapatla Raja Govt College</strong></div>
+          <div class="field-row">
+            <div class="field"><span>Course / Class</span><strong id="courseName">B.Com</strong></div>
+            <div class="field"><span>Category</span><strong>Student</strong></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><span>Distance</span><strong id="distance">25 KM</strong></div>
+            <div class="field"><span>Valid Until</span><strong id="validUntil">31 Aug 2026</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="route-strip">
+        <span class="route-label">TRAVEL ROUTE</span>
+        <div class="route-path" id="routeName">
+          <span class="stop" id="routeFrom">Yerram Bus Stand</span>
+          <span class="route-arrow"><i class="fa-solid fa-bus"></i></span>
+          <span class="stop" id="routeTo">Kakinada Bus Stand</span>
+        </div>
+      </div>
+
+      <div class="validity-strip">
+        <div><span>Pass ID</span><strong id="barcodeNumber">BP202600435</strong></div>
+        <div class="validity-divider"></div>
+        <div><span>Status</span><strong id="validityStatus">ACTIVE</strong></div>
+      </div>
+
+      <div class="pass-footer">
+        <div class="barcode-box"><span class="barcode" aria-label="Pass barcode"></span><small id="barcodeText">BP202600435</small></div>
+        <div class="official-seal"><span>ONLINE PASS</span><small>DIGITAL SERVICE</small></div>
+      </div>
+      <p class="pass-terms">* Valid only with original Govt. ID proof &nbsp;•&nbsp; Non-transferable</p>
+    </section>
+
+    <section class="admin-pass-status-card">
+      <div class="status-icon-wrap"><i class="fa-solid fa-shield-halved"></i></div>
+      <div><span>ADMIN CONTROL</span><strong id="controlText">Pass is active and ready for travel.</strong><small>Edits are applied only after you save the pass.</small></div>
+    </section>
+
+    <section class="pass-edit-panel" id="passEditPanel" hidden>
+      <div class="edit-panel-head">
+        <div><span>EDIT DETAILS</span><h3>Update pass information</h3></div>
+        <button type="button" class="close-edit-button" id="closeEditButton" aria-label="Close edit"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="edit-grid">
+        <label>Holder Name<input id="editStudentName" type="text"></label>
+        <label>Institution<input id="editCollegeName" type="text"></label>
+        <label>Course / Class<input id="editCourseName" type="text"></label>
+        <label>Distance<input id="editDistance" type="text"></label>
+        <label>From<input id="editRouteFrom" type="text"></label>
+        <label>To<input id="editRouteTo" type="text"></label>
+        <label>Valid Until<input id="editValidUntil" type="text"></label>
+        <label>Status<select id="editStatus"><option value="ACTIVE">ACTIVE</option><option value="EXPIRED">EXPIRED</option><option value="INACTIVE">INACTIVE</option></select></label>
+      </div>
+      <div class="edit-panel-actions">
+        <button type="button" class="cancel-edit" id="cancelEditButton">Cancel</button>
+        <button type="button" class="save-edit" id="saveEditButton"><i class="fa-solid fa-check"></i> Save Changes</button>
+      </div>
+    </section>
+  </section>
+</main>
+
+
+
+        <!-- =====================================
+             BOTTOM BUTTON
+        ====================================== -->
+
+        <div class="bottom-action">
+
+
+            <button
+                class="applications-btn"
+                id="applicationsButton"
+                type="button"
+            >
+
+                <i class="fa-solid fa-list-check"></i>
+
+                <span>Back to Applications</span>
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- =====================================
+             MORE OPTIONS MENU
+        ====================================== -->
+
+        <div
+            class="more-menu"
+            id="moreMenu"
+        >
+
+
+            <button
+                type="button"
+                id="printPassButton"
+            >
+
+                <i class="fa-solid fa-print"></i>
+
+                Print Pass
+
+            </button>
+
+
+            <button
+                type="button"
+                id="downloadPassButton"
+            >
+
+                <i class="fa-solid fa-download"></i>
+
+                Download Pass
+
+            </button>
+
+
+            <button
+                type="button"
+                id="sharePassButton"
+            >
+
+                <i class="fa-solid fa-share-nodes"></i>
+
+                Share Pass
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- =====================================
+             SUCCESS TOAST
+        ====================================== -->
+
+        <div
+            class="toast-message"
+            id="toastMessage"
+        >
+
+            <i
+                class="fa-solid fa-circle-check"
+                id="toastIcon"
+            ></i>
+
+            <span id="toastText"></span>
+
+        </div>
+
+
+    <nav class="bottom-nav" aria-label="Admin navigation"><a href="admin-dashboard.html"><i class="fa-solid fa-house"></i><span>Home</span></a><a href="admin-applications.html"><i class="fa-regular fa-file-lines"></i><span>Applications</span></a><a class="active" href="admin-routes.html"><i class="fa-solid fa-route"></i><span>Management</span></a><a href="admin-profile.html"><i class="fa-solid fa-ellipsis"></i><span>More</span></a></nav>
+    <script src="admin-approved.js"></script>
+    </div>
+
+
+    </div>
+  </div>
+</div>
+<script src="admin-phone-status.js"></script>
+<script src="admin-back-navigation.js"></script>
+</body>
+
+</html>

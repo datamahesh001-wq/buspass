@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Plan - Bus Pass Application</title>
+    <link rel="stylesheet" href="employee-plan.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../user-phone-frame.css">
+    <link rel="stylesheet" href="../user-design-system.css">
+    <script defer src="../user-phone-frame.js"></script>
+    <link rel="stylesheet" href="../user-premium.css">
+</head>
+<body>
+<div class="app employee-plan-app">
+    <div class="header">
+        <button class="back-btn" type="button" onclick="goBack()"><i class="fa-solid fa-arrow-left"></i></button>
+        <div class="header-content"><h2>Employee Pass</h2><p>Application Form</p></div>
+    </div>
+    <div class="progress-container">
+        <div class="progress-step active">1</div><div class="progress-line active"></div>
+        <div class="progress-step active">2</div><div class="progress-line active"></div>
+        <div class="progress-step active">3</div><div class="progress-line active"></div>
+        <div class="progress-step active">4</div>
+    </div>
+
+    <main class="plan-card">
+        <h3>Employee Plan Selection</h3>
+        <p class="subtitle">Choose a pass plan that suits your office commute</p>
+        <section class="employee-summary" aria-label="Employee work details">
+            <div class="employee-summary-title"><i class="fa-solid fa-building"></i> Employee Work Details</div>
+            <div class="employee-summary-grid">
+                <div><span>Organization</span><strong id="organizationValue">Not available</strong></div>
+                <div><span>Employee ID</span><strong id="employeeIdValue">Not available</strong></div>
+                <div class="designation-field"><span>Designation</span><strong id="designationValue">Not available</strong></div>
+            </div>
+        </section>
+        <div class="route-box">
+            <span class="route-label">Office Route</span>
+            <strong id="routeSummary">Home Bus Stop → Office Bus Stop</strong>
+            <span class="distance" id="routeDistance">Select your office route</span>
+        </div>
+        <label class="plan-option selected"><input type="radio" name="plan" value="Monthly Pass" data-price="450" checked onchange="selectPlan(this)"><span class="radio-circle"></span><div class="plan-details"><strong>Monthly Pass</strong><small>Validity for 30 days from the date of issue</small></div><span class="price">₹450/-</span></label>
+        <label class="plan-option"><input type="radio" name="plan" value="3 Monthly" data-price="1250" onchange="selectPlan(this)"><span class="radio-circle"></span><div class="plan-details"><strong>3 Monthly</strong><small>Valid for 3 months from the date of issue</small></div><span class="price">₹1,250/-</span></label>
+        <label class="plan-option"><input type="radio" name="plan" value="Half-Yearly Pass" data-price="2400" onchange="selectPlan(this)"><span class="radio-circle"></span><div class="plan-details"><strong>Half-Yearly Pass</strong><small>Valid for 6 months from the date of issue</small></div><span class="price">₹2,400/-</span></label>
+        <label class="plan-option"><input type="radio" name="plan" value="Yearly Pass" data-price="4500" onchange="selectPlan(this)"><span class="radio-circle"></span><div class="plan-details"><strong>Yearly Pass</strong><small>Valid for 12 months from the date of issue</small></div><span class="price">₹4,500/-</span></label>
+        <div class="bottom-buttons"><button type="button" class="back-button" onclick="goBack()">Back</button><button type="button" class="next-button" onclick="goNext()">Next</button></div>
+    </main>
+</div>
+<script src="../popup.js"></script>
+<script src="application-state.js"></script>
+<script src="employee-plan.js"></script>
+</body>
+</html>

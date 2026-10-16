@@ -1,0 +1,613 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+
+    background: #dce8f5;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* =========================
+   MAIN APP
+========================= */
+
+.app {
+    width: 390px;
+    height: 844px;
+
+    background: #f7faff;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border: 1px solid #c8d7e8;
+
+    box-shadow: 0 12px 30px rgba(27, 72, 119, 0.16);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    height: 142px;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: flex-start;
+    align-items: center;
+
+    padding-left: 78px;
+
+    background: #0b63ce;
+
+    border-bottom-left-radius: 34px;
+    border-bottom-right-radius: 34px;
+}
+
+
+/* Back Button */
+
+.back-btn {
+    position: absolute;
+
+    left: 20px;
+    top: 24px;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: #0b63ce;
+
+    cursor: pointer;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 18px;
+}
+
+
+/* Header Text */
+
+.header-content {
+    text-align: center;
+
+    margin-top: 8px;
+}
+
+.header-content h2 {
+    font-size: 24px;
+
+    color: #ffffff;
+
+    font-weight: 700;
+
+    margin-bottom: 5px;
+}
+
+.header-content p {
+    font-size: 12px;
+
+    color: #dcecff;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   PAYMENT DETAILS
+========================= */
+
+.payment-details {
+    position: absolute;
+
+    top: 112px;
+
+    left: 20px;
+    right: 20px;
+
+    height: 168px;
+
+    background: #e9f8ed;
+
+    border: 1px solid #b9dfc2;
+
+    border-radius: 18px;
+
+    padding: 16px 20px;
+
+    box-shadow: 0 7px 16px rgba(29, 94, 55, 0.1);
+}
+
+
+/* Amount Label */
+
+.amount-label {
+    font-size: 12px;
+
+    color: #1267df;
+
+    font-weight: 700;
+
+    margin-bottom: 4px;
+}
+
+
+/* Amount */
+
+.amount {
+    font-size: 26px;
+
+    color: #00a92f;
+
+    font-weight: 700;
+
+    margin-bottom: 17px;
+}
+
+
+/* Detail Title */
+
+.detail-title {
+    font-size: 10px;
+
+    color: #555;
+
+    font-weight: 600;
+
+    margin-bottom: 4px;
+}
+
+
+/* Detail Value */
+
+.detail-value {
+    font-size: 11px;
+
+    color: #1267df;
+
+    font-weight: 600;
+
+    margin-bottom: 7px;
+}
+
+
+/* =========================
+   PAYMENT METHOD TITLE
+========================= */
+
+.payment-method-title {
+    position: absolute;
+
+    top: 302px;
+
+    left: 22px;
+
+    font-size: 15px;
+
+    color: #1267df;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   PAYMENT METHODS
+========================= */
+
+.payment-methods {
+    position: absolute;
+
+    top: 336px;
+
+    left: 20px;
+    right: 20px;
+
+    border: none;
+
+    border-radius: 0;
+
+    overflow: hidden;
+
+    background: transparent;
+}
+
+
+/* Payment Option */
+
+.payment-option {
+    width: 100%;
+
+    height: 56px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 16px;
+
+    border: 1px solid #d5e0ed;
+
+    border-radius: 14px;
+
+    margin-bottom: 10px;
+
+    cursor: pointer;
+
+    background: #ffffff;
+
+    box-shadow: 0 4px 10px rgba(34, 77, 121, 0.08);
+
+    transition: 0.2s ease;
+}
+
+.payment-option:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Left Side */
+
+.method-left {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+}
+
+
+/* Payment Text */
+
+.method-left span {
+    font-size: 13px;
+
+    color: #444;
+
+    font-weight: 500;
+}
+
+
+/* Method Icon */
+
+.method-icon {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 10px;
+
+    background: #eaf2ff;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+
+    color: #1767d9;
+}
+
+
+/* UPI */
+
+.upi-icon {
+    font-size: 9px;
+
+    font-weight: 700;
+
+    color: #777;
+
+    border: 1px solid transparent;
+}
+
+
+/* Card */
+
+.card-icon {
+    color: #1767d9;
+
+    font-size: 18px;
+}
+
+
+/* Bank */
+
+.bank-icon {
+    color: #1767d9;
+
+    font-size: 17px;
+}
+
+
+/* Hide Actual Radio */
+
+.payment-option input {
+    display: none;
+}
+
+
+/* Custom Radio */
+
+.custom-radio {
+    width: 18px;
+    height: 18px;
+
+    border: 1.5px solid #999;
+
+    border-radius: 50%;
+
+    position: relative;
+
+    flex-shrink: 0;
+}
+
+
+/* Selected Radio */
+
+.payment-option.selected .custom-radio {
+    border-color: #1c73ff;
+}
+
+.payment-option.selected .custom-radio::after {
+    content: "";
+
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    background: #1c73ff;
+
+    border-radius: 50%;
+
+    left: 3px;
+    top: 3px;
+}
+
+
+/* =========================
+   PAY NOW
+========================= */
+
+.pay-button {
+    position: absolute;
+
+    left: 20px;
+    right: 20px;
+
+    bottom: 45px;
+
+    height: 52px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: #216cf2;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.pay-button:hover {
+    background: #1559d2;
+}
+
+
+/* =========================
+   SECURE PAYMENT
+========================= */
+
+.secure-payment {
+    position: absolute;
+
+    bottom: 18px;
+
+    width: 100%;
+
+    text-align: center;
+
+    font-size: 10px;
+
+    color: #00ad31;
+
+    font-weight: 700;
+}
+
+.secure-payment i {
+    font-size: 10px;
+
+    margin-right: 3px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 420px) {
+
+    body {
+        background: #ffffff;
+
+        align-items: flex-start;
+    }
+
+    .app {
+        width: 100%;
+
+        height: 100vh;
+
+        min-height: 700px;
+
+        border: none;
+    }
+}
+
+/* ===== FINAL SCREEN SIZE SYSTEM ===== */
+body { min-height: 100vh; padding: 0; align-items: flex-start; justify-content: center; }
+.app { width: 390px; height: auto; min-height: 844px; max-height: none; }
+@media (max-width: 390px) { body { display: block; padding: 0; } .app { width: 100%; min-height: 844px; } }
+
+/* ===== METHOD-SPECIFIC PAYMENT DETAILS ===== */
+.payment-detail-panel {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    top: 530px;
+    min-height: 170px;
+    padding: 14px 16px;
+    background: #ffffff;
+    border: 1px solid #d9e5f3;
+    border-radius: 16px;
+    box-shadow: 0 5px 14px rgba(34,77,121,0.08);
+}
+
+.method-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.panel-kicker {
+    display: block;
+    font-size: 8px;
+    letter-spacing: .7px;
+    color: #8b98a7;
+    font-weight: 800;
+    margin-bottom: 2px;
+}
+
+.method-panel-header h4 {
+    font-size: 14px;
+    color: #163d70;
+    font-weight: 800;
+}
+
+.method-badge {
+    padding: 5px 9px;
+    border-radius: 999px;
+    background: #e9f2ff;
+    color: #1767d9;
+    font-size: 8px;
+    font-weight: 800;
+}
+
+.method-fields label {
+    display: block;
+    margin: 7px 0 4px;
+    font-size: 9px;
+    color: #546171;
+    font-weight: 700;
+}
+
+.method-fields input,
+.method-fields select {
+    width: 100%;
+    height: 34px;
+    border: 1px solid #d3dfeb;
+    border-radius: 10px;
+    padding: 0 10px;
+    background: #f9fbff;
+    color: #22354b;
+    font-size: 10px;
+    outline: none;
+}
+
+.method-fields input:focus,
+.method-fields select:focus {
+    border-color: #4f8df7;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(79,141,247,.12);
+}
+
+.field-row {
+    display: grid;
+    grid-template-columns: 1fr 0.7fr;
+    gap: 9px;
+}
+
+.field-hint {
+    margin-top: 7px;
+    color: #7b8998;
+    font-size: 8px;
+    line-height: 1.35;
+}
+
+.field-hint i { margin-right: 4px; color: #2f78dc; }
+.hidden { display: none !important; }
+
+/* keep room for the new details panel */
+.pay-button { bottom: 45px; }
+.secure-payment { bottom: 18px; }
+
+@media (max-width: 420px) {
+    .payment-detail-panel { top: 530px; }
+}
+
+/* Card and Net Banking need more room for their entry fields. Keep Pay Now
+   after those fields in the scrollable phone screen instead of over them. */
+.app.expanded-payment-details {
+    min-height: 960px;
+    overflow: visible;
+}
+
+.app.expanded-payment-details .payment-detail-panel {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    margin: 388px 20px 0;
+    min-height: 0;
+}
+
+.app.expanded-payment-details .pay-button {
+    position: relative;
+    display: block;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: calc(100% - 40px);
+    margin: 14px 20px 0;
+}
+
+.app.expanded-payment-details .secure-payment {
+    position: relative;
+    bottom: auto;
+    padding: 12px 0 22px;
+}

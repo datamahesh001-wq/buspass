@@ -1,0 +1,344 @@
+/* Online Bus Pass user experience — shared visual language for every user screen. */
+:root {
+  --ap-navy: #062b69;
+  --ap-blue: #096eea;
+  --ap-cyan: #16c5ed;
+  --ap-sky: #eaf6ff;
+  --ap-ink: #12345f;
+  --ap-muted: #657b9e;
+  --ap-border: #cfe1f5;
+  --ap-success: #149b68;
+  --ap-danger: #d74a58;
+}
+
+body.user-frame-ready .user-phone-app {
+  color: var(--ap-ink);
+  background:
+    radial-gradient(circle at 100% 0, rgba(22, 197, 237, .13), transparent 25%),
+    linear-gradient(180deg, #f8fcff 0%, #edf7ff 100%);
+}
+
+body.user-frame-ready .mobile-screen,
+body.user-frame-ready .app,
+body.user-frame-ready .app-container,
+body.user-frame-ready .container {
+  color: var(--ap-ink);
+  background:
+    radial-gradient(circle at 100% 0, rgba(22, 197, 237, .10), transparent 26%),
+    linear-gradient(180deg, #f9fcff, #edf7ff) !important;
+}
+
+/* Core controls use a consistent, high contrast state system. */
+body.user-frame-ready button,
+body.user-frame-ready input,
+body.user-frame-ready select,
+body.user-frame-ready textarea { font-family: Poppins, system-ui, sans-serif; }
+
+body.user-frame-ready button,
+body.user-frame-ready a { -webkit-tap-highlight-color: transparent; }
+
+body.user-frame-ready button:focus-visible,
+body.user-frame-ready a:focus-visible,
+body.user-frame-ready input:focus-visible,
+body.user-frame-ready select:focus-visible,
+body.user-frame-ready textarea:focus-visible {
+  outline: 3px solid rgba(22, 197, 237, .35) !important;
+  outline-offset: 2px;
+}
+
+body.user-frame-ready input,
+body.user-frame-ready select,
+body.user-frame-ready textarea,
+body.user-frame-ready .input-wrap,
+body.user-frame-ready .input-wrapper,
+body.user-frame-ready .select-wrapper {
+  border-color: var(--ap-border) !important;
+  background-color: #f8fcff !important;
+}
+
+body.user-frame-ready input:focus,
+body.user-frame-ready select:focus,
+body.user-frame-ready textarea:focus,
+body.user-frame-ready .input-wrap:focus-within,
+body.user-frame-ready .input-wrapper:focus-within,
+body.user-frame-ready .select-wrapper:focus-within {
+  border-color: var(--ap-blue) !important;
+  background-color: #fff !important;
+  box-shadow: 0 0 0 4px rgba(9, 110, 234, .10) !important;
+}
+
+/* The application journey headers now share the APSRTC blue-sky identity. */
+body.user-frame-ready .top-header,
+body.user-frame-ready .header,
+body.user-frame-ready .tracking-header,
+body.user-frame-ready .profile-header,
+body.user-frame-ready .pass-screen-header,
+body.user-frame-ready .history-header {
+  position: relative;
+  overflow: hidden;
+  border: 0 !important;
+  background:
+    radial-gradient(circle at 86% -12%, rgba(84, 222, 255, .78), transparent 35%),
+    linear-gradient(122deg, #03255f 0%, #075ebc 54%, #16bfe9 125%) !important;
+  box-shadow: 0 11px 22px rgba(4, 58, 129, .16);
+}
+
+body.user-frame-ready .top-header::after,
+body.user-frame-ready .header::after,
+body.user-frame-ready .tracking-header::after,
+body.user-frame-ready .profile-header::after,
+body.user-frame-ready .pass-screen-header::after,
+body.user-frame-ready .history-header::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 70px;
+  right: -42px;
+  bottom: -42px;
+  border: 1px solid rgba(255, 255, 255, .28);
+  border-radius: 50%;
+  box-shadow: -24px -18px 0 -1px rgba(255,255,255,.12);
+  pointer-events: none;
+}
+
+body.user-frame-ready .top-header h1,
+body.user-frame-ready .header h1,
+body.user-frame-ready .tracking-header h1,
+body.user-frame-ready .profile-header h1,
+body.user-frame-ready .pass-screen-header h1,
+body.user-frame-ready .history-header h1,
+body.user-frame-ready .header-title h1,
+body.user-frame-ready .header-content h1 { color: #fff !important; }
+
+body.user-frame-ready .top-header p,
+body.user-frame-ready .header p,
+body.user-frame-ready .tracking-header p,
+body.user-frame-ready .profile-header p,
+body.user-frame-ready .pass-screen-header p,
+body.user-frame-ready .history-header p,
+body.user-frame-ready .header-title p,
+body.user-frame-ready .header-content p { color: #d9f4ff !important; }
+
+body.user-frame-ready .eyebrow,
+body.user-frame-ready .service-kicker,
+body.user-frame-ready .category-kicker,
+body.user-frame-ready .official-mark { color: #0b8ad3 !important; }
+
+body.user-frame-ready .top-header .official-mark,
+body.user-frame-ready .header .official-mark,
+body.user-frame-ready .profile-header .official-mark { color: #b9f4ff !important; }
+
+body.user-frame-ready .back-btn,
+body.user-frame-ready .back-button,
+body.user-frame-ready .back-form-btn {
+  color: var(--ap-navy) !important;
+  border: 1px solid rgba(255, 255, 255, .42) !important;
+  background: rgba(255, 255, 255, .96) !important;
+  box-shadow: 0 6px 14px rgba(2, 38, 93, .16) !important;
+}
+
+/* Cards, selections and forms have one trustworthy service-card appearance. */
+body.user-frame-ready .details-card,
+body.user-frame-ready .documents-card,
+body.user-frame-ready .pass-card,
+body.user-frame-ready .route-card,
+body.user-frame-ready .plan-card,
+body.user-frame-ready .payment-details,
+body.user-frame-ready .payment-detail-panel,
+body.user-frame-ready .section-card,
+body.user-frame-ready .application-card,
+body.user-frame-ready .progress-card,
+body.user-frame-ready .info-card,
+body.user-frame-ready .current-status,
+body.user-frame-ready .account-summary,
+body.user-frame-ready .profile-section,
+body.user-frame-ready .employee-summary,
+body.user-frame-ready .route-box,
+body.user-frame-ready .transaction-card,
+body.user-frame-ready .empty-box,
+body.user-frame-ready .empty-card {
+  border-color: var(--ap-border) !important;
+  background: rgba(255, 255, 255, .96) !important;
+  box-shadow: 0 10px 24px rgba(7, 67, 141, .08) !important;
+}
+
+body.user-frame-ready .details-card,
+body.user-frame-ready .documents-card,
+body.user-frame-ready .route-card,
+body.user-frame-ready .plan-card,
+body.user-frame-ready .payment-detail-panel,
+body.user-frame-ready .section-card { border-radius: 20px !important; }
+
+body.user-frame-ready .pass-card:hover,
+body.user-frame-ready .route-card:hover,
+body.user-frame-ready .plan-card:hover,
+body.user-frame-ready .option-card:hover,
+body.user-frame-ready .document-item:hover {
+  border-color: #86c9f7 !important;
+  box-shadow: 0 12px 27px rgba(7, 86, 181, .14) !important;
+  transform: translateY(-1px);
+}
+
+body.user-frame-ready .pass-card.selected,
+body.user-frame-ready .plan-option.selected,
+body.user-frame-ready .category-option.selected,
+body.user-frame-ready .payment-option.selected,
+body.user-frame-ready .route-card.selected {
+  border-color: var(--ap-blue) !important;
+  background: linear-gradient(145deg, #f7fcff, #e9f7ff) !important;
+  box-shadow: 0 0 0 3px rgba(9, 110, 234, .10), 0 12px 27px rgba(7, 86, 181, .12) !important;
+}
+
+/* CTA actions are blue-to-cyan, while secondary actions remain clearly defined. */
+body.user-frame-ready .continue-btn,
+body.user-frame-ready .next-btn,
+body.user-frame-ready .next-button,
+body.user-frame-ready .pay-button,
+body.user-frame-ready .home-button,
+body.user-frame-ready .track-button,
+body.user-frame-ready .dashboard-button,
+body.user-frame-ready .upload-btn.primary,
+body.user-frame-ready .bottom-btn.primary,
+body.user-frame-ready .save-btn {
+  color: #fff !important;
+  border: 0 !important;
+  background: linear-gradient(105deg, #075bc7 0%, #0879e6 52%, #15c4ed 120%) !important;
+  box-shadow: 0 10px 20px rgba(8, 103, 213, .24) !important;
+}
+
+body.user-frame-ready .continue-btn:hover,
+body.user-frame-ready .next-btn:hover,
+body.user-frame-ready .next-button:hover,
+body.user-frame-ready .pay-button:hover,
+body.user-frame-ready .home-button:hover,
+body.user-frame-ready .track-button:hover,
+body.user-frame-ready .dashboard-button:hover { filter: brightness(1.04); transform: translateY(-1px); }
+
+body.user-frame-ready .continue-btn:disabled,
+body.user-frame-ready .next-btn:disabled,
+body.user-frame-ready .next-button:disabled,
+body.user-frame-ready .pay-button:disabled { background: #b7c8dc !important; box-shadow: none !important; }
+
+body.user-frame-ready .bottom-buttons .back-button,
+body.user-frame-ready .refresh-button,
+body.user-frame-ready .cancel-btn,
+body.user-frame-ready .edit-details-button,
+body.user-frame-ready .doc-mini-btn {
+  color: #076add !important;
+  border-color: #82c2f6 !important;
+  background: #fff !important;
+}
+
+/* Upload/status feedback follows a single semantic palette. */
+body.user-frame-ready .document-item,
+body.user-frame-ready .payment-option,
+body.user-frame-ready .plan-option,
+body.user-frame-ready .category-option,
+body.user-frame-ready .option-card {
+  border-color: #d7e6f5 !important;
+  background: #fff !important;
+}
+
+body.user-frame-ready .document-status.uploaded,
+body.user-frame-ready .status-pill.success,
+body.user-frame-ready .pass-status.active,
+body.user-frame-ready .verified { color: var(--ap-success) !important; background-color: #e8f9f1 !important; }
+
+body.user-frame-ready .status-pill.rejected,
+body.user-frame-ready .document-status.invalid,
+body.user-frame-ready .pass-status.rejected { color: var(--ap-danger) !important; background-color: #fff0f2 !important; }
+
+/* A compact floating dock keeps primary navigation legible on every app screen. */
+body.user-frame-ready .bottom-nav {
+  border: 1px solid rgba(138, 208, 249, .32) !important;
+  background: linear-gradient(125deg, #04265d, #0756a7) !important;
+  box-shadow: 0 13px 27px rgba(3, 42, 98, .24) !important;
+}
+
+body.user-frame-ready .bottom-nav a,
+body.user-frame-ready .bottom-nav .nav-item { color: #b9d9f4 !important; }
+
+body.user-frame-ready .bottom-nav a.active,
+body.user-frame-ready .bottom-nav a.active-nav,
+body.user-frame-ready .bottom-nav .nav-item.selected,
+body.user-frame-ready .bottom-nav .nav-item.active {
+  color: #fff !important;
+  background: rgba(55, 187, 244, .22) !important;
+}
+
+body.user-frame-ready .bottom-nav a.active i,
+body.user-frame-ready .bottom-nav a.active-nav i,
+body.user-frame-ready .bottom-nav .nav-item.selected i,
+body.user-frame-ready .bottom-nav .nav-item.active i { color: #6ee7ff !important; }
+
+/* Dashboard: a strong public-service travel hero rather than a generic portal. */
+body.bp-dashboard .container > header {
+  height: 105px;
+  padding-top: 26px;
+  border-bottom: 0 !important;
+  color: #fff;
+  background: linear-gradient(118deg, #03245c, #0866bf 62%, #14c1e9) !important;
+}
+body.bp-dashboard .container > header::after { content:""; position:absolute; width:130px; height:130px; right:-47px; top:-70px; border-radius:50%; border:1px solid rgba(255,255,255,.25); }
+body.bp-dashboard .logo h2,
+body.bp-dashboard .welcome h3 { color: #fff !important; }
+body.bp-dashboard .logo small,
+body.bp-dashboard .welcome span,
+body.bp-dashboard .welcome small { color: #ccefff !important; }
+body.bp-dashboard .menu-btn { border-color: rgba(255,255,255,.30) !important; color:#fff !important; background:rgba(255,255,255,.14) !important; }
+body.bp-dashboard .hero { height: 205px; background: #063979 !important; }
+body.bp-dashboard .hero::after { background: linear-gradient(90deg, rgba(2,35,86,.94), rgba(7,91,188,.47) 58%, transparent) !important; }
+body.bp-dashboard .hero-copy span { color: #91eeff !important; }
+body.bp-dashboard .pass-card { border-top: 3px solid #18c4eb !important; }
+body.bp-dashboard .box i,
+body.bp-dashboard .panel-heading > i { color: #0872d7 !important; background: #e5f5ff !important; }
+body.bp-dashboard .helpline-card { background: linear-gradient(105deg, #052963, #0871d2 62%, #0bbbe2) !important; }
+
+/* Login follows the supplied Online Bus Pass reference: journey visual above a curved, clear form. */
+body.bp-login .container { min-height: calc(100% - 28px) !important; overflow: hidden !important; background: #f6fbff !important; }
+body.bp-login .blue-header { top: 0; left: 0; width: 100%; height: 342px; border-radius: 0; background: linear-gradient(105deg, rgba(2,34,86,.82), rgba(3,99,189,.16)), url("image/bus.jpg") center/cover !important; }
+body.bp-login .blue-header::after { content:""; position:absolute; inset:0; background: linear-gradient(180deg, rgba(5,79,163,.18), transparent 48%, rgba(6,26,69,.36)); }
+body.bp-login .header-pattern { top: 102px; right: -8px; opacity: .28; }
+body.bp-login .logo { margin-top: 34px; }
+body.bp-login .logo img { width: 65px; height: 65px; margin-bottom: 5px; border-color: rgba(255,255,255,.9); box-shadow: 0 7px 18px rgba(0,0,0,.25); }
+body.bp-login .logo h1 { color:#fff; font-size: 31px; text-shadow: 0 2px 7px rgba(0,0,0,.20); }
+body.bp-login .logo .ap-mark { color:#72eaff; font-style:italic; letter-spacing:-2px; }
+body.bp-login .logo p { color:#e9f8ff; font-weight:600; }
+body.bp-login .logo p span { margin:0 6px; color:#6de6ff; }
+body.bp-login .bus-image { display:none; }
+body.bp-login .login-card { width: calc(100% - 28px); margin: 104px auto 0; padding: 25px 22px 18px; border: 1px solid rgba(255,255,255,.9); border-radius: 34px 34px 25px 25px; background: rgba(255,255,255,.97); box-shadow: 0 -6px 25px rgba(4,41,99,.10), 0 18px 34px rgba(4,41,99,.14); }
+body.bp-login .login-card::before { content:""; position:absolute; top:-13px; left:8%; right:8%; height:26px; border-radius:50%; background:#fff; box-shadow:0 -5px 14px rgba(7,72,155,.06); }
+body.bp-login .welcome-label, body.bp-login .login-card h2, body.bp-login .login-card > span, body.bp-login form, body.bp-login .divider, body.bp-login .signup-btn, body.bp-login .admin-login, body.bp-login .login-benefits { position:relative; z-index:1; }
+body.bp-login .welcome-label { color:#0875d7; letter-spacing: .7px; }
+body.bp-login .login-card h2 { color:#052d69; font-size:27px; }
+body.bp-login .input-box input { height:50px; border-radius:25px; background:#f4faff; font-size:11px; }
+body.bp-login .input-box { height:50px; }.bp-login .left-icon,.bp-login .eye { top:18px; }
+body.bp-login .login-btn { height:50px; border-radius:25px; font-size:14px; background:linear-gradient(105deg,#0752b8,#0878df 52%,#13c3eb) !important; }
+body.bp-login .signup-btn { height:47px; border-radius:24px; border-color:#0876e4; color:#0768d4; }
+body.bp-login .forgot { margin-bottom:13px; }.bp-login .divider { margin:14px 0; }
+body.bp-login .admin-login { margin-top:12px; color:#346a9c; }
+body.bp-login .login-benefits { display:grid; grid-template-columns:repeat(4,1fr); margin:16px -5px -4px; padding:12px 5px; border-radius:19px; background:linear-gradient(100deg,#edf8ff,#f6fbff); color:#195a9c; text-align:center; font-size:7px; line-height:1.25; }
+body.bp-login .login-benefits span+span { border-left:1px solid #cde4f8; }
+body.bp-login .login-benefits i { display:block; margin-bottom:5px; color:#0877db; font-size:16px; }
+
+/* Account creation keeps the richer form easy to scan inside the device. */
+body.bp-signup .blue-header { height: 205px; background:linear-gradient(130deg,#03275f,#0871d0 64%,#13bee8) !important; }
+body.bp-signup .logo h1 { color:#fff !important; font-size:30px; }.bp-signup .logo p{color:#d9f5ff !important;}
+body.bp-signup .logo img { width:70px;height:70px; }.bp-signup .bus-image { height:105px; margin-top:15px; border-radius:20px; }
+body.bp-signup .signup-card { width:calc(100% - 28px); padding:22px 20px; border-radius:25px; border:1px solid #d8eafa; box-shadow:0 14px 30px rgba(7,67,141,.12); }
+body.bp-signup .signup-card h2 { color:#06316f; }.bp-signup .signup-btn { border-radius:14px; background:linear-gradient(105deg,#075dc8,#11bee9) !important; }.bp-signup .input-box input{border-color:#cfe2f5;background:#f8fcff;}
+
+/* Password recovery and completion screens retain the same service tone. */
+body.bp-forgot-password .reset-container,
+body.bp-verify-otp .reset-container,
+body.bp-reset-password .reset-container { padding: 28px 18px; background: linear-gradient(160deg,#eaf7ff,#f9fdff); }
+body.bp-forgot-password .reset-brand,
+body.bp-verify-otp .reset-brand,
+body.bp-reset-password .reset-brand { color:#063979; }.bp-forgot-password .reset-brand i,.bp-verify-otp .reset-brand i,.bp-reset-password .reset-brand i{background:linear-gradient(135deg,#075dc8,#10bee9);}
+body.bp-forgot-password .reset-card,
+body.bp-verify-otp .reset-card,
+body.bp-reset-password .reset-card { border:1px solid #d5e8f9; border-radius:25px; box-shadow:0 14px 28px rgba(4,69,142,.11); }
+
+@media (max-width:430px) {
+  body.bp-login .login-card { margin-top:104px; }
+}

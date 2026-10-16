@@ -1,0 +1,19 @@
+@import url('student-plan.css');
+
+.employee-plan-app .plan-card h3::before { background: #159b72; }
+.employee-summary { margin: 0 0 12px; padding: 10px 11px; border: 1px solid #cfe4da; border-radius: 12px; background: linear-gradient(110deg, #f3fbf7, #f8fcff); }
+.employee-summary-title { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; color: #159b72; font: 700 9px 'Space Grotesk', sans-serif; text-transform: uppercase; letter-spacing: .35px; }
+.employee-summary-title i { color: #1765c1; }
+.employee-summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 10px; }
+.employee-summary-grid div { min-width: 0; }
+.employee-summary-grid .designation-field { grid-column: 1 / -1; padding-top: 7px; border-top: 1px solid #dceee5; }
+.employee-summary-grid span { display: block; margin-bottom: 3px; color: #7890a4; font-size: 7px; font-weight: 700; }
+.employee-summary-grid strong { display: block; overflow: hidden; color: #244d73; font: 700 9px 'DM Sans', sans-serif; text-overflow: ellipsis; white-space: nowrap; }
+.employee-plan-app .route-label { color: #159b72; }
+.employee-plan-app .price { color: #159b72; }
+
+
+/* ===== FINAL SCREEN SIZE SYSTEM ===== */
+body { min-height: 100vh; padding: 0; align-items: flex-start; justify-content: center; }
+.app { width: 390px; height: auto; min-height: 844px; max-height: none; }
+@media (max-width: 390px) { body { display: block; padding: 0; } .app { width: 100%; min-height: 844px; } }

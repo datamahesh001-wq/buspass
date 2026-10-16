@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Route - Bus Pass Application</title>
+
+    <link rel="stylesheet" href="student-route.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../user-phone-frame.css">
+    <link rel="stylesheet" href="../user-design-system.css">
+    <script defer src="../user-phone-frame.js"></script>
+    <link rel="stylesheet" href="../user-premium.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- Header -->
+    <div class="header">
+
+        <button class="back-btn" onclick="goBack()">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <div class="header-content">
+            <h2>Student Pass</h2>
+            <p>Application Form</p>
+        </div>
+
+    </div>
+
+
+    <!-- Progress -->
+    <div class="progress-container">
+
+        <div class="progress-step active">1</div>
+
+        <div class="progress-line active"></div>
+
+        <div class="progress-step active">2</div>
+
+        <div class="progress-line active"></div>
+
+        <div class="progress-step active">3</div>
+
+        <div class="progress-line"></div>
+
+        <div class="progress-step">4</div>
+
+    </div>
+
+
+    <!-- Route Selection Card -->
+    <div class="route-card">
+
+        <h3>Route Selection</h3>
+
+        <p class="subtitle">
+            Select your travel route and bus details
+        </p>
+
+        <div id="routeEmptyState" class="route-empty-state" hidden>
+            <i class="fa-solid fa-route"></i>
+            <strong>No Routes Available</strong>
+            <span>Published routes from the Transport Office will appear here.</span>
+        </div>
+
+
+        <!-- From Stop -->
+        <div class="field">
+
+            <label>From Stop</label>
+
+            <div class="select-box">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <select id="fromStop">
+
+                    <option value="">
+                        Select From Stop
+                    </option>
+
+                </select>
+
+                <i class="fa-solid fa-chevron-down arrow"></i>
+
+            </div>
+
+        </div>
+
+
+        <!-- Swap Button -->
+        <button
+            class="swap-btn"
+            type="button"
+            aria-label="Swap From and To stops"
+            title="Swap route direction"
+            onclick="swapStops()">
+
+            <i class="fa-solid fa-right-left"></i>
+
+        </button>
+
+
+        <!-- To Stop -->
+        <div class="field to-field">
+
+            <label>To Stop</label>
+
+            <div class="select-box">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <select id="toStop">
+
+                    <option value="">
+                        Select To Stop
+                    </option>
+
+                </select>
+
+                <i class="fa-solid fa-chevron-down arrow"></i>
+
+            </div>
+
+        </div>
+
+
+        <!-- Bus Type -->
+        <div class="bus-type-section">
+
+            <h4>Bus Type</h4>
+
+
+            <div class="bus-options">
+
+                <!-- Ordinary -->
+                <label class="bus-option selected">
+
+                    <input
+                        type="radio"
+                        name="busType"
+                        value="Ordinary"
+                        checked
+                        onchange="selectBusType(this)">
+
+                    <span class="radio-circle"></span>
+
+                    <div>
+                        <strong>Ordinary</strong>
+                        <small>Regular Service</small>
+                    </div>
+
+                </label>
+
+
+                <!-- Express -->
+                <label class="bus-option">
+
+                    <input
+                        type="radio"
+                        name="busType"
+                        value="Express"
+                        onchange="selectBusType(this)">
+
+                    <span class="radio-circle"></span>
+
+                    <div>
+                        <strong>Express</strong>
+                        <small>Limited Stop Service</small>
+                    </div>
+
+                </label>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <!-- Fixed bottom action bar: stays at the phone viewport bottom while the form scrolls. -->
+    <div class="bottom-buttons" aria-label="Route navigation">
+        <button type="button" class="back-button" onclick="goBack()">Back</button>
+        <button type="button" class="next-button" onclick="goNext()">Next</button>
+    </div>
+
+</div>
+
+
+<script src="../popup.js"></script>
+
+<script src="location-data.js"></script>
+
+<script src="custom-dropdown.js"></script>
+
+<script src="application-state.js"></script>
+<script src="student-route.js?v=20260917-3"></script>
+
+</body>
+</html>

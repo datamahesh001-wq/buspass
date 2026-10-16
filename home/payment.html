@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Payment - Bus Pass Application</title>
+
+    <link rel="stylesheet" href="payment.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../user-phone-frame.css">
+    <link rel="stylesheet" href="../user-design-system.css">
+    <script defer src="../user-phone-frame.js"></script>
+    <link rel="stylesheet" href="../user-premium.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ================= HEADER ================= -->
+
+    <div class="header">
+
+        <button class="back-btn" onclick="goBack()">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <div class="header-content">
+
+            <h2>Payment</h2>
+
+            <p>Complete Your Payment</p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= PAYMENT DETAILS ================= -->
+
+    <div class="payment-details">
+
+        <div class="amount-label">
+            Amount to Pay
+        </div>
+
+        <div class="amount" id="amountValue">
+            ₹0/-
+        </div>
+
+
+        <div class="detail-title">
+            Pass Type
+        </div>
+
+        <div class="detail-value" id="passTypeValue">
+            Student Monthly Pass
+        </div>
+
+
+        <div class="detail-title">
+            Pass Validity
+        </div>
+
+        <div class="detail-value" id="validityValue">
+            Select a pass plan first
+        </div>
+
+    </div>
+
+
+    <!-- ================= PAYMENT METHOD ================= -->
+
+    <h3 class="payment-method-title">
+        Choose Payment Method
+    </h3>
+
+
+    <div class="payment-methods">
+
+
+        <!-- UPI -->
+
+        <label class="payment-option selected">
+
+            <div class="method-left">
+
+                <div class="method-icon upi-icon">
+                    UPI
+                </div>
+
+                <span>UPI</span>
+
+            </div>
+
+            <input
+                type="radio"
+                name="paymentMethod"
+                value="UPI"
+                checked
+                onchange="selectPayment(this)">
+
+            <span class="custom-radio"></span>
+
+        </label>
+
+
+        <!-- Credit / Debit Card -->
+
+        <label class="payment-option">
+
+            <div class="method-left">
+
+                <div class="method-icon card-icon">
+                    <i class="fa-regular fa-credit-card"></i>
+                </div>
+
+                <span>Credit / Debit Card</span>
+
+            </div>
+
+            <input
+                type="radio"
+                name="paymentMethod"
+                value="Credit / Debit Card"
+                onchange="selectPayment(this)">
+
+            <span class="custom-radio"></span>
+
+        </label>
+
+
+        <!-- Net Banking -->
+
+        <label class="payment-option">
+
+            <div class="method-left">
+
+                <div class="method-icon bank-icon">
+                    <i class="fa-solid fa-building-columns"></i>
+                </div>
+
+                <span>Net Banking</span>
+
+            </div>
+
+            <input
+                type="radio"
+                name="paymentMethod"
+                value="Net Banking"
+                onchange="selectPayment(this)">
+
+            <span class="custom-radio"></span>
+
+        </label>
+
+    </div>
+
+
+
+    <!-- ================= PAYMENT DETAILS BY METHOD ================= -->
+
+    <div id="paymentDetailPanel" class="payment-detail-panel" aria-live="polite">
+
+        <div class="method-panel-header">
+            <div>
+                <span class="panel-kicker">PAYMENT DETAILS</span>
+                <h4 id="paymentPanelTitle">UPI Payment</h4>
+            </div>
+            <span id="paymentPanelBadge" class="method-badge">UPI</span>
+        </div>
+
+        <div id="upiFields" class="method-fields">
+            <label>UPI ID</label>
+            <input id="upiId" type="text" placeholder="example@upi" autocomplete="off">
+            <p class="field-hint"><i class="fa-solid fa-shield-halved"></i> Enter your UPI ID to continue securely.</p>
+        </div>
+
+        <div id="cardFields" class="method-fields hidden">
+            <label>Card Number</label>
+            <input id="cardNumber" inputmode="numeric" maxlength="19" placeholder="1234 5678 9012 3456" autocomplete="cc-number">
+
+            <label>Card Holder Name</label>
+            <input id="cardHolder" type="text" placeholder="Name on card" autocomplete="cc-name">
+
+            <div class="field-row">
+                <div>
+                    <label>Expiry Date</label>
+                    <input id="cardExpiry" type="text" maxlength="5" placeholder="MM/YY" autocomplete="cc-exp">
+                </div>
+                <div>
+                    <label>CVV</label>
+                    <input id="cardCvv" type="password" inputmode="numeric" maxlength="4" placeholder="•••" autocomplete="cc-csc">
+                </div>
+            </div>
+        </div>
+
+        <div id="netBankingFields" class="method-fields hidden">
+            <label>Select Bank</label>
+            <select id="bankName">
+                <option value="">Choose your bank</option>
+                <option>State Bank of India</option>
+                <option>HDFC Bank</option>
+                <option>ICICI Bank</option>
+                <option>Axis Bank</option>
+                <option>Canara Bank</option>
+                <option>Union Bank of India</option>
+                <option>Punjab National Bank</option>
+            </select>
+
+            <label>Customer / User ID</label>
+            <input id="bankUserId" type="text" placeholder="Enter your bank user ID" autocomplete="off">
+            <p class="field-hint"><i class="fa-solid fa-lock"></i> You will continue to your bank's secure login flow.</p>
+        </div>
+
+    </div>
+
+    <!-- ================= PAY BUTTON ================= -->
+
+    <button
+        class="pay-button"
+        onclick="makePayment()">
+
+        Pay Now
+
+    </button>
+
+
+    <!-- Secure Payment -->
+
+    <div class="secure-payment">
+
+        <i class="fa-solid fa-lock"></i>
+
+        100% Secure Payment
+
+    </div>
+
+</div>
+
+
+<script src="../popup.js"></script>
+
+<script src="application-state.js"></script>
+<script src="payment.js"></script>
+
+</body>
+</html>

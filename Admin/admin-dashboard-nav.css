@@ -1,0 +1,53 @@
+/* Shared floating navigation used by the Admin dashboard, Bus Stops and Profile. */
+.iphone-app .bottom-nav.dashboard-nav{
+  position:absolute!important;
+  z-index:95!important;
+  left:12px!important;
+  right:12px!important;
+  bottom:11px!important;
+  width:auto!important;
+  height:68px!important;
+  display:grid!important;
+  grid-template-columns:repeat(4,1fr)!important;
+  align-items:center!important;
+  padding:6px!important;
+  gap:2px!important;
+  border:1px solid rgba(140,215,255,.28)!important;
+  border-radius:24px!important;
+  background:linear-gradient(135deg,#061f42,#0a559f)!important;
+  box-shadow:0 17px 32px rgba(3,41,83,.27),inset 0 1px 0 rgba(255,255,255,.12)!important;
+}
+.iphone-app .bottom-nav.dashboard-nav .nav-item{
+  position:relative!important;
+  height:54px!important;
+  min-width:0!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:4px!important;
+  border:0!important;
+  border-radius:16px!important;
+  background:transparent!important;
+  color:#a8c1d8!important;
+  font-size:6.8px!important;
+  font-weight:700!important;
+  cursor:pointer;
+}
+.iphone-app .bottom-nav.dashboard-nav .nav-item i{font-size:15px!important;color:inherit!important}
+.iphone-app .bottom-nav.dashboard-nav .nav-item.active{
+  color:#fff!important;
+  background:rgba(77,164,242,.20)!important;
+}
+.iphone-app .bottom-nav.dashboard-nav .nav-item.active::before{
+  content:""!important;
+  display:block!important;
+  position:absolute!important;
+  top:5px!important;
+  width:25px!important;
+  height:3px!important;
+  border-radius:99px!important;
+  background:#f2b43d!important;
+}
+.iphone-app .bottom-nav.dashboard-nav .nav-item.active i{color:#f4bd51!important}
+.iphone-app .bottom-nav.dashboard-nav .nav-item:focus-visible{outline:2px solid #a9ddff;outline-offset:2px}

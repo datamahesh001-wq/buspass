@@ -1,0 +1,23 @@
+ADMIN SCREEN REDESIGN - USER REQUEST SCOPE
+
+Changed only Admin-side front-end screens:
+- Admin Login
+- Admin Home / Dashboard
+- Applications list (Student / Employee)
+- Application Details
+- Manual Verification
+- Refreshed visual language for Routes, Bus Stops and Pass Plans management
+
+Behavior:
+- Existing user-side screens are not changed.
+- Database schema/database.sql is not changed.
+- backend/server.js is not changed.
+- Existing Admin route/stop/plan management JavaScript and CRUD behavior are preserved.
+- Application Details reads the current user's locally saved application details, route, plan, payment and uploaded-document preview data when those values are present in localStorage.
+- Admin verification is manual: documents/details/route/payment are not marked verified automatically.
+- Clicking Review / application sections opens the Verification screen.
+- Uploaded document cards open a preview modal; Verify Document records a separate admin verification flag in localStorage.
+- Approval/rejection is only enabled after the required manual checks are completed.
+
+Important technical limitation from the requested "do not change server" constraint:
+The current backend does not expose an Admin API for listing every user's full application record and documents. Therefore the redesigned Admin UI uses the project's existing server API where already available and the existing browser-side application data/localStorage for the current application. No new server/database endpoint was added.

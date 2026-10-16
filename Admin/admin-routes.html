@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Routes - BusPass</title>
+
+
+    <!-- Google Font -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="admin-routes.css"
+    >
+
+    <link rel="stylesheet" href="admin-gov-theme.css">
+  <link rel="stylesheet" href="iphone-admin-frame.css">
+  <link rel="stylesheet" href="admin-mobile-system.css">
+    <link rel="stylesheet" href="admin-premium.css">
+</head>
+
+
+<body>
+<div class="iphone-shell">
+  <div class="iphone-screen">
+    <div class="iphone-camera" aria-hidden="true"></div>
+    <div class="iphone-app">
+
+
+
+    <!-- =====================================
+         MAIN MOBILE APP CONTAINER
+    ====================================== -->
+
+    <div class="app-container">
+
+
+        <!-- =====================================
+             TOP HEADER
+        ====================================== -->
+
+        <header class="top-header">
+
+
+            <!-- Menu Button -->
+
+            <button
+                class="menu-btn"
+                id="menuButton"
+                type="button"
+                aria-label="Open Menu"
+            >
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+            <!-- Header Title -->
+
+            <div class="header-title">
+
+                <p>TRANSPORT MANAGEMENT</p>
+
+                <h1>Routes</h1>
+
+            </div>
+
+
+            <!-- Add Route Button -->
+
+            <button
+                class="add-route-btn"
+                id="addRouteButton"
+                type="button"
+            >
+
+                <i class="fa-solid fa-plus"></i>
+
+                <span>Add Route</span>
+
+            </button>
+
+
+        </header>
+
+
+
+        <!-- =====================================
+             ROUTE TABS
+        ====================================== -->
+
+        <section class="route-tabs-container">
+
+
+            <button
+                class="route-tab active"
+                data-tab="routes"
+                type="button"
+            >
+
+                <i class="fa-solid fa-road"></i>
+
+                <span>Routes</span>
+
+            </button>
+
+
+            <button
+                class="route-tab"
+                data-tab="busStops"
+                type="button"
+            >
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <span>Bus Stops</span>
+
+            </button>
+
+
+            <button
+                class="route-tab"
+                data-tab="passPlans"
+                type="button"
+            >
+
+                <i class="fa-solid fa-ticket"></i>
+
+                <span>Pass Plans</span>
+
+            </button>
+
+
+        </section>
+
+
+
+        <!-- =====================================
+             MAIN CONTENT
+        ====================================== -->
+
+        <main class="routes-content">
+
+
+            <!-- =====================================
+                 ROUTES PANEL
+            ====================================== -->
+
+            <section
+                class="tab-panel active"
+                id="routesPanel"
+            >
+
+
+                <!-- Route Summary -->
+
+                <div class="content-heading">
+
+                    <div>
+
+                        <p class="section-label">
+                            ACTIVE TRANSPORT NETWORK
+                        </p>
+
+                        <h2>Routes in AP</h2>
+
+                    </div>
+
+
+                    <div class="route-count">
+
+                        <i class="fa-solid fa-route"></i>
+
+                        <span id="routeCount">
+                            0 Routes
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+
+
+            </section>
+
+
+
+            <!-- =====================================
+                 BUS STOPS PANEL
+            ====================================== -->
+
+            <section
+                class="tab-panel"
+                id="busStopsPanel"
+            >
+
+                <div class="empty-panel">
+
+                    <div class="empty-icon">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                    </div>
+
+                    <h3>Bus Stops</h3>
+
+                    <p>
+                        Manage all available bus stops
+                        from this section.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================================
+                 PASS PLANS PANEL
+            ====================================== -->
+
+            <section
+                class="tab-panel"
+                id="passPlansPanel"
+            >
+
+                <div class="empty-panel">
+
+                    <div class="empty-icon">
+
+                        <i class="fa-solid fa-ticket"></i>
+
+                    </div>
+
+                    <h3>Pass Plans</h3>
+
+                    <p>
+                        Manage student and employee
+                        pass plans here.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- Bottom Space -->
+
+            <div class="bottom-space"></div>
+
+
+        </main>
+
+
+
+        <!-- =====================================
+             BOTTOM NAVIGATION
+        ====================================== -->
+
+        <nav class="bottom-nav dashboard-nav" aria-label="Admin navigation">
+
+
+            <!-- Home -->
+
+            <button
+                class="nav-item"
+                id="homeNav"
+                type="button"
+            >
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>Home</span>
+
+            </button>
+
+
+            <!-- Applications -->
+
+            <button
+                class="nav-item"
+                id="applicationsNav"
+                type="button"
+            >
+
+                <i class="fa-solid fa-file-lines"></i>
+
+                <span>Applications</span>
+
+            </button>
+
+
+            <!-- Management -->
+
+            <button
+                class="nav-item active"
+                id="managementNav"
+                type="button"
+            >
+
+                <i class="fa-solid fa-route"></i>
+
+                <span>Management</span>
+
+            </button>
+
+
+            <!-- More -->
+
+            <button
+                class="nav-item"
+                id="moreNav"
+                type="button"
+            >
+
+                <i class="fa-solid fa-bars"></i>
+
+                <span>More</span>
+
+            </button>
+
+
+        </nav>
+
+
+
+        <!-- =====================================
+             ADD / EDIT ROUTE MODAL
+        ====================================== -->
+
+        <div
+            class="modal-overlay"
+            id="routeModal"
+        >
+
+            <div class="route-modal-card">
+
+
+                <div class="modal-header">
+
+                    <div>
+
+                        <p>ROUTE MANAGEMENT</p>
+
+                        <h2 id="modalTitle">
+                            Add New Route
+                        </h2>
+
+                    </div>
+
+
+                    <button
+                        class="close-modal-btn"
+                        id="closeModalButton"
+                        type="button"
+                    >
+
+                        <i class="fa-solid fa-xmark"></i>
+
+                    </button>
+
+                </div>
+
+
+
+                <form id="routeForm">
+
+
+                    <!-- Route ID -->
+
+                    <div class="form-group">
+
+                        <label for="routeId">
+                            Route ID
+                        </label>
+
+                        <input
+                            type="text"
+                            id="routeId"
+                            placeholder="Example: RTE07"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- From -->
+
+                    <div class="form-group">
+
+                        <label for="fromLocation">
+                            From Location
+                        </label>
+
+                        <input
+                            type="text"
+                            id="fromLocation"
+                            list="apRouteStops"
+                            placeholder="Enter starting location"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- To -->
+
+                    <div class="form-group">
+
+                        <label for="toLocation">
+                            To Location
+                        </label>
+
+                        <input
+                            type="text"
+                            id="toLocation"
+                            list="apRouteStops"
+                            placeholder="Enter destination"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- Distance -->
+
+                    <div class="form-group">
+
+                        <label for="routeDistance">
+                            Distance
+                        </label>
+
+                        <input
+                            type="number"
+                            id="routeDistance"
+                            min="0.1"
+                            step="0.1"
+                            placeholder="Enter distance in KM"
+                            required
+                        >
+
+                        <small class="distance-help">Enter the route distance manually in KM.</small>
+
+                    </div>
+
+
+
+                    <!-- Bus Type -->
+
+                    <div class="form-group">
+
+                        <label for="busType">
+                            Bus Type
+                        </label>
+
+                        <select
+                            id="busType"
+                            required
+                        >
+
+                            <option value="">
+                                Select Bus Type
+                            </option>
+
+                            <option value="Ordinary">
+                                Ordinary
+                            </option>
+
+                            <option value="Express">
+                                Express
+                            </option>
+
+                            <option value="Deluxe">
+                                Deluxe
+                            </option>
+
+                            <option value="Super Luxury">
+                                Super Luxury
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- Modal Buttons -->
+
+                    <div class="modal-actions">
+
+                        <button
+                            class="cancel-btn"
+                            id="cancelRouteButton"
+                            type="button"
+                        >
+
+                            Cancel
+
+                        </button>
+
+
+                        <button
+                            class="save-route-btn"
+                            type="submit"
+                        >
+
+                            <i class="fa-solid fa-floppy-disk"></i>
+
+                            Save Route
+
+                        </button>
+
+                    </div>
+
+
+                </form>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             DELETE CONFIRMATION MODAL
+        ====================================== -->
+
+        <div
+            class="modal-overlay"
+            id="deleteModal"
+        >
+
+            <div class="delete-modal-card">
+
+
+                <div class="delete-icon">
+
+                    <i class="fa-solid fa-trash"></i>
+
+                </div>
+
+
+                <h2>Delete Route?</h2>
+
+
+                <p>
+                    Are you sure you want to remove
+                    this route from the system?
+                </p>
+
+
+                <div class="delete-modal-actions">
+
+                    <button
+                        class="cancel-delete-btn"
+                        id="cancelDeleteButton"
+                        type="button"
+                    >
+
+                        Cancel
+
+                    </button>
+
+
+                    <button
+                        class="confirm-delete-btn"
+                        id="confirmDeleteButton"
+                        type="button"
+                    >
+
+                        Delete
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             TOAST MESSAGE
+        ====================================== -->
+
+        <div
+            class="toast-message"
+            id="toastMessage"
+        >
+
+            <i
+                class="fa-solid fa-circle-check"
+                id="toastIcon"
+            ></i>
+
+            <span id="toastText">
+                Route added successfully!
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- JavaScript -->
+
+    <script src="admin-routes.js"></script>
+
+
+    </div>
+  </div>
+</div>
+<script src="admin-phone-status.js"></script>
+</body>
+
+</html>

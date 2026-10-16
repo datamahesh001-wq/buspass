@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active Pass - BusPass</title>
+    <link rel="stylesheet" href="active-pass.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../user-phone-frame.css">
+    <link rel="stylesheet" href="../user-design-system.css">
+    <script defer src="../user-phone-frame.js"></script>
+    <link rel="stylesheet" href="../user-premium.css">
+</head>
+<body>
+    <main class="mobile-screen">
+
+        <!-- ================= SCREEN HEADER ================= -->
+        <header class="pass-screen-header">
+            <button class="back-btn" type="button" onclick="goBack()" aria-label="Go back"><i class="fa-solid fa-arrow-left"></i></button>
+            <div class="header-title"><h1>Active Pass</h1><p>Government bus pass services</p></div>
+            <button class="menu-btn" type="button" onclick="openMenu()" aria-label="Open menu"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+        </header>
+
+        <!-- ================= GOVERNMENT BUS PASS CARD ================= -->
+        <section class="govt-pass" aria-label="Active government student bus pass">
+
+            <!-- Security watermark -->
+            <span class="pass-watermark" aria-hidden="true"><i class="fa-solid fa-bus"></i></span>
+
+            <!-- Corporation band -->
+            <div class="pass-head">
+                <span class="pass-emblem"><img src="../image/buslogo.jpg" alt="Online Bus Pass emblem"></span>
+                <div class="pass-head-text">
+                    <span class="telugu">ఆంధ్రప్రదేశ్ రాష్ట్ర రోడ్డు రవాణా సంస్థ</span>
+                    <strong>ONLINE BUS PASS</strong>
+                    <small>Digital Transport Service</small>
+                </div>
+            </div>
+
+            <!-- Pass title strip -->
+            <div class="pass-title-strip">
+                <h2 id="passTitleHeading"><i class="fa-solid fa-id-card"></i> STUDENT BUS PASS</h2>
+                <span class="pass-status" id="passStatusBadge"><i class="fa-solid fa-circle-check"></i> ACTIVE</span>
+            </div>
+
+            <!-- Holder photo + pass details -->
+            <div class="pass-body">
+                <figure class="holder-photo">
+                    <img id="holderPhoto" alt="Pass holder photo">
+                    <figcaption>HOLDER'S PHOTO</figcaption>
+                </figure>
+
+                <div class="pass-fields">
+                    <div class="field pass-number-field"><span>Pass Number</span><strong id="passNumber">BP20240604135</strong></div>
+                    <div class="field"><span>Holder Name</span><strong id="holderName">Ramesh Kumar</strong></div>
+                    <div class="field"><span id="institutionLabel">Institution</span><strong id="institutionName">Pithapur Raja's Govt College</strong></div>
+                        <div class="field-row">
+                        <div class="field"><span id="courseLabel">Course</span><strong id="courseField">B Com</strong></div>
+                        <div class="field"><span>Category</span><strong id="categoryField">Student</strong></div>
+                    </div>
+                        <div class="field-row student-academic-field">
+                            <div class="field"><span id="passIdLabel">Student ID</span><strong id="passIdField">--</strong></div>
+                            <div class="field"><span>Distance</span><strong id="distanceField">--</strong></div>
+                        </div>
+                </div>
+            </div>
+
+            <!-- Travel route -->
+            <div class="route-strip">
+                <span class="route-label">TRAVEL ROUTE</span>
+                <div class="route-path">
+                    <span class="stop" id="fromStop">Yanam Bus Stand</span>
+                    <span class="route-arrow"><i class="fa-solid fa-bus"></i></span>
+                    <span class="stop" id="toStop">Kakinada Bus Stand</span>
+                </div>
+            </div>
+
+            <!-- Validity -->
+            <div class="validity-strip">
+                <div><span>Valid From</span><strong id="validFromDate">01 May 2025</strong></div>
+                <div class="validity-divider"></div>
+                <div><span>Valid Up To</span><strong id="validUptoDate">01 May 2026</strong></div>
+            </div>
+
+            <!-- Barcode + official seal -->
+            <div class="pass-footer">
+                <div class="barcode-box">
+                    <span class="barcode" role="img" aria-label="Pass barcode BP20240604135"></span>
+                    <small id="barcodeNumber">BP20240604135</small>
+                </div>
+                <div class="official-seal" aria-hidden="true"><span>ONLINE PASS</span><small>DIGITAL SERVICE</small></div>
+            </div>
+
+            <p class="pass-terms">* Valid only with original Govt. ID proof &nbsp;•&nbsp; Non-transferable</p>
+        </section>
+
+        <!-- ================= STATUS STRIP ================= -->
+        <div class="status-strip" id="statusStrip">
+            <i class="fa-solid fa-circle-check"></i>
+            <div><strong id="statusStripTitle">Your pass is active</strong><span id="statusStripText">Travel safe and follow the rules.</span></div>
+        </div>
+
+        <!-- ================= DOWNLOAD ================= -->
+        <button class="download-button" type="button" onclick="downloadPass()"><i class="fa-solid fa-download"></i> Download Pass</button>
+
+        <!-- ================= BOTTOM NAVIGATION ================= -->
+        <nav class="bottom-nav" aria-label="Primary navigation">
+            <a class="nav-item" href="dashboard.html"><i class="fa-solid fa-house nav-icon"></i><span>Home</span></a>
+            <a class="nav-item selected" href="active-pass.html"><i class="fa-regular fa-id-card nav-icon"></i><span>My Pass</span></a>
+            <a class="nav-item" href="history.html"><i class="fa-solid fa-clock-rotate-left nav-icon"></i><span>History</span></a>
+            <a class="nav-item" href="profile.html"><i class="fa-solid fa-user nav-icon"></i><span>Profile</span></a>
+        </nav>
+
+    </main>
+    <script src="active-pass.js"></script>
+</body>
+</html>

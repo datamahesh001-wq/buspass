@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a4e95">
+  <title>User Management - Online Bus Pass Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="admin-mobile-system.css">
+  <link rel="stylesheet" href="iphone-admin-frame.css">
+  <link rel="stylesheet" href="admin-premium.css">
+  <link rel="stylesheet" href="admin-user-management.css">
+</head>
+<body>
+  <div class="iphone-shell">
+    <div class="iphone-screen">
+      <div class="iphone-camera" aria-hidden="true"></div>
+      <div class="iphone-app">
+        <div class="app-container user-management-container">
+          <header class="top-header user-top-header">
+            <button class="back-btn" id="backButton" type="button" aria-label="Back to dashboard"><i class="fa-solid fa-arrow-left"></i></button>
+            <div class="header-content"><p>BUS PASS MANAGEMENT SYSTEM</p><h1>User Management</h1></div>
+            <button class="notification-btn" id="notificationButton" type="button" aria-label="Open notifications"><i class="fa-regular fa-bell"></i><span class="notification-dot"></span></button>
+          </header>
+
+          <main class="admin-screen-main user-management-main" data-screen="users">
+            <section class="user-page-intro">
+              <div class="user-intro-copy"><span class="user-eyebrow"><i class="fa-solid fa-shield-halved"></i> ADMINISTRATION</span><h2>User Management</h2><p>Manage student and employee accounts.</p></div>
+              <span class="user-intro-emblem" aria-hidden="true"><i class="fa-solid fa-users-gear"></i></span>
+            </section>
+
+            <section class="user-stats" aria-label="User summary">
+              <button class="user-stat total" type="button" data-stat-filter="all" aria-label="Show all users">
+                <span class="user-stat-icon"><i class="fa-solid fa-users"></i></span><span class="user-stat-label">Total Users</span><strong id="totalUsers">—</strong><small>All profiles <i class="fa-solid fa-arrow-up-right-from-square"></i></small>
+              </button>
+              <button class="user-stat student" type="button" data-stat-filter="student" aria-label="Show student profiles">
+                <span class="user-stat-icon"><i class="fa-solid fa-graduation-cap"></i></span><span class="user-stat-label">Students</span><strong id="studentUsers">—</strong><small>Student profiles <i class="fa-solid fa-arrow-up-right-from-square"></i></small>
+              </button>
+              <button class="user-stat employee" type="button" data-stat-filter="employee" aria-label="Show employee profiles">
+                <span class="user-stat-icon"><i class="fa-solid fa-briefcase"></i></span><span class="user-stat-label">Employees</span><strong id="employeeUsers">—</strong><small>Employee profiles <i class="fa-solid fa-arrow-up-right-from-square"></i></small>
+              </button>
+            </section>
+
+            <section class="user-controls" aria-label="Find users">
+              <label class="user-search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><input id="screenSearch" type="search" placeholder="Search name, ID or mobile" autocomplete="off" aria-label="Search name, ID or mobile"><button id="clearUserSearch" type="button" aria-label="Clear search" hidden><i class="fa-solid fa-xmark"></i></button></label>
+              <button class="user-filter-open" id="screenFilter" type="button" aria-label="Open user filters" title="Filter users"><i class="fa-solid fa-sliders"></i><span>Filter</span><b id="filterCount" hidden>1</b></button>
+            </section>
+
+            <div class="user-tabs" id="userTabs" role="tablist" aria-label="Filter user type">
+              <button class="active" type="button" role="tab" aria-selected="true" data-filter="all">All</button>
+              <button type="button" role="tab" aria-selected="false" data-filter="student">Students</button>
+              <button type="button" role="tab" aria-selected="false" data-filter="employee">Employees</button>
+              <button type="button" role="tab" aria-selected="false" data-filter="active">Active</button>
+            </div>
+
+            <div class="user-list-heading"><div><h3>Accounts</h3><p id="userListSubtitle">Latest available profiles</p></div><span id="userResultCount" class="user-result-count">Loading…</span></div>
+            <div id="userListLoading" class="user-loading"><span class="user-loader"><i class="fa-solid fa-circle-notch fa-spin"></i></span><div><strong>Loading user profiles</strong><small>Fetching current records from the server…</small></div></div>
+            <div id="screenList" class="user-list" aria-live="polite"></div>
+            <section id="screenEmpty" class="user-empty" hidden><span><i class="fa-solid fa-user-group"></i></span><strong id="userEmptyTitle">No users found</strong><p id="userEmptyText">Try another search or clear the selected filters.</p><button id="resetUserFilters" type="button">Clear search and filters</button><button id="retryUserLoad" type="button" hidden>Retry loading users</button></section>
+            <p class="user-data-note"><i class="fa-solid fa-circle-info"></i> Profiles are based on the latest available application record for each applicant.</p>
+          </main>
+
+          <nav class="bottom-nav user-bottom-nav" aria-label="Admin navigation">
+            <a href="admin-dashboard.html" data-nav="home"><i class="fa-solid fa-house"></i><span>Home</span></a>
+            <a href="admin-applications.html" data-nav="applications"><i class="fa-regular fa-file-lines"></i><span>Applications</span></a>
+            <a href="admin-user-management.html" class="active" data-nav="management" aria-current="page"><i class="fa-solid fa-users-gear"></i><span>Management</span></a>
+            <a href="admin-profile.html" data-nav="more"><i class="fa-solid fa-ellipsis"></i><span>More</span></a>
+          </nav>
+
+          <div class="user-filter-overlay" id="userFilterOverlay" hidden>
+            <button class="user-overlay-backdrop" id="closeUserFilterBackdrop" type="button" aria-label="Close filter"></button>
+            <section class="user-filter-sheet" role="dialog" aria-modal="true" aria-labelledby="userFilterTitle">
+              <div class="filter-sheet-grip"></div>
+              <div class="filter-sheet-heading"><div><span>REFINE DIRECTORY</span><h2 id="userFilterTitle">Filter Users</h2></div><button type="button" id="closeUserFilter" aria-label="Close filter"><i class="fa-solid fa-xmark"></i></button></div>
+              <label class="filter-field"><span>Account type</span><select id="filterUserType"><option value="all">All accounts</option><option value="student">Students</option><option value="employee">Employees</option></select></label>
+              <label class="filter-field"><span>Account status</span><select id="filterUserStatus"><option value="all">Any status</option><option value="active">Active / Approved</option><option value="pending">Pending</option><option value="rejected">Rejected</option><option value="expired">Expired</option></select></label>
+              <label class="filter-field"><span>Sort profiles by</span><select id="filterUserSort"><option value="recent">Recently updated</option><option value="name-asc">Name · A to Z</option><option value="name-desc">Name · Z to A</option></select></label>
+              <div class="filter-sheet-actions"><button id="clearUserFilters" class="filter-clear" type="button">Reset</button><button id="applyUserFilters" class="filter-apply" type="button"><i class="fa-solid fa-check"></i> Apply Filters</button></div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="admin-user-management.js"></script>
+  <script src="admin-phone-status.js"></script>
+</body>
+</html>

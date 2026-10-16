@@ -1,0 +1,454 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;display:grid;place-items:center;background:#e3edf8;font-family:Poppins,sans-serif;color:#183a60}
+.app-container{width:390px;min-height:844px;position:relative;overflow:hidden;background:#f7faff;box-shadow:0 24px 50px rgba(22,59,105,.2)}
+button{font:inherit}
+.verify-header{height:77px;display:flex;align-items:center;gap:10px;padding:0 14px;background:#1162d5;color:#fff;border-radius:0 0 19px 19px;box-shadow:0 8px 18px rgba(22,86,165,.22)}
+.verify-header>div{flex:1}
+.verify-header span,.card-head span,.decision-card>div>span{font-size:6px;font-weight:800;letter-spacing:1px}
+.verify-header span{color:#bddaff}
+.verify-header h1{font-size:18px;margin-top:3px}
+.header-icon{width:30px;height:30px;display:grid;place-items:center;border:0;border-radius:10px;background:rgba(255,255,255,.15);color:#fff}
+.content{padding:12px 13px 85px}
+.app-summary,.check-card,.decision-card{border:1px solid #dbe5ef;border-radius:15px;background:#fff;box-shadow:0 6px 14px rgba(21,60,107,.05)}
+.app-summary{display:flex;align-items:center;gap:9px;padding:10px}
+.review-meter{margin-top:9px;padding:10px 11px;border:1px solid #d9e7f5;border-radius:14px;background:linear-gradient(120deg,#f9fcff,#edf7ff);box-shadow:0 6px 14px rgba(21,60,107,.04)}.review-meter>div:first-child{display:flex;align-items:center;justify-content:space-between;gap:8px}.review-meter span,.review-meter small{color:#7590aa;font-size:5.6px;font-weight:800;letter-spacing:.55px}.review-meter strong{color:#1c528f;font-size:6.5px}.review-meter small{display:block;margin-top:6px;font-weight:600;letter-spacing:0}.review-track{height:5px;margin-top:8px;overflow:hidden;border-radius:99px;background:#dceaf7}.review-track span{display:block;width:0;height:100%;border-radius:inherit;background:linear-gradient(90deg,#1765c8,#16bde8);transition:width .25s ease}
+.avatar{width:44px;height:44px;display:grid;place-items:center;border-radius:13px;overflow:hidden;background:#eaf2ff;color:#2b70d6}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.app-summary h2{color:#1d426e;font-size:11px}
+.app-summary p{margin-top:2px;color:#607a93;font-size:6.3px;font-weight:700}
+.app-summary small{display:block;margin-top:2px;color:#8f9eae;font-size:5.7px}
+.status-chip{margin-left:auto;padding:4px 6px;border-radius:99px;font-size:5.4px;font-weight:800}
+.status-chip.pending{background:#fff0d7;color:#cf8a1f}
+.status-chip.approved{background:#e4f8ee;color:#28966b}
+.status-chip.rejected{background:#ffe9ec;color:#d0505c}
+.check-card{padding:10px;margin-top:9px}
+.card-head{display:flex;justify-content:space-between;align-items:flex-end}
+.card-head>div>span{color:#d17d17}
+.card-head h3{margin-top:3px;color:#1d436e;font-size:11px}
+.card-head>strong{font-size:5.6px;color:#7d91a8}
+.pending-text{color:#ca8a20!important}
+.verified-text{color:#278f67!important}
+.data-rows{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:9px}
+.data-rows>div{display:flex;flex-direction:column;gap:2px;min-width:0;padding:7px;border-radius:9px;background:#f9fbfe;border:1px solid #edf1f5}
+.data-rows span,.route-box span{color:#98a5b1;font-size:5.4px;text-transform:uppercase;letter-spacing:.25px}
+.data-rows strong{color:#4b657e;font-size:6.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.outline-action{width:100%;height:36px;margin-top:9px;border:1px solid #bfd4ee;border-radius:10px;background:#f0f6ff;color:#276cca;font-size:6.5px;font-weight:800;cursor:pointer}
+.outline-action.done{background:#e5f8ef;border-color:#bee9d2;color:#278f67}
+.verification-docs{display:flex;flex-direction:column;gap:6px;margin-top:9px}
+.verify-doc{display:flex;align-items:center;gap:8px;padding:8px;border:1px solid #e2e9f0;border-radius:10px;background:#fff;transition:.2s ease}.verify-doc.is-verified{border-color:#bfe6d2;background:#f5fcf8}
+.verify-doc .doc-icon{width:31px;height:31px;display:grid;place-items:center;border-radius:9px;background:#edf4fc;color:#3d78bc}
+.verify-doc>div:nth-child(2){flex:1;min-width:0}
+.verify-doc h4{color:#46617b;font-size:6.7px}
+.verify-doc p{margin-top:2px;color:#8a9bab;font-size:5.6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.verify-doc button{min-width:62px;height:25px;padding:0 7px;border:1px solid #bcd6f1;border-radius:8px;background:#f4f9ff;color:#2168c6;font-size:5.4px;font-weight:800;cursor:pointer}.verify-doc button:hover{background:#e8f3ff}.verify-doc button.verified{border-color:#bde5d0;background:#e8f8ef;color:#278f67}.verify-doc .doc-review-state{display:block;margin-top:3px;color:#bd7b17;font-size:5.1px;font-weight:700}.verify-doc.is-verified .doc-review-state{color:#278f67}
+.route-box{display:grid;grid-template-columns:1fr 20px 1fr;gap:6px;align-items:center;margin-top:9px;padding:9px;border-radius:10px;border:1px solid #edf1f5;background:#fbfdff}
+.route-box strong{display:block;margin-top:3px;color:#2d4e6f;font-size:6.9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.route-box>i{text-align:center;color:#4a80cc;font-size:9px}
+.decision-card{padding:10px;margin-top:9px}
+.decision-card>div>span{color:#d17d17}
+.decision-card h3{margin-top:3px;color:#1d436e;font-size:11px}
+.decision-card p{margin-top:4px;color:#8291a2;font-size:6px;line-height:1.45}
+.decision{display:flex;align-items:flex-start;gap:8px;padding:9px;margin-top:7px;border:1px solid #e3e9ef;border-radius:10px;cursor:pointer}
+.decision input{position:fixed!important;left:-100px!important;top:-100px!important;width:1px!important;height:1px!important;margin:0!important;opacity:0!important}
+.decision>span{width:16px;height:16px;border:1.5px solid #b8c7d7;border-radius:50%;background:#fff;flex-shrink:0}
+.decision.approved input:checked+span{border-color:#2a9a6d;box-shadow:inset 0 0 0 4px #fff;background:#2a9a6d}
+.decision.rejected input:checked+span{border-color:#d2555e;box-shadow:inset 0 0 0 4px #fff;background:#d2555e}
+.decision strong{display:block;color:#49627b;font-size:6.7px}
+.decision small{display:block;margin-top:2px;color:#8d9aa9;font-size:5.6px}
+.decision:has(input:checked){border-color:#bfd5ee;background:#f6faff}
+.decision.rejected:has(input:checked){border-color:#efc9cd;background:#fff8f8}
+.decision-card textarea{display:block;width:100%;height:49px;margin-top:8px;padding:8px;border:1px solid #dce5ee;border-radius:10px;outline:0;resize:none;background:#fbfdff;font:500 6.5px Poppins;color:#45617d}
+.action-bar{position:absolute;left:11px;right:11px;bottom:10px;z-index:4}
+.action-bar button{width:100%;height:48px;border:0;border-radius:14px;background:#b8c8d9;color:#fff;box-shadow:0 10px 20px rgba(32,96,170,.12);font-size:7.8px;font-weight:800;cursor:pointer}
+.action-bar button.enabled{background:linear-gradient(135deg,#155bbd,#2d79e6)}.action-bar button.reject-action{background:linear-gradient(135deg,#bd3e4c,#e36a6e)}.action-bar button:disabled{cursor:not-allowed}
+.overlay{position:absolute;inset:0;background:rgba(7,31,64,.42);display:none;align-items:flex-end;z-index:7}
+.overlay.show{display:flex}
+.confirm-sheet{width:100%;padding:18px;border-radius:21px 21px 0 0;background:#fff;text-align:center}
+.confirm-icon{width:46px;height:46px;margin:0 auto;display:grid;place-items:center;border-radius:15px;background:#e5f8ef;color:#2d9a70;font-size:21px}
+.confirm-sheet h2{margin-top:10px;color:#1e426c;font-size:13px}
+.confirm-sheet p{margin-top:5px;color:#8291a2;font-size:7px;line-height:1.5}
+.confirm-actions{display:flex;gap:8px;margin-top:14px}
+.confirm-actions button{flex:1;height:39px;border-radius:11px;border:1px solid #dce5ee;background:#f7faff;color:#5f7892;font-size:7px;font-weight:800}
+.confirm-actions button:last-child{border:0;background:#1762c8;color:#fff}
+.decision-overlay{z-index:8;align-items:center;padding:16px}.decision-sheet{width:100%;padding:19px 15px 15px;border-radius:21px;background:#fff;text-align:center;box-shadow:0 18px 45px rgba(7,31,64,.24)}.decision-modal-icon{width:53px;height:53px;margin:0 auto 9px;display:grid;place-items:center;border-radius:17px;font-size:24px}.decision-modal-icon.approved{background:#e5f8ef;color:#2d9a70}.decision-modal-icon.rejected{background:#ffe9ec;color:#d0505c}.decision-sheet>span{color:#d17d17;font-size:6px;font-weight:800;letter-spacing:1px}.decision-sheet h2{margin-top:5px;color:#1e426c;font-size:14px}.decision-sheet>p{margin:5px auto 0;color:#8291a2;font-size:7px;line-height:1.5}.check-warning{display:flex;gap:5px;align-items:center;margin-top:11px;padding:8px;border-radius:9px;background:#fff6df;color:#a97212;text-align:left;font-size:6px}.decision-sheet textarea{width:100%;height:48px;margin-top:11px;padding:8px;border:1px solid #dce5ee;border-radius:9px;resize:none;outline:0;font:500 6.5px Poppins;color:#45617d}.decision-modal-actions{display:flex;gap:7px;margin-top:13px}.decision-modal-actions button{flex:1;height:38px;border:1px solid #dce5ee;border-radius:10px;background:#f7faff;color:#5f7892;font-size:6.7px;font-weight:800}.decision-modal-actions button.approve-confirm{border:0;background:#1762c8;color:#fff}.decision-modal-actions button.reject-confirm{border:0;background:#d0525d;color:#fff}.decision-modal-actions button:disabled{background:#b8c8d9;color:#fff;cursor:not-allowed}
+.admin-toast{position:absolute;left:14px;right:14px;top:88px;z-index:12;padding:10px 11px;border-radius:12px;background:#173b70;color:#fff;font-size:6.5px;box-shadow:0 10px 20px rgba(15,54,103,.2);display:flex;gap:6px;align-items:center}
+.result-overlay{z-index:9;align-items:center;padding:16px}.result-sheet{width:100%;padding:22px 16px 17px;border-radius:22px;background:#fff;text-align:center;box-shadow:0 18px 45px rgba(7,31,64,.24)}.result-icon{width:62px;height:62px;margin:0 auto 11px;display:grid;place-items:center;border-radius:20px;font-size:29px}.result-icon.approved{background:#e3f8ed;color:#28966b}.result-icon.rejected{background:#ffe9ec;color:#d0505c}.result-sheet>span{color:#d17d17;font-size:6px;font-weight:800;letter-spacing:1px}.result-sheet h2{margin-top:6px;color:#1e426c;font-size:15px}.result-sheet p{margin:6px auto 0;max-width:235px;color:#8291a2;font-size:7px;line-height:1.55}.result-actions{display:grid;gap:7px;margin-top:17px}.result-actions button{height:39px;border-radius:11px;border:1px solid #dce5ee;background:#f7faff;color:#5f7892;font-size:7px;font-weight:800}.result-actions button:first-child{border:0;background:linear-gradient(135deg,#155bbd,#2d79e6);color:#fff}
+@media(max-width:390px){body{display:block;background:#f7faff}
+.app-container{width:100%;min-height:100vh}
+}
+
+/* Keep the long verification form scrollable, while its controls stay at the
+   bottom of the phone screen. */
+.iphone-app:has(.verify-header){overflow:hidden!important}
+.iphone-app:has(.verify-header)>.app-container{height:100%!important;min-height:0!important;display:flex;flex-direction:column;overflow:hidden!important}
+.iphone-app:has(.verify-header)>.app-container .content{flex:1;min-height:0;overflow-y:auto;padding-bottom:150px;scrollbar-width:none}
+.iphone-app:has(.verify-header)>.app-container .content::-webkit-scrollbar{width:0}
+.iphone-app:has(.verify-header)>.bottom-nav{position:absolute;left:11px;right:11px;bottom:10px;height:58px;display:grid;grid-template-columns:repeat(4,1fr);align-items:center;border:1px solid #cfdbe8;border-radius:16px;background:#fff;box-shadow:0 10px 23px rgba(30,64,110,.14);z-index:50}
+.iphone-app:has(.verify-header)>.bottom-nav a{display:flex;flex-direction:column;align-items:center;gap:3px;color:#667a91;text-decoration:none;font-size:6px;font-weight:600}
+.iphone-app:has(.verify-header)>.bottom-nav a i{font-size:13px}
+.iphone-app:has(.verify-header)>.bottom-nav a.active{color:#1f6bd1}
+.iphone-app:has(.verify-header)>.app-container .action-bar{bottom:76px}
+
+
+/* =========================================================
+   FINAL APPLICATION VERIFICATION FLOW
+   Clear review steps + stronger typography + true scrolling
+========================================================= */
+
+.iphone-app:has(.verify-header){
+    overflow:hidden!important;
+}
+
+.iphone-app:has(.verify-header) > .app-container{
+    width:100%!important;
+    height:100%!important;
+    min-height:0!important;
+    display:flex!important;
+    flex-direction:column!important;
+    overflow:hidden!important;
+    background:#f5f9fd!important;
+}
+
+.iphone-app:has(.verify-header) > .app-container > .verify-header{
+    flex:0 0 auto!important;
+}
+
+.iphone-app:has(.verify-header) > .app-container > .content{
+    flex:1 1 auto!important;
+    min-height:0!important;
+    height:auto!important;
+    overflow-y:auto!important;
+    overflow-x:hidden!important;
+    -webkit-overflow-scrolling:touch!important;
+    scrollbar-width:none!important;
+    padding:13px 13px 155px!important;
+}
+
+.iphone-app:has(.verify-header) > .app-container > .content::-webkit-scrollbar{
+    display:none!important;
+}
+
+/* Header */
+.iphone-app:has(.verify-header) .verify-header{
+    height:88px!important;
+    min-height:88px!important;
+    padding:20px 14px 12px!important;
+    background:
+      radial-gradient(circle at 90% 0,rgba(82,192,255,.35),transparent 34%),
+      linear-gradient(135deg,#06244d,#0a579c 58%,#1089c8)!important;
+    border-radius:0 0 24px 24px!important;
+    box-shadow:0 11px 25px rgba(11,74,132,.22)!important;
+}
+
+.iphone-app:has(.verify-header) .verify-header h1{
+    font-size:19px!important;
+    font-weight:900!important;
+    letter-spacing:-.4px!important;
+}
+
+.iphone-app:has(.verify-header) .verify-header span{
+    color:#bfe5ff!important;
+    font-size:6px!important;
+    font-weight:900!important;
+    letter-spacing:1.2px!important;
+}
+
+.iphone-app:has(.verify-header) .header-icon{
+    width:38px!important;
+    height:38px!important;
+    border:1px solid rgba(255,255,255,.22)!important;
+    border-radius:12px!important;
+    background:rgba(255,255,255,.12)!important;
+}
+
+/* Applicant summary */
+.iphone-app:has(.verify-header) .app-summary{
+    margin-top:1px!important;
+    padding:12px!important;
+    border:1px solid #cfe1ef!important;
+    border-radius:18px!important;
+    background:#fff!important;
+    box-shadow:0 8px 18px rgba(20,70,115,.07)!important;
+}
+
+.iphone-app:has(.verify-header) .app-summary h2{
+    color:#123f72!important;
+    font-size:12px!important;
+    font-weight:900!important;
+}
+
+.iphone-app:has(.verify-header) .app-summary p{
+    color:#3d6890!important;
+    font-size:7px!important;
+    font-weight:800!important;
+}
+
+.iphone-app:has(.verify-header) .app-summary small{
+    color:#8298ac!important;
+    font-size:6px!important;
+    font-weight:700!important;
+}
+
+.iphone-app:has(.verify-header) .status-chip{
+    padding:5px 8px!important;
+    font-size:6px!important;
+    font-weight:900!important;
+}
+
+/* Progress */
+.iphone-app:has(.verify-header) .review-meter{
+    padding:12px!important;
+    border:1px solid #c7e1f3!important;
+    border-radius:17px!important;
+    background:linear-gradient(145deg,#f8fdff,#eaf6ff)!important;
+    box-shadow:0 8px 18px rgba(16,99,163,.08)!important;
+}
+
+.iphone-app:has(.verify-header) .review-meter span{
+    color:#b56c08!important;
+    font-size:6px!important;
+    font-weight:900!important;
+    letter-spacing:1px!important;
+}
+
+.iphone-app:has(.verify-header) .review-meter strong{
+    color:#14528d!important;
+    font-size:7px!important;
+    font-weight:900!important;
+}
+
+.iphone-app:has(.verify-header) .review-meter small{
+    color:#7890a6!important;
+    font-size:6px!important;
+    line-height:1.4!important;
+    letter-spacing:0!important;
+}
+
+/* Verification cards */
+.iphone-app:has(.verify-header) .check-card,
+.iphone-app:has(.verify-header) .decision-card{
+    margin-top:11px!important;
+    padding:12px!important;
+    border:1px solid #d2e2ef!important;
+    border-radius:19px!important;
+    background:#fff!important;
+    box-shadow:0 8px 19px rgba(20,70,115,.06)!important;
+}
+
+.iphone-app:has(.verify-header) .card-head{
+    padding-bottom:9px!important;
+    border-bottom:1px solid #e8eff5!important;
+}
+
+.iphone-app:has(.verify-header) .card-head span,
+.iphone-app:has(.verify-header) .decision-card > div > span{
+    color:#b9700d!important;
+    font-size:6px!important;
+    font-weight:900!important;
+    letter-spacing:1px!important;
+}
+
+.iphone-app:has(.verify-header) .card-head h3,
+.iphone-app:has(.verify-header) .decision-card h3{
+    color:#123f72!important;
+    font-size:11px!important;
+    font-weight:900!important;
+}
+
+.iphone-app:has(.verify-header) .data-rows{
+    margin-top:9px!important;
+}
+
+.iphone-app:has(.verify-header) .data-rows span{
+    color:#8aa0b3!important;
+    font-size:5.8px!important;
+    font-weight:700!important;
+}
+
+.iphone-app:has(.verify-header) .data-rows strong{
+    color:#315575!important;
+    font-size:7px!important;
+    font-weight:900!important;
+}
+
+.iphone-app:has(.verify-header) .outline-action{
+    min-height:42px!important;
+    margin-top:10px!important;
+    border-radius:12px!important;
+    border:1px solid #bcd8ee!important;
+    background:#f4faff!important;
+    color:#1467b9!important;
+    font-size:7px!important;
+    font-weight:900!important;
+}
+
+.iphone-app:has(.verify-header) .outline-action.done{
+    border-color:#b9e6d0!important;
+    background:#edfaf3!important;
+    color:#218b63!important;
+}
+
+/* Documents */
+.iphone-app:has(.verify-header) .verify-doc{
+    margin-top:8px!important;
+    padding:9px!important;
+    border:1px solid #e0eaf2!important;
+    border-radius:13px!important;
+    background:#f9fcff!important;
+}
+
+.iphone-app:has(.verify-header) .verify-doc h4{
+    color:#315575!important;
+    font-size:7px!important;
+    font-weight:900!important;
+}
+
+.iphone-app:has(.verify-header) .verify-doc p{
+    color:#8095a8!important;
+    font-size:5.8px!important;
+}
+
+.iphone-app:has(.verify-header) .verify-doc button{
+    min-width:68px!important;
+    min-height:30px!important;
+    border-radius:9px!important;
+    font-size:5.7px!important;
+    font-weight:900!important;
+}
+
+/* Decision area */
+.iphone-app:has(.verify-header) .decision-card{
+    background:linear-gradient(145deg,#ffffff,#f3f9ff)!important;
+    border-color:#bcd9ee!important;
+}
+
+.iphone-app:has(.verify-header) .decision-card > div > p{
+    margin-top:4px!important;
+    color:#7890a6!important;
+    font-size:6.2px!important;
+    line-height:1.45!important;
+}
+
+.iphone-app:has(.verify-header) .decision{
+    min-height:52px!important;
+    margin-top:8px!important;
+    padding:9px!important;
+    border:1px solid #d8e6f0!important;
+    border-radius:13px!important;
+    background:#fff!important;
+}
+
+.iphone-app:has(.verify-header) .decision strong{
+    color:#234c70!important;
+    font-size:7px!important;
+    font-weight:900!important;
+}
+
+.iphone-app:has(.verify-header) .decision small{
+    color:#8499aa!important;
+    font-size:5.7px!important;
+}
+
+.iphone-app:has(.verify-header) #rejectionReason{
+    min-height:58px!important;
+    margin-top:9px!important;
+    border:1px solid #efcbd0!important;
+    border-radius:12px!important;
+    font-size:6.5px!important;
+    padding:9px!important;
+}
+
+/* Sticky final decision action */
+.iphone-app:has(.verify-header) > .app-container > .action-bar{
+    left:12px!important;
+    right:12px!important;
+    bottom:77px!important;
+    z-index:96!important;
+}
+
+.iphone-app:has(.verify-header) > .app-container > .action-bar button{
+    min-height:47px!important;
+    border-radius:15px!important;
+    font-size:8px!important;
+    font-weight:900!important;
+}
+
+.iphone-app:has(.verify-header) > .bottom-nav{
+    position:absolute!important;
+    left:10px!important;
+    right:10px!important;
+    bottom:10px!important;
+    height:63px!important;
+    z-index:100!important;
+    border-radius:19px!important;
+    border:1px solid #c9ddeb!important;
+    background:rgba(255,255,255,.98)!important;
+    box-shadow:0 12px 28px rgba(25,68,115,.18)!important;
+}
+
+.iphone-app:has(.verify-header) > .bottom-nav a{
+    font-size:7px!important;
+    font-weight:800!important;
+}
+
+.iphone-app:has(.verify-header) > .bottom-nav a i{
+    font-size:16px!important;
+}
+
+/* Decision sheets: readable and touch-friendly */
+.iphone-app:has(.verify-header) .decision-sheet,
+.iphone-app:has(.verify-header) .confirm-sheet,
+.iphone-app:has(.verify-header) .result-sheet{
+    border-radius:23px!important;
+}
+
+.iphone-app:has(.verify-header) .decision-sheet h2,
+.iphone-app:has(.verify-header) .result-sheet h2,
+.iphone-app:has(.verify-header) .confirm-sheet h2{
+    color:#123f72!important;
+    font-size:15px!important;
+    font-weight:900!important;
+}
+
+.iphone-app:has(.verify-header) .decision-sheet > p,
+.iphone-app:has(.verify-header) .result-sheet p,
+.iphone-app:has(.verify-header) .confirm-sheet p{
+    font-size:7px!important;
+    line-height:1.55!important;
+}
+
+
+/* Field-by-field review actions: every submitted value is tappable. */
+.iphone-app:has(.verify-header) .field-action{position:relative;cursor:pointer;padding-right:24px;border-radius:8px;transition:background .15s ease,border-color .15s ease,transform .15s ease}
+.iphone-app:has(.verify-header) .field-action:hover,.iphone-app:has(.verify-header) .field-action:focus{background:#f4f9ff;outline:none}
+.iphone-app:has(.verify-header) .field-action:focus-visible{box-shadow:0 0 0 2px #8bbcf0}
+.iphone-app:has(.verify-header) .field-chevron{position:absolute;right:7px;top:50%;transform:translateY(-50%);font-size:5px;color:#8aa4bb}
+.iphone-app:has(.verify-header) .field-is-verified{background:#f1fbf6;border-color:#c9ead9!important}
+.iphone-app:has(.verify-header) .field-is-verified .field-chevron{color:#26956c}
+.field-action-overlay{z-index:40!important;align-items:flex-end!important;padding:0!important}
+.field-action-sheet{width:100%;padding:18px 15px 15px;border-radius:22px 22px 0 0;background:#fff;box-shadow:0 -12px 35px rgba(8,38,72,.2);text-align:left}
+.field-action-icon{width:40px;height:40px;display:grid;place-items:center;border-radius:13px;background:#eaf4ff;color:#216cc6;font-size:16px}
+.field-action-sheet>span{display:block;margin-top:10px;color:#c17912;font-size:6px;font-weight:900;letter-spacing:1px}
+.field-action-sheet h2{margin-top:4px;color:#123f72;font-size:13px;font-weight:900}
+.field-action-sheet>p{margin-top:7px;padding:10px;border:1px solid #e1eaf2;border-radius:11px;background:#f8fbfe;color:#315575;font-size:8px;font-weight:800;line-height:1.5;word-break:break-word}
+.field-action-meta{margin-top:8px;color:#2a8e69;font-size:6.3px;font-weight:800}
+.field-action-buttons{display:flex;gap:8px;margin-top:13px}
+.field-action-buttons button{flex:1;height:40px;border-radius:11px;font-size:7px;font-weight:900}
+#fieldActionClose{border:1px solid #dce6ef;background:#f7faff;color:#607992}
+#fieldActionVerify{border:0;background:linear-gradient(135deg,#1358bd,#2d79e6);color:#fff}
+#fieldActionVerify:disabled{background:#d9e6e0;color:#318667}
+.verification-document-overlay{z-index:35!important;align-items:flex-end!important;padding:0!important}
+.verification-document-sheet{width:100%;padding:14px;border-radius:21px 21px 0 0;background:#fff;box-shadow:0 -12px 35px rgba(8,38,72,.2)}
+.verification-document-preview{height:230px;margin-top:10px;display:grid;place-items:center;overflow:hidden;border:1px solid #dfe8f0;border-radius:13px;background:#f7faff}
+.verification-document-preview img{display:none;max-width:100%;max-height:100%;object-fit:contain}
+.verification-document-preview img.show{display:block}
+.verification-document-footer{display:flex;align-items:center;gap:8px;margin-top:9px}
+.verification-document-footer span{flex:1;min-width:0;color:#617a93;font-size:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.verification-document-footer button{height:38px;padding:0 12px;border:0;border-radius:10px;background:#eaf3ff;color:#246cd0;font-size:6px;font-weight:900}
+.verification-document-footer button:disabled{background:#e4f6ed;color:#278b65}
+
+/* Keep the decision sheet over the review page instead of allowing the radio
+    focus change to leave the administrator at an empty scrolled area. */
+.iphone-app:has(.verify-header) .decision-overlay{position:absolute!important;inset:0!important;display:none!important;align-items:center!important;overflow-y:auto!important;z-index:80!important}
+.iphone-app:has(.verify-header) .decision-overlay.show{display:flex!important}
+.iphone-app:has(.verify-header) .decision-sheet{max-height:calc(100% - 32px)!important;overflow-y:auto!important}

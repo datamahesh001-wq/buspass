@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Track Application - BusPass</title>
+<link rel="stylesheet" href="application-tracking.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet" href="../user-phone-frame.css">
+    <link rel="stylesheet" href="../user-design-system.css">
+    <script defer src="../user-phone-frame.js"></script>
+    <link rel="stylesheet" href="../user-premium.css">
+</head>
+<body>
+<main class="mobile-screen">
+<header class="tracking-header">
+<button class="back-btn" type="button" onclick="goBack()" aria-label="Go back"><i class="fa-solid fa-arrow-left"></i></button>
+<div class="header-copy"><span class="eyebrow">BUSPASS • APPLICATION</span><h1>Track Application</h1><p>Follow your pass from payment to approval.</p></div>
+<div class="header-icon"><i class="fa-solid fa-route"></i></div>
+</header>
+<section class="application-card">
+<div class="application-top"><div><span class="label">APPLICATION ID</span><strong id="applicationId">Loading...</strong></div><span class="status-pill" id="statusPill"><i class="fa-solid fa-clock"></i> Checking</span></div>
+<div class="application-route"><span><i class="fa-solid fa-bus"></i> Pass application</span><strong id="passType">Bus Pass</strong></div>
+</section>
+<section class="progress-card">
+<div class="section-title"><div><span class="eyebrow">LIVE STATUS</span><h2 id="progressTitle">Checking your application</h2></div><span class="progress-count" id="progressCount">0/5</span></div>
+<div class="timeline" id="timeline"></div>
+</section>
+<section class="current-status" id="currentStatus"><div class="status-icon"><i class="fa-solid fa-shield-heart"></i></div><div><span>WHAT HAPPENS NEXT?</span><strong id="nextTitle">We are checking your application.</strong><p id="nextText">Your latest application status will appear here.</p></div></section>
+<section class="rejection-card" id="rejectionCard" hidden><div class="rejection-head"><div class="rejection-icon"><i class="fa-solid fa-circle-exclamation"></i></div><div><span>ADMIN REVIEW</span><h2>Application needs correction</h2></div></div><p id="rejectionReasonText">The Transport Office has requested corrections.</p><button id="reapplyButton" type="button"><i class="fa-solid fa-rotate-right"></i> Correct Details &amp; Reapply</button></section>
+<section class="info-card">
+<div class="info-item"><i class="fa-solid fa-bell"></i><div><strong>Automatic updates</strong><span>Refresh this screen anytime to see the latest status.</span></div></div>
+<div class="info-item"><i class="fa-solid fa-id-card"></i><div><strong>After approval</strong><span>Your approved government-style pass will become available in My Pass.</span></div></div>
+</section>
+<div class="tracking-actions"><button class="refresh-button" type="button" onclick="loadTracking()"><i class="fa-solid fa-rotate-right"></i> Refresh Status</button><button class="dashboard-button" type="button" onclick="goDashboard()"><i class="fa-solid fa-house"></i> Dashboard</button></div>
+</main>
+<script src="application-state.js"></script>
+<script src="application-tracking.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b4f98">
+  <title>Payment Details - Online Bus Pass Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="admin-mobile-system.css">
+  <link rel="stylesheet" href="iphone-admin-frame.css">
+  <link rel="stylesheet" href="admin-mobile-system.css">
+  <link rel="stylesheet" href="admin-premium.css">
+  <link rel="stylesheet" href="admin-payments.css">
+  <link rel="stylesheet" href="admin-payment-details.css">
+</head>
+<body>
+  <div class="iphone-shell">
+    <div class="iphone-screen">
+      <div class="iphone-camera" aria-hidden="true"></div>
+      <div class="iphone-app">
+        <div class="app-container payment-details-container">
+          <header class="top-header">
+            <button class="back-btn" id="backButton" type="button" aria-label="Back to payments"><i class="fa-solid fa-arrow-left"></i></button>
+            <div class="header-content"><p>PAYMENT MANAGEMENT</p><h1>Payment Details</h1></div>
+            <button class="notification-btn" id="notificationButton" type="button" aria-label="Open notifications" title="Notifications"><i class="fa-regular fa-bell"></i></button>
+          </header>
+
+          <main class="admin-screen-main payment-details-main" id="paymentDetailsMain">
+            <div id="paymentDetailsLoading" class="details-state"><span class="details-loader"><i class="fa-solid fa-circle-notch fa-spin"></i></span><strong>Loading payment details</strong><span>Fetching the selected application from the existing server.</span></div>
+            <div id="paymentDetailsError" class="details-state details-error" hidden><span class="details-loader"><i class="fa-solid fa-triangle-exclamation"></i></span><strong id="paymentDetailsErrorTitle">Payment details unavailable</strong><span id="paymentDetailsErrorText">Check the application ID and local server, then try again.</span><button type="button" id="retryPaymentDetails">Try again</button><a href="admin-payments.html">Back to Payments</a></div>
+
+            <div id="paymentDetailsContent" hidden>
+              <section class="details-intro">
+                <span class="payments-eyebrow">TRANSACTION OVERVIEW</span>
+                <h2>Payment Details</h2>
+                <p>Review the transaction and its linked bus pass application.</p>
+              </section>
+
+              <section class="transaction-hero" aria-labelledby="transactionAmount">
+                <div class="transaction-hero-top"><span class="transaction-hero-icon"><i class="fa-solid fa-credit-card"></i></span><span id="paymentStatusPill" class="payment-status-pill unknown">Not recorded</span></div>
+                <span class="transaction-amount-label">Payment amount</span>
+                <strong id="transactionAmount">—</strong>
+                <div class="transaction-hero-divider"></div>
+                <span class="transaction-id-label">Transaction ID</span>
+                <div class="transaction-id-row"><strong id="transactionId">Not recorded</strong><button type="button" id="copyTransactionId" aria-label="Copy transaction ID" title="Copy transaction ID"><i class="fa-regular fa-copy"></i></button></div>
+                <span class="transaction-copied" id="transactionCopied" role="status" hidden>Transaction ID copied</span>
+              </section>
+
+              <section class="details-section" aria-labelledby="paymentInfoHeading">
+                <div class="details-section-heading"><span class="details-section-icon blue"><i class="fa-solid fa-receipt"></i></span><div><h3 id="paymentInfoHeading">Payment Information</h3><p>Recorded transaction fields</p></div></div>
+                <div class="details-info-grid">
+                  <div class="details-info-item"><span>Payment status</span><strong id="detailPaymentStatus">Not recorded</strong></div>
+                  <div class="details-info-item"><span>Payment method</span><strong id="detailPaymentMethod">Not recorded</strong></div>
+                  <div class="details-info-item"><span>Payment date</span><strong id="detailPaymentDate">Not available</strong></div>
+                  <div class="details-info-item"><span>Amount paid</span><strong id="detailAmountPaid">Not recorded</strong></div>
+                </div>
+              </section>
+
+              <section class="details-section" aria-labelledby="applicantInfoHeading">
+                <div class="details-section-heading"><span class="details-section-icon teal"><i class="fa-solid fa-user"></i></span><div><h3 id="applicantInfoHeading">Applicant Details</h3><p>Applicant associated with this transaction</p></div></div>
+                <div class="details-info-grid">
+                  <div class="details-info-item full"><span>Full name</span><strong id="detailApplicantName">Not available</strong></div>
+                  <div class="details-info-item"><span>Applicant type</span><strong id="detailApplicantType">Not available</strong></div>
+                  <div class="details-info-item"><span>Applicant ID</span><strong id="detailApplicantId">Not available</strong></div>
+                  <div class="details-info-item"><span>Mobile number</span><strong id="detailMobile">Not available</strong></div>
+                  <div class="details-info-item"><span>Email address</span><strong id="detailEmail">Not available</strong></div>
+                </div>
+              </section>
+
+              <section class="details-section" aria-labelledby="applicationInfoHeading">
+                <div class="details-section-heading"><span class="details-section-icon violet"><i class="fa-solid fa-file-lines"></i></span><div><h3 id="applicationInfoHeading">Application & Pass</h3><p>Pass information linked to the payment</p></div></div>
+                <div class="details-info-grid">
+                  <div class="details-info-item"><span>Application ID</span><strong id="detailApplicationId">Not available</strong></div>
+                  <div class="details-info-item"><span>Application status</span><strong id="detailApplicationStatus">Not available</strong></div>
+                  <div class="details-info-item"><span>Pass type</span><strong id="detailPassType">Not available</strong></div>
+                  <div class="details-info-item"><span>Pass plan</span><strong id="detailPlanName">Not available</strong></div>
+                  <div class="details-info-item"><span>Plan amount</span><strong id="detailPlanAmount">Not available</strong></div>
+                  <div class="details-info-item"><span>Application date</span><strong id="detailApplicationDate">Not available</strong></div>
+                </div>
+              </section>
+
+              <section class="details-section" aria-labelledby="journeyInfoHeading">
+                <div class="details-section-heading"><span class="details-section-icon amber"><i class="fa-solid fa-route"></i></span><div><h3 id="journeyInfoHeading">Route & Validity</h3><p>Travel details for the selected pass</p></div></div>
+                <div class="route-summary"><span class="route-point"><i class="fa-solid fa-circle-dot"></i></span><strong id="detailFromStop">Not available</strong><span class="route-line"></span><span class="route-point destination"><i class="fa-solid fa-location-dot"></i></span><strong id="detailToStop">Not available</strong></div>
+                <div class="details-info-grid">
+                  <div class="details-info-item"><span>Distance</span><strong id="detailDistance">Not available</strong></div>
+                  <div class="details-info-item"><span>Bus type</span><strong id="detailBusType">Not available</strong></div>
+                  <div class="details-info-item"><span>Pass ID</span><strong id="detailPassId">Not issued</strong></div>
+                  <div class="details-info-item"><span>Valid until</span><strong id="detailValidTo">Not available</strong></div>
+                </div>
+              </section>
+
+              <div class="payment-detail-actions"><a class="view-application-button" id="viewApplicationButton" href="admin-applications.html"><i class="fa-solid fa-arrow-up-right-from-square"></i> View full application</a><a class="back-payments-button" href="admin-payments.html"><i class="fa-solid fa-arrow-left"></i> Back to Payments</a></div>
+              <p class="payment-details-footnote"><i class="fa-solid fa-shield-halved"></i> Payment information is shown from the existing server record. Fields without a saved value are marked as unavailable.</p>
+            </div>
+          </main>
+
+          <nav class="bottom-nav" aria-label="Admin navigation">
+            <a href="admin-dashboard.html" data-nav="home"><i class="fa-solid fa-house"></i><span>Home</span></a>
+            <a href="admin-applications.html" data-nav="applications"><i class="fa-regular fa-file-lines"></i><span>Applications</span></a>
+            <a href="admin-routes.html" data-nav="management"><i class="fa-solid fa-users-gear"></i><span>Management</span></a>
+            <a href="admin-profile.html" data-nav="more"><i class="fa-solid fa-ellipsis"></i><span>More</span></a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="admin-payment-details.js"></script>
+  <script src="admin-phone-status.js"></script>
+</body>
+</html>

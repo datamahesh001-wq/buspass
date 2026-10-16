@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Admin Home - BusPass</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="iphone-admin-frame.css">
+<link rel="stylesheet" href="admin-mobile-system.css">
+<link rel="stylesheet" href="admin-dashboard.css">
+    <link rel="stylesheet" href="admin-premium.css">
+</head>
+
+<body>
+<div class="iphone-shell">
+  <div class="iphone-screen">
+    <div class="iphone-camera" aria-hidden="true"></div>
+    <div class="iphone-app">
+      <div class="app-container">
+        <header class="topbar" aria-label="BusPass admin header">
+          <button id="menuButton" class="menu-button" type="button" aria-label="Open administration menu" aria-expanded="false" aria-controls="adminDrawer">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="brand-mini">
+            <span class="brand-mark" aria-hidden="true"><img src="../image/buslogo.jpg" alt=""></span>
+            <span class="brand-copy"><strong>BusPass</strong><span>STATE TRANSPORT SERVICES</span></span>
+          </div>
+          <div class="top-actions">
+            <button id="notificationButton" class="icon-button notification-button" type="button" aria-label="Notifications">
+              <i class="fa-regular fa-bell"></i><b aria-hidden="true"></b>
+            </button>
+            <button id="adminProfileButton" class="admin-avatar" type="button" aria-label="Open admin profile"><img id="adminDashboardProfileImage" alt="Admin profile photo"><span id="adminDashboardProfileInitials">AD</span></button>
+          </div>
+        </header>
+
+        <div id="drawerBackdrop" class="drawer-backdrop" aria-hidden="true"></div>
+        <aside id="adminDrawer" class="admin-drawer" aria-label="Administration menu" aria-hidden="true">
+          <div class="drawer-head">
+            <div class="drawer-seal"><i class="fa-solid fa-landmark"></i></div>
+            <div><strong>Online Transport</strong><small>ADMINISTRATION PORTAL</small></div>
+            <button id="drawerClose" type="button" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+          <div class="drawer-admin"><span>AD</span><div><strong>Administrator</strong><small>System Control Centre</small></div><i class="fa-solid fa-circle-check"></i></div>
+          <p class="drawer-label">CONTROL PANEL</p>
+          <nav class="drawer-links" aria-label="Administration links">
+            <a class="selected" href="admin-dashboard.html"><i class="fa-solid fa-chart-pie"></i><span>Dashboard</span></a>
+            <a href="admin-applications.html"><i class="fa-regular fa-clipboard"></i><span>Applications</span></a>
+            <a href="admin-verification.html"><i class="fa-solid fa-user-check"></i><span>Document Verification</span></a>
+            <a href="admin-approved.html"><i class="fa-solid fa-circle-check"></i><span>Approved Passes</span></a>
+            <a href="admin-payments.html"><i class="fa-solid fa-indian-rupee-sign"></i><span>Payments & Revenue</span></a>
+            <span class="drawer-group">TRANSPORT NETWORK</span>
+            <a href="admin-routes.html"><i class="fa-solid fa-route"></i><span>Route Directory</span></a>
+            <a href="admin-bus-stops.html"><i class="fa-solid fa-location-dot"></i><span>Bus Stop Registry</span></a>
+            <a href="admin-pass-plans.html"><i class="fa-solid fa-id-card"></i><span>Pass Plans</span></a>
+            <a href="admin-pass-management.html"><i class="fa-solid fa-ticket"></i><span>Pass Management</span></a>
+            <span class="drawer-group">ADMINISTRATION</span>
+            <a href="admin-user-management.html"><i class="fa-solid fa-users"></i><span>User Management</span></a>
+            <a href="admin-profile.html"><i class="fa-regular fa-user"></i><span>Admin Profile</span></a>
+            <a href="admin-settings.html"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+          </nav>
+          <button id="drawerLogout" class="drawer-logout" type="button"><i class="fa-solid fa-arrow-right-from-bracket"></i><span>Logout</span></button>
+          <div class="drawer-footer"><i class="fa-solid fa-shield-halved"></i><span>Secure government service</span></div>
+        </aside>
+
+        <main class="dashboard-content">
+          <section class="welcome-block">
+            <div class="welcome-eyebrow"><span>ADMIN HOME</span><i class="fa-solid fa-shield-halved"></i></div>
+            <h1>Welcome, Admin</h1>
+            <p>Here’s what’s happening with your system today.</p>
+            <div class="date-chip" id="currentDate">Friday, 11 September</div>
+          </section>
+
+          <section class="hero-banner" aria-label="BusPass services">
+            <div class="hero-copy">
+              <div class="hero-kicker"><i class="fa-solid fa-bus-simple"></i><span>ONLINE BUS PASS SERVICES</span></div>
+              <h2>Moving Online, smarter.</h2>
+              <p>A single command centre for trusted, connected public transport.</p>
+              <span class="hero-status"><i class="fa-solid fa-circle"></i> Admin services live</span>
+            </div>
+            <div class="hero-art">
+              <span class="route-badge"><i class="fa-solid fa-location-arrow"></i> LIVE NETWORK</span>
+              <div class="hero-skyline" aria-hidden="true"></div>
+              <img src="../image/bus.jpg" alt="Online transport bus" class="hero-bus">
+              <span class="hero-orbit orbit-one" aria-hidden="true"></span>
+              <span class="hero-orbit orbit-two" aria-hidden="true"></span>
+            </div>
+          </section>
+
+          <section class="stats-grid" aria-label="System overview">
+            <button class="stat-card blue" data-go="admin-applications.html?type=all" type="button">
+              <span class="stat-icon"><i class="fa-regular fa-file-lines"></i></span>
+              <span class="stat-content"><small>Total Applications</small><strong id="totalApplications">0</strong><em>Open all applications</em></span>
+              <i class="fa-solid fa-arrow-up-right-from-square stat-arrow" aria-hidden="true"></i>
+            </button>
+            <button class="stat-card green" data-go="admin-applications.html?type=all&status=pending" type="button">
+              <span class="stat-icon"><i class="fa-solid fa-user-check"></i></span>
+              <span class="stat-content"><small>Pending Review</small><strong id="pendingApplications">0</strong><em>Review pending items</em></span>
+              <i class="fa-solid fa-arrow-up-right-from-square stat-arrow" aria-hidden="true"></i>
+            </button>
+            <button class="stat-card teal" data-go="admin-approved.html" type="button">
+              <span class="stat-icon"><i class="fa-solid fa-circle-check"></i></span>
+              <span class="stat-content"><small>Approved Passes</small><strong id="approvedApplications">0</strong><em>Open issued passes</em></span>
+              <i class="fa-solid fa-arrow-up-right-from-square stat-arrow" aria-hidden="true"></i>
+            </button>
+            <button class="stat-card violet" data-go="admin-payments.html?status=success" type="button">
+              <span class="stat-icon"><i class="fa-solid fa-indian-rupee-sign"></i></span>
+              <span class="stat-content"><small>Total Revenue</small><strong id="totalRevenue">₹0</strong><em>Open payment records</em></span>
+              <i class="fa-solid fa-arrow-up-right-from-square stat-arrow" aria-hidden="true"></i>
+            </button>
+          </section>
+
+          <section class="section-block quick-section">
+            <div class="section-heading">
+              <div><span>QUICK ACCESS</span><h2>Quick Actions</h2></div>
+              <button id="refreshButton" class="text-button" type="button"><i class="fa-solid fa-rotate"></i><span>Refresh</span></button>
+            </div>
+            <div class="quick-grid">
+              <button data-go="admin-routes.html" type="button">
+                <span class="quick-icon blue-icon"><i class="fa-solid fa-route"></i></span><span class="quick-copy"><strong>Add Route</strong><small>Build a corridor</small></span><i class="fa-solid fa-plus quick-arrow"></i>
+              </button>
+              <button data-go="admin-bus-stops.html" type="button">
+                <span class="quick-icon amber-icon"><i class="fa-solid fa-location-dot"></i></span><span class="quick-copy"><strong>Add Bus Stop</strong><small>Register a stop</small></span><i class="fa-solid fa-plus quick-arrow"></i>
+              </button>
+              <button data-go="admin-pass-plans.html" type="button">
+                <span class="quick-icon teal-icon"><i class="fa-solid fa-id-card"></i></span><span class="quick-copy"><strong>Add Plans</strong><small>Create a pass plan</small></span><i class="fa-solid fa-plus quick-arrow"></i>
+              </button>
+              <button data-go="admin-applications.html" type="button">
+                <span class="quick-icon violet-icon"><i class="fa-solid fa-clipboard-check"></i></span><span class="quick-copy"><strong>Review Requests</strong><small>Approve citizen passes</small></span><i class="fa-solid fa-arrow-right quick-arrow"></i>
+              </button>
+            </div>
+          </section>
+
+          <section class="section-block recent-section">
+            <div class="section-heading">
+              <div><span>LATEST ACTIVITY</span><h2>Recent Applications</h2></div>
+              <button id="reviewButton" class="text-button" type="button">View All <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+            <div id="applicationList" class="application-list"></div>
+            <div id="recentEmpty" class="recent-empty"><span class="empty-icon"><i class="fa-regular fa-clock"></i></span><strong>No recent applications yet</strong><small>New applications will appear here after they are submitted.</small></div>
+          </section>
+        </main>
+
+        <nav class="bottom-nav" aria-label="Admin navigation">
+          <a class="active" href="admin-dashboard.html"><span class="nav-icon"><i class="fa-solid fa-house"></i></span><span>Home</span></a>
+          <a href="admin-applications.html"><span class="nav-icon"><i class="fa-regular fa-file-lines"></i></span><span>Applications</span></a>
+          <a href="admin-routes.html"><span class="nav-icon"><i class="fa-solid fa-route"></i></span><span>Management</span></a>
+          <a href="admin-profile.html"><span class="nav-icon"><i class="fa-solid fa-ellipsis"></i></span><span>More</span></a>
+        </nav>
+      </div>
+      <script src="admin-dashboard.js"></script>
+    </div>
+  </div>
+</div>
+<script src="admin-phone-status.js"></script>
+</body>
+</html>

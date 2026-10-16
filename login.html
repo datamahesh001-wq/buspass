@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BusPass Login</title>
+
+    <link rel="stylesheet" href="login.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="user-phone-frame.css">
+    <link rel="stylesheet" href="user-design-system.css">
+    <script defer src="user-phone-frame.js"></script>
+    <link rel="stylesheet" href="user-premium.css">
+    <link rel="stylesheet" href="login-hero-match.css">
+</head>
+
+<body class="login-page">
+
+    <div class="login-status-bar device-status-bar" aria-label="Phone status">
+        <time id="loginClock" aria-label="Current time"></time>
+        <div class="login-status-icons" aria-hidden="true">
+            <i class="fa-solid fa-signal"></i>
+            <i class="fa-solid fa-wifi"></i>
+            <i class="fa-solid fa-battery-three-quarters"></i>
+        </div>
+    </div>
+
+    <main class="container">
+
+        <!-- ================= BLUE HEADER ================= -->
+
+        <div class="blue-header"></div>
+        <div class="header-pattern" aria-hidden="true"></div>
+
+
+        <!-- ================= LOGO ================= -->
+
+        <section class="logo">
+
+            <img
+                src="image/buslogo.jpg"
+                alt="BusPass Logo">
+
+            <h1>Online Bus Pass</h1>
+
+            <p>Travel Smart <span aria-hidden="true">|</span> Save More</p>
+
+        </section>
+
+
+        <!-- ================= BUS IMAGE ================= -->
+
+        <div class="bus-image">
+
+            <img
+                src="image/bus.jpg"
+                alt="Bus">
+
+        </div>
+
+
+        <!-- ================= LOGIN CARD ================= -->
+
+        <section class="login-card">
+
+            <div class="welcome-label"><i class="fa-solid fa-sparkles"></i> YOUR JOURNEY STARTS HERE</div>
+
+            <h2>Welcome back</h2>
+
+            <span>
+                Login to continue your journey
+            </span>
+
+
+            <!-- ================= FORM ================= -->
+
+            <form id="loginForm" autocomplete="off" novalidate>
+
+                <!-- USERNAME -->
+
+                <div class="input-box">
+
+                    <i class="fa-regular fa-user left-icon"></i>
+
+                    <input
+                        type="text"
+                        id="username"
+                        placeholder="Email address or mobile number"
+                        autocomplete="off">
+
+                </div>
+
+                <p
+                    id="usernameError"
+                    class="error-message">
+                </p>
+
+
+                <!-- PASSWORD -->
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-lock left-icon"></i>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Password"
+                        autocomplete="new-password">
+
+                    <i
+                        class="fa-regular fa-eye-slash eye"
+                        id="togglePassword"
+                        role="button"
+                        tabindex="0"
+                        title="Show password"
+                        aria-label="Show password">
+                    </i>
+
+                </div>
+
+                <p
+                    id="passwordError"
+                    class="error-message">
+                </p>
+
+
+                <!-- FORGOT PASSWORD -->
+
+                <div class="forgot">
+
+                    <a href="#" id="forgotPassword">
+                        Forgot Password?
+                    </a>
+
+                </div>
+
+
+                <!-- LOGIN -->
+
+                <button
+                    type="submit"
+                    class="login-btn">
+
+                    <span>Login</span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </form>
+
+
+            <!-- ================= DIVIDER ================= -->
+
+            <div class="divider">
+
+                <span>OR</span>
+
+            </div>
+
+
+            <!-- ================= SIGN UP ================= -->
+
+            <button
+                type="button"
+                class="signup-btn"
+                id="signupBtn">
+
+                Sign Up
+
+            </button>
+
+
+            <a href="Admin/admin-login.html" class="admin-login">
+                <i class="fa-solid fa-shield-halved"></i>
+                Admin Login
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <div class="login-benefits" aria-label="BusPass benefits">
+                <span><i class="fa-solid fa-shield-halved"></i>Safe<br>Travel</span>
+                <span><i class="fa-solid fa-bus-simple"></i>Better<br>Connectivity</span>
+                <span><i class="fa-solid fa-indian-rupee-sign"></i>Affordable<br>Fares</span>
+                <span><i class="fa-solid fa-leaf"></i>Greener<br>Tomorrow</span>
+            </div>
+
+        </section>
+
+
+        <!-- ================= SUCCESS / ERROR POPUP ================= -->
+
+        <div
+            class="popup-overlay"
+            id="popupOverlay">
+
+            <div class="popup-box">
+
+                <div
+                    class="popup-icon"
+                    id="popupIcon">
+
+                    <i class="fa-solid fa-check"></i>
+
+                </div>
+
+                <h3 id="popupTitle">
+                    Login Successful!
+                </h3>
+
+                <p id="popupMessage">
+                    Welcome to BusPass.
+                </p>
+
+                <button
+                    type="button"
+                    id="popupButton">
+                    OK
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="login.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Payment Success - BusPass</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="payment-success.css">
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet" href="user-phone-frame.css">
+    <link rel="stylesheet" href="user-design-system.css">
+    <script defer src="user-phone-frame.js"></script>
+    <link rel="stylesheet" href="user-premium.css">
+</head>
+
+<body>
+
+    <div class="mobile-screen">
+
+        <!-- =========================
+             GREEN SUCCESS SECTION
+        ========================== -->
+
+        <div class="success-section">
+
+            <!-- SUCCESS IMAGE -->
+            <div class="success-image" aria-hidden="true">
+                <i class="fa-solid fa-check"></i>
+            </div>
+
+
+            <!-- SUCCESS TITLE -->
+
+            <h1>
+                Payment Successful!
+            </h1>
+
+
+            <!-- SUCCESS MESSAGE -->
+
+            <p class="success-message">
+                Your payment of <strong id="successAmount">₹0/-</strong> has been received.<br>
+                Your pass application is now confirmed.
+            </p>
+
+
+            <!-- =========================
+                 TRANSACTION CARD
+            ========================== -->
+
+            <div class="transaction-card">
+
+
+                <!-- TRANSACTION ID -->
+
+                <div class="transaction-row">
+
+                    <span class="transaction-label">
+                        Transaction ID
+                    </span>
+
+                    <strong class="transaction-value">
+                        <span id="transactionId">Generating...</span>
+                    </strong>
+
+                </div>
+
+
+                <!-- DATE & TIME -->
+
+                <div class="transaction-row">
+
+                    <span class="transaction-label">
+                        Date &amp; Time
+                    </span>
+
+                    <strong class="transaction-value">
+                        <span id="paymentDate">Just now</span>
+                    </strong>
+
+                </div>
+
+
+                <!-- PASS TYPE -->
+
+                <div class="transaction-row">
+
+                    <span class="transaction-label">
+                        Pass Type
+                    </span>
+
+                    <strong class="transaction-value">
+                        <span id="successPassType">Student Pass</span>
+                    </strong>
+
+                </div>
+
+
+                <!-- VALIDITY -->
+
+                <div class="transaction-row last-row">
+
+                    <span class="transaction-label">
+                        Validity
+                    </span>
+
+                    <strong class="transaction-value">
+                        <span id="successValidity">Based on selected plan</span>
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             GO TO HOME BUTTON
+        ========================== -->
+
+        <div class="success-actions">
+
+            <button
+                class="track-button"
+                type="button"
+                onclick="trackApplication()">
+                <i class="fa-solid fa-route"></i> Track Application
+            </button>
+
+            <button
+                class="home-button"
+                type="button"
+                onclick="goHome()">
+                <i class="fa-solid fa-house"></i> Go To Dashboard
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- JS -->
+<script src="home/application-state.js"></script>
+<script src="payment-success.js"></script>
+
+</body>
+
+</html>

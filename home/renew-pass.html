@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Renew Pass - BusPass</title>
+
+    <link rel="stylesheet" href="renew-pass.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../user-phone-frame.css">
+    <link rel="stylesheet" href="../user-design-system.css">
+    <script defer src="../user-phone-frame.js"></script>
+    <link rel="stylesheet" href="../user-premium.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- Header -->
+    <div class="header">
+
+        <button class="back-btn" onclick="goBack()">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <div class="header-content">
+            <h2>Renew Pass</h2>
+            <p>Extend Your Journey</p>
+        </div>
+
+    </div>
+
+
+    <!-- ================= CURRENT PASS SUMMARY ================= -->
+
+    <div class="content-area" id="renewContent">
+
+        <div class="section-card current-pass-card">
+
+            <h3><i class="fa-solid fa-id-card"></i> Current Pass</h3>
+
+            <!-- Status strip -->
+            <div class="status-strip" id="statusStrip">
+                <span class="status-badge active" id="statusBadge">
+                    <i class="fa-solid fa-circle-check"></i> Active
+                </span>
+                <span class="status-note" id="statusNote">
+                    Your pass details are shown below.
+                </span>
+            </div>
+
+            <!-- Details -->
+            <div class="detail-grid">
+
+                <div class="detail-row">
+                    <span>Pass</span>
+                    <strong id="currentPassName">--</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Route</span>
+                    <strong id="currentRoute">--</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Valid From</span>
+                    <strong id="currentValidFrom">--</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Valid Till</span>
+                    <strong id="currentValidTill">--</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Last Paid</span>
+                    <strong id="currentLastPaid">--</strong>
+                </div>
+
+            </div>
+
+            <!-- Renewal note -->
+            <div class="renew-note">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>
+                    Your route, documents and details stay the same.
+                    Only the pass validity will be extended.
+                </span>
+            </div>
+
+            <button type="button" class="edit-details-button" onclick="editRenewalDetails()">
+                <i class="fa-solid fa-pen-to-square"></i>
+                <span>Want to change your details?</span>
+                <strong>Edit Details</strong>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </button>
+
+        </div>
+
+
+        <!-- ================= PLAN SELECTION ================= -->
+
+        <div class="section-card plans-card">
+
+            <h3><i class="fa-solid fa-tags"></i> Choose Renewal Plan</h3>
+
+            <p class="subtitle">
+                Select a plan for your renewed pass
+            </p>
+
+            <div id="planList">
+                <!-- Plans loaded from backend -->
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= EMPTY STATE ================= -->
+
+    <div class="content-area" id="emptyState" style="display:none;">
+
+        <div class="section-card empty-card">
+
+            <div class="empty-icon">
+                <i class="fa-solid fa-ticket-simple"></i>
+            </div>
+
+            <h3 id="emptyTitle">No pass to renew</h3>
+
+            <p id="emptyMessage">
+                You don't have a paid pass yet. Apply for a new pass to get started.
+            </p>
+
+            <button
+                type="button"
+                class="empty-action-btn"
+                id="emptyActionBtn"
+                onclick="handleEmptyAction()">
+                Apply New Pass
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Bottom Buttons -->
+    <div class="bottom-buttons" id="bottomButtons">
+
+        <button
+            type="button"
+            class="back-button"
+            onclick="goBack()">
+            Back
+        </button>
+
+        <button
+            type="button"
+            class="next-button"
+            onclick="proceedToPayment()">
+            Continue to Payment
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="../popup.js"></script>
+
+<script src="renew-pass.js"></script>
+
+</body>
+</html>

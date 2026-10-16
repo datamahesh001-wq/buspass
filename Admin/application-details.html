@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Application Details - Admin</title><link rel="stylesheet" href="application-details.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">  <link rel="stylesheet" href="iphone-admin-frame.css">
+  <link rel="stylesheet" href="admin-mobile-system.css">
+    <link rel="stylesheet" href="admin-premium.css">
+<style>
+  .iphone-app:has(.detail-header) {
+    overflow: hidden !important;
+  }
+
+  .iphone-app:has(.detail-header) > .app-container {
+    height: calc(100% - 26px) !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .iphone-app:has(.detail-header) > .app-container > .content {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    scrollbar-width: none !important;
+  }
+
+  .iphone-app:has(.detail-header) > .app-container > .content::-webkit-scrollbar { display: none !important; }
+</style>
+</head><body>
+<div class="iphone-shell">
+  <div class="iphone-screen">
+    <div class="iphone-camera" aria-hidden="true"></div>
+    <div class="iphone-app">
+<div class="app-container">
+<header class="detail-header"><button id="backButton" class="header-icon" type="button"><i class="fa-solid fa-arrow-left"></i></button><div><span>ADMIN PORTAL</span><h1>Application Details</h1></div><button id="editApplicationButton" class="header-icon" type="button" title="Edit application"><i class="fa-solid fa-pen"></i></button></header>
+<main class="content">
+<section class="profile-card"><div class="profile-main"><div class="profile-avatar" id="profileAvatar"><i class="fa-solid fa-user"></i></div><div class="profile-copy"><div class="name-row"><h2 id="applicantName">Rahul Sharma</h2><span id="applicationStatus" class="status-chip pending">Pending</span></div><p id="applicationId">STU20260001</p><small id="applicationDate"><i class="fa-regular fa-calendar"></i> Applied on 20 May 2026</small></div></div><div class="profile-footer"><span id="applicationTypeText"><i class="fa-solid fa-graduation-cap"></i> Student Pass Application</span><div class="profile-actions"><button id="editApplicationButton2" type="button" class="secondary-action"><i class="fa-solid fa-pen"></i> Edit</button><button id="verifyNowButton" type="button">Open Verification <i class="fa-solid fa-arrow-right"></i></button></div></div></section>
+<section class="progress-card"><div class="progress-head"><div><span>APPLICATION STATUS</span><h3>Review progress</h3></div><strong id="progressPercent">0%</strong></div><div class="progress-track"><div id="progressFill"></div></div><div class="progress-steps"><span id="submittedStep" class="done"><i class="fa-solid fa-circle-check"></i> Submitted</span><span id="reviewStep"><i class="fa-regular fa-circle"></i> Manual Review</span><span id="decisionStep"><i class="fa-regular fa-circle"></i> Decision</span></div></section>
+<section class="info-card clickable-section" data-open="personal"><div class="section-title"><span><i class="fa-regular fa-user"></i> APPLICANT INFORMATION</span><button class="mini-action" type="button">Review <i class="fa-solid fa-arrow-right"></i></button><h3>Personal Details</h3></div><div class="detail-grid"><div><span>Full Name</span><strong id="fullName">Rahul Sharma</strong></div><div><span>Mobile No.</span><strong id="mobileNumber">9123456780</strong></div><div><span>Email Address</span><strong id="emailAddress">rahul@gmail.com</strong></div><div><span>Date of Birth</span><strong id="dateOfBirth">26-04-2000</strong></div><div><span>Gender</span><strong id="gender">Male</strong></div><div><span id="organizationLabel">College</span><strong id="organizationName">Vignan College of Engineering</strong></div></div></section>
+<section class="info-card clickable-section" data-open="personal">
+<div class="section-title"><span><i class="fa-solid fa-table-list"></i> FULL SUBMITTED DATA</span><button class="mini-action" type="button">Review <i class="fa-solid fa-arrow-right"></i></button><h3>Applicant Record</h3></div>
+<div class="detail-grid detail-grid-wide">
+<div><span>Student Category</span><strong id="studentCategory">Not available</strong></div>
+<div><span>Aadhaar Number</span><strong id="aadhaarNumber">Not available</strong></div>
+<div><span>Father Name</span><strong id="fatherName">Not available</strong></div>
+<div><span>Mother Name</span><strong id="motherName">Not available</strong></div>
+<div><span>Contact Number</span><strong id="contactNumber">Not available</strong></div>
+<div><span>Employee ID</span><strong id="employeeId">Not available</strong></div>
+<div><span>Department</span><strong id="department">Not available</strong></div>
+<div><span>Designation</span><strong id="designation">Not available</strong></div>
+<div><span>City</span><strong id="city">Not available</strong></div>
+<div><span>District</span><strong id="district">Not available</strong></div>
+<div><span>State</span><strong id="state">Not available</strong></div>
+<div><span>PIN Code</span><strong id="pinCode">Not available</strong></div>
+<div style="grid-column:1/-1"><span>Permanent Address</span><strong id="permanentAddress">Not available</strong></div>
+</div></section>
+<section class="info-card clickable-section" data-open="route"><div class="section-title"><span><i class="fa-solid fa-route"></i> TRAVEL INFORMATION</span><button class="mini-action" type="button">Review <i class="fa-solid fa-arrow-right"></i></button><h3>Route Details</h3></div><div class="route-strip"><div><span>FROM</span><strong id="fromLocation">KPHB Colony</strong></div><i class="fa-solid fa-arrow-right"></i><div><span>TO</span><strong id="toLocation">LB Nagar</strong></div></div><div class="route-meta"><div><span>Distance</span><strong id="distance">25 KM</strong></div><div><span>Bus Type</span><strong id="busType">Ordinary</strong></div></div></section>
+<section class="info-card clickable-section" data-open="plan"><div class="section-title"><span><i class="fa-solid fa-ticket"></i> SELECTED PLAN</span><button class="mini-action" type="button">Review <i class="fa-solid fa-arrow-right"></i></button><h3>Pass Information</h3></div><div class="plan-row"><div class="plan-icon"><i class="fa-solid fa-bus"></i></div><div><strong id="passPlanName">Monthly Bus Pass</strong><small id="passPlanValidity">Valid for one month</small></div><b>₹<span id="passAmount">500</span></b></div></section>
+<section class="info-card clickable-section" data-open="payment"><div class="section-title"><span><i class="fa-solid fa-credit-card"></i> PAYMENT INFORMATION</span><button class="mini-action" type="button">Review <i class="fa-solid fa-arrow-right"></i></button><h3>Payment Details</h3></div><div class="detail-grid"><div><span>Status</span><strong id="paymentStatus">Paid</strong></div><div><span>Method</span><strong id="paymentMethod">UPI</strong></div><div><span>Transaction ID</span><strong id="transactionId">TXN202608001</strong></div><div><span>Amount</span><strong id="paymentAmount">₹500</strong></div></div></section>
+<section class="docs-card"><div class="docs-head"><div><span>USER SUBMITTED FILES</span><h3>Uploaded Documents</h3></div><strong id="documentCount">0 Files</strong></div><div id="documentsList" class="docs-list"></div></section>
+<div class="bottom-space"></div></main>
+<div class="action-bar"><button id="openVerificationButton" class="verify-button" type="button"><i class="fa-solid fa-user-check"></i> Continue to Verification</button></div>
+<div id="documentOverlay" class="overlay"><div class="document-modal"><div class="modal-head"><div><span id="modalDocLabel">DOCUMENT</span><h3 id="modalDocTitle">Document Preview</h3></div><button id="closeDocumentOverlay" type="button"><i class="fa-solid fa-xmark"></i></button></div><div class="preview-frame"><img id="documentPreviewImage" alt="Uploaded document"><div id="documentPlaceholder" class="document-placeholder"><i class="fa-regular fa-file-image"></i><strong>No preview available</strong><span>The uploaded file name is available to the admin.</span></div></div><div class="modal-footer"><span id="documentFileName">File name</span><button id="documentVerifyButton" type="button">Verify Document <i class="fa-solid fa-check"></i></button></div></div></div>
+
+<div id="editOverlay" class="overlay edit-overlay"><div class="edit-modal"><div class="modal-head"><div><span>ADMIN EDIT</span><h3>Edit Applicant Details</h3></div><button id="closeEditOverlay" type="button"><i class="fa-solid fa-xmark"></i></button></div><p class="edit-note">Admin edits the submitted details. Saved values are also synchronized with the existing application details endpoint.</p><form id="editApplicationForm" class="edit-form"><div class="edit-grid"><label>Full Name<input name="fullName" required></label><label>Mobile Number<input name="mobile" inputmode="numeric" maxlength="10" required></label><label>Email<input name="email" type="email" required></label><label>Date of Birth<input name="dateOfBirth" type="date"></label><label>Gender<select name="gender"><option value="">Select</option><option>Male</option><option>Female</option><option>Other</option></select></label><label id="orgFieldLabel">College / Organization<input name="organization"></label><label id="idFieldLabel">Student ID<input name="idNumber"></label><label>Department<input name="department"></label><label>Designation / Course<input name="designationOrCourse"></label><label>City<input name="city"></label><label>District<input name="district"></label><label>State<input name="state"></label><label>PIN Code<input name="pinCode" maxlength="6"></label><label class="full-field">Permanent Address<textarea name="permanentAddress" rows="3"></textarea></label></div><div class="edit-footer"><button id="cancelEditButton" type="button" class="cancel-edit">Cancel</button><button type="submit" class="save-edit"><i class="fa-solid fa-floppy-disk"></i> Save Changes</button></div></form></div></div>
+</div><nav class="bottom-nav" aria-label="Admin navigation"><a href="admin-dashboard.html"><i class="fa-solid fa-house"></i><span>Home</span></a><a class="active" href="admin-applications.html"><i class="fa-regular fa-file-lines"></i><span>Applications</span></a><a href="admin-routes.html"><i class="fa-solid fa-route"></i><span>Management</span></a><a href="admin-profile.html"><i class="fa-solid fa-ellipsis"></i><span>More</span></a></nav><script src="application-details.js?v=20260918-3"></script>    </div>
+  </div>
+</div>
+<script src="admin-phone-status.js"></script>
+<script src="admin-back-navigation.js"></script>
+</body></html>

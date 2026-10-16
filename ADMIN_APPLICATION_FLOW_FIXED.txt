@@ -1,0 +1,16 @@
+ADMIN APPLICATION FLOW - FIXED
+
+Flow:
+1. User selects route -> POST /api/routes creates pass_applications with status 'draft'.
+2. User selects a plan and pays -> POST /api/payments saves payment and changes that application to 'paid'.
+3. Admin Applications screen -> GET /api/admin/dashboard reads pass_applications from MySQL.
+4. 'paid', 'draft' and 'submitted' are displayed as Pending for admin review.
+5. Admin opens the application -> GET /api/admin/applications/:id loads the complete application and documents from MySQL.
+6. Admin approves/rejects -> POST /api/admin/applications/:id/status saves the final decision in MySQL.
+7. The admin application list refreshes every 5 seconds, so a user applying from another browser appears automatically.
+
+IMPORTANT:
+- Start MySQL with database buspass_db.
+- Start backend/server.js on http://localhost:5000.
+- Open the user and admin pages from a web server (recommended), not by double-clicking HTML files.
+- The admin list no longer depends on the user's browser localStorage for application visibility.

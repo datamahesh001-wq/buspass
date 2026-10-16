@@ -1,0 +1,1098 @@
+/* =========================================
+   GLOBAL RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+    font-family: "Poppins", sans-serif;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eef1f5;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   MAIN APP CONTAINER
+========================================= */
+
+.app-container {
+    position: relative;
+
+    width: 390px;
+    height: 844px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8f9fc 0%,
+            #eef1f5 100%
+        );
+
+    box-shadow:
+        0 15px 45px rgba(35, 48, 75, 0.18);
+}
+
+
+/* =========================================
+   TOP HEADER
+========================================= */
+
+.top-header {
+    position: relative;
+    z-index: 20;
+
+    height: 88px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 20px 16px 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4b35ad 0%,
+            #7058d2 100%
+        );
+
+    border-radius:
+        0 0 18px 18px;
+
+    box-shadow:
+        0 5px 14px rgba(75, 53, 173, 0.22);
+}
+
+
+/* =========================================
+   MENU BUTTON
+========================================= */
+
+.menu-btn {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        rgba(255, 255, 255, 0.10);
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.menu-btn:active {
+    transform: scale(0.93);
+}
+
+
+/* =========================================
+   HEADER TITLE
+========================================= */
+
+.header-title {
+    flex: 1;
+
+    text-align: center;
+}
+
+
+.header-title h1 {
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.2px;
+}
+
+
+/* =========================================
+   ADD ROUTE BUTTON
+========================================= */
+
+.add-route-btn {
+    min-width: 76px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    padding: 0 10px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: #5944bc;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 10px rgba(38, 25, 104, 0.15);
+
+    transition: 0.2s ease;
+}
+
+
+.add-route-btn i {
+    font-size: 8px;
+}
+
+
+.add-route-btn:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================================
+   MANAGEMENT TABS
+========================================= */
+
+.management-tabs {
+    position: relative;
+    z-index: 15;
+
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+
+    margin: -1px 12px 0;
+
+    padding: 4px;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    border:
+        1px solid #dce2ea;
+
+    box-shadow:
+        0 3px 10px rgba(47, 60, 85, 0.08);
+}
+
+
+/* =========================================
+   TAB BUTTON
+========================================= */
+
+.management-tab {
+    flex: 1;
+
+    height: 33px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: #4f5968;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+
+.management-tab.active {
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #5139b2,
+            #684fd0
+        );
+
+    box-shadow:
+        0 3px 8px rgba(81, 57, 178, 0.20);
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.bus-stops-content {
+    height: calc(844px - 88px - 43px - 78px);
+
+    overflow-y: auto;
+
+    padding: 10px 14px 20px;
+
+    scrollbar-width: none;
+}
+
+
+.bus-stops-content::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* =========================================
+   TAB PANEL
+========================================= */
+
+.tab-panel {
+    display: none;
+}
+
+
+.tab-panel.active {
+    display: block;
+
+    animation:
+        fadePanel 0.25s ease;
+}
+
+
+@keyframes fadePanel {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   BUS STOP CARD
+========================================= */
+
+.bus-stop-card {
+    min-height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 9px;
+
+    padding: 10px 10px 10px 13px;
+
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    border:
+        1px solid #d9e0e8;
+
+    box-shadow:
+        0 3px 9px rgba(40, 54, 80, 0.06);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.bus-stop-card:active {
+    transform: scale(0.99);
+
+    box-shadow:
+        0 2px 6px rgba(40, 54, 80, 0.08);
+}
+
+
+/* =========================================
+   BUS STOP DETAILS
+========================================= */
+
+.bus-stop-details {
+    flex: 1;
+
+    min-width: 0;
+
+    padding-right: 8px;
+}
+
+
+.bus-stop-details h3 {
+    color: #3d4858;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    line-height: 1.4;
+}
+
+
+.bus-stop-details p {
+    margin-top: 2px;
+
+    color: #8a94a2;
+
+    font-size: 6px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   ROUTE NUMBER
+========================================= */
+
+.stop-route {
+    display: flex;
+    align-items: center;
+
+    gap: 4px;
+
+    margin-top: 5px;
+}
+
+
+.stop-route i {
+    color: #8069d4;
+
+    font-size: 7px;
+}
+
+
+.stop-route span {
+    color: #6c7684;
+
+    font-size: 6px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.1px;
+}
+
+
+/* =========================================
+   STOP ACTION BUTTONS
+========================================= */
+
+.stop-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+}
+
+
+.stop-actions button {
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #f4f6fa;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.stop-actions button:active {
+    transform: scale(0.88);
+}
+
+
+.edit-stop-btn {
+    color: #456ee9;
+
+    font-size: 9px;
+}
+
+
+.delete-stop-btn {
+    color: #ef6464;
+
+    font-size: 9px;
+}
+
+
+/* =========================================
+   BOTTOM NAVIGATION
+========================================= */
+
+.bottom-nav {
+    position: absolute;
+
+    z-index: 30;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 78px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    padding: 8px 12px 10px;
+
+    background:
+        rgba(255, 255, 255, 0.98);
+
+    border-top:
+        1px solid #dfe5ec;
+
+    box-shadow:
+        0 -5px 16px rgba(40, 54, 80, 0.06);
+}
+
+
+/* =========================================
+   NAV ITEM
+========================================= */
+
+.nav-item {
+    flex: 1;
+
+    height: 54px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #66717f;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 7px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.nav-item i {
+    font-size: 13px;
+}
+
+
+.nav-item.active {
+    color: #5540ba;
+}
+
+
+.nav-item.active i {
+    color: #5540ba;
+
+    transform: translateY(-1px);
+}
+
+
+.nav-item:active {
+    transform: scale(0.94);
+}
+
+
+/* =========================================
+   MODAL OVERLAY
+========================================= */
+
+.modal-overlay {
+    position: absolute;
+
+    z-index: 100;
+
+    inset: 0;
+
+    display: none;
+
+    align-items: flex-end;
+
+    background:
+        rgba(22, 30, 47, 0.50);
+
+    backdrop-filter: blur(3px);
+}
+
+
+.modal-overlay.show {
+    display: flex;
+
+    animation: overlayFade 0.25s ease;
+}
+
+
+@keyframes overlayFade {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================
+   ADD / EDIT BUS STOP MODAL
+========================================= */
+
+.bus-stop-modal-card {
+    width: 100%;
+
+    max-height: 82%;
+
+    overflow-y: auto;
+
+    padding: 21px 17px 25px;
+
+    border-radius:
+        24px 24px 0 0;
+
+    background: #ffffff;
+
+    animation: modalSlideUp 0.3s ease;
+
+    scrollbar-width: none;
+}
+
+
+.bus-stop-modal-card::-webkit-scrollbar {
+    display: none;
+}
+
+
+@keyframes modalSlideUp {
+
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   MODAL HEADER
+========================================= */
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+}
+
+
+.modal-header p {
+    color: #8d98a7;
+
+    font-size: 5px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
+}
+
+
+.modal-header h2 {
+    margin-top: 3px;
+
+    color: #39475b;
+
+    font-size: 16px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   CLOSE BUTTON
+========================================= */
+
+.close-modal-btn {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background: #f2f4f8;
+
+    color: #667281;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+
+.close-modal-btn:active {
+    transform: scale(0.92);
+}
+
+
+/* =========================================
+   FORM GROUP
+========================================= */
+
+.form-group {
+    margin-bottom: 13px;
+}
+
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #4f5c6e;
+
+    font-size: 8px;
+
+    font-weight: 600;
+}
+
+
+.form-group input {
+    width: 100%;
+    height: 43px;
+
+    padding: 0 12px;
+
+    outline: none;
+
+    border:
+        1px solid #dce2ea;
+
+    border-radius: 11px;
+
+    background: #f8fafc;
+
+    color: #3e4b5e;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 8px;
+
+    transition: 0.2s ease;
+}
+
+
+.form-group input:focus {
+    border-color: #624bc5;
+
+    box-shadow:
+        0 0 0 3px rgba(98, 75, 197, 0.10);
+}
+
+
+.form-group input::placeholder {
+    color: #a5afbb;
+}
+
+
+/* =========================================
+   MODAL ACTIONS
+========================================= */
+
+.modal-actions {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+
+.cancel-btn,
+.save-stop-btn {
+    flex: 1;
+
+    height: 44px;
+
+    border-radius: 11px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.cancel-btn {
+    border:
+        1px solid #dce3ea;
+
+    background: #ffffff;
+
+    color: #667485;
+}
+
+
+.save-stop-btn {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    border: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4d36b0,
+            #7058d4
+        );
+
+    color: #ffffff;
+
+    box-shadow:
+        0 5px 13px rgba(80, 57, 180, 0.22);
+}
+
+
+.cancel-btn:active,
+.save-stop-btn:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================
+   DELETE MODAL
+========================================= */
+
+.delete-modal-card {
+    width: calc(100% - 36px);
+
+    margin: auto;
+
+    padding: 25px 20px 20px;
+
+    border-radius: 22px;
+
+    background: #ffffff;
+
+    text-align: center;
+
+    animation: deleteModalAnimation 0.25s ease;
+}
+
+
+@keyframes deleteModalAnimation {
+
+    from {
+        opacity: 0;
+
+        transform: scale(0.90);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================================
+   DELETE ICON
+========================================= */
+
+.delete-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: auto;
+
+    border-radius: 17px;
+
+    background: #fff0f0;
+
+    color: #ee6262;
+
+    font-size: 20px;
+}
+
+
+.delete-modal-card h2 {
+    margin-top: 14px;
+
+    color: #3c485a;
+
+    font-size: 16px;
+
+    font-weight: 700;
+}
+
+
+.delete-modal-card p {
+    margin-top: 8px;
+
+    color: #8b96a4;
+
+    font-size: 8px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   DELETE ACTIONS
+========================================= */
+
+.delete-modal-actions {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+
+.cancel-delete-btn,
+.confirm-delete-btn {
+    flex: 1;
+
+    height: 42px;
+
+    border-radius: 11px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+.cancel-delete-btn {
+    border:
+        1px solid #dce3ea;
+
+    background: #ffffff;
+
+    color: #667383;
+}
+
+
+.confirm-delete-btn {
+    border: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e75555,
+            #f27575
+        );
+
+    color: #ffffff;
+}
+
+
+/* =========================================
+   TOAST MESSAGE
+========================================= */
+
+.toast-message {
+    position: absolute;
+
+    z-index: 200;
+
+    top: 100px;
+    left: 50%;
+
+    width: calc(100% - 32px);
+
+    min-height: 44px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 10px 13px;
+
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    border:
+        1px solid #dfe5ed;
+
+    box-shadow:
+        0 9px 25px rgba(40, 55, 82, 0.15);
+
+    color: #48566a;
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    transform:
+        translate(-50%, -15px);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: 0.3s ease;
+}
+
+
+.toast-message.show {
+    opacity: 1;
+
+    transform:
+        translate(-50%, 0);
+}
+
+
+.toast-message i {
+    font-size: 14px;
+
+    color: #3aa86c;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media screen and (max-width: 390px) {
+
+    body {
+        display: block;
+    }
+
+
+    .app-container {
+        width: 100%;
+        height: 100vh;
+
+        min-height: 844px;
+    }
+
+
+    .bus-stops-content {
+        height:
+            calc(100vh - 88px - 43px - 78px);
+    }
+
+}
+
+
+/* =========================================
+   SMALL HEIGHT DEVICES
+========================================= */
+
+@media screen and (max-height: 750px) {
+
+    .app-container {
+        height: 100vh;
+        min-height: 100vh;
+    }
+
+
+    .bus-stops-content {
+        height:
+            calc(100vh - 88px - 43px - 78px);
+    }
+
+}/* Refreshed admin management visual language */
+body{background:#e3edf8!important;font-family:Poppins,sans-serif!important}.app-container{width:390px!important;min-height:844px!important;background:#f7faff!important;box-shadow:0 24px 50px rgba(22,59,105,.20)!important}.top-header{height:77px!important;background:linear-gradient(135deg,#0f5fc8,#176fe0)!important;color:#fff!important;border:0!important;border-radius:0 0 20px 20px!important}.top-header .header-title h1{color:#fff!important}.add-route-btn,.menu-btn{border-radius:11px!important}.management-tabs{margin:10px 12px 0!important;padding:4px!important;border-radius:13px!important;background:#fff!important;border:1px solid #d9e4ef!important;box-shadow:0 5px 12px rgba(22,62,110,.05)!important}.management-tab{border-radius:9px!important;font-size:7px!important}.bus-stop-card{border:1px solid #dce6ef!important;border-radius:14px!important;background:#fff!important;box-shadow:0 6px 13px rgba(21,60,107,.05)!important}.stop-actions button{border-radius:7px!important}.bottom-nav{border-radius:16px!important}

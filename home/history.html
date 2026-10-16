@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pass History - BusPass</title>
+    <link rel="stylesheet" href="history.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../user-phone-frame.css">
+    <link rel="stylesheet" href="../user-design-system.css">
+    <script defer src="../user-phone-frame.js"></script>
+    <link rel="stylesheet" href="../user-premium.css">
+</head>
+<body>
+<div class="mobile-screen">
+    <header class="history-header">
+        <button class="back-btn" type="button" onclick="goBack()" aria-label="Go back"><i class="fa-solid fa-arrow-left"></i></button>
+        <div class="header-title"><h1>Pass History</h1><p>Every journey, all in one place</p></div>
+        <button class="calendar-btn" type="button" aria-label="Calendar"><i class="fa-regular fa-calendar"></i></button>
+    </header>
+    <div class="tabs">
+        <button class="tab active" type="button" data-filter="all" onclick="changeTab(this)">All</button>
+        <button class="tab" type="button" data-filter="active" onclick="changeTab(this)">Active</button>
+        <button class="tab" type="button" data-filter="expired" onclick="changeTab(this)">Expired</button>
+    </div>
+    <div class="section-header">
+        <span class="your-passes">Your Passes</span>
+        <button class="sort-btn" type="button" onclick="toggleSort()"><i class="fa-solid fa-filter filter-icon"></i><span id="sortText">Latest First</span><i class="fa-solid fa-chevron-down down-arrow"></i></button>
+    </div>
+    <main class="pass-list" id="passList" aria-live="polite"></main>
+    <nav class="bottom-nav">
+        <button class="nav-item" type="button" onclick="goHome()"><i class="fa-solid fa-house nav-icon"></i><span>Home</span></button>
+        <button class="nav-item" type="button" onclick="goMyPass()"><i class="fa-regular fa-clipboard nav-icon"></i><span>My Pass</span></button>
+        <button class="nav-item selected" type="button"><i class="fa-solid fa-clock-rotate-left nav-icon"></i><span>History</span></button>
+        <button class="nav-item" type="button" onclick="goProfile()"><i class="fa-solid fa-user nav-icon"></i><span>Profile</span></button>
+    </nav>
+</div>
+<script src="history.js?v=20260918-2"></script>
+</body>
+</html>

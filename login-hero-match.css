@@ -1,0 +1,23 @@
+/* Keep the login hero identical to the account-creation screen. */
+body.bp-login .blue-header {
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 342px !important;
+  transform: none !important;
+  border-radius: 0 !important;
+  background:
+    linear-gradient(105deg, rgba(2, 34, 86, .84), rgba(3, 99, 189, .18)),
+    url("image/bus.jpg") center / cover no-repeat !important;
+}
+
+body.bp-login .blue-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(5, 79, 163, .13), transparent 48%, rgba(6, 26, 69, .38));
+}
+
+/* The large hero replaces the small duplicate image card. */
+body.bp-login .bus-image,
+body.bp-login .header-pattern { display: none !important; }

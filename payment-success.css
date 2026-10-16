@@ -1,0 +1,24 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { min-height: 100vh; padding: 24px; background: radial-gradient(circle at 50% 0%, #dff8ed 0, #edf3ff 44%, #dbe5f4 100%); font-family: "Poppins", sans-serif; display: grid; place-items: center; color: #23354d; }
+.mobile-screen { width: min(100%, 420px); min-height: 680px; padding: 42px 28px 28px; background: #fff; position: relative; overflow: hidden; border-radius: 30px; box-shadow: 0 22px 60px #17335b25; text-align: center; }
+.success-section { display: flex; flex-direction: column; align-items: center; }
+.success-image { width: 104px; height: 104px; display: grid; place-items: center; margin-bottom: 21px; border-radius: 50%; background: #d9f7e8; color: #15945e; font-size: 50px; box-shadow: 0 0 0 12px #effbf5; animation: pop-in .55s ease both; }
+.success-image i { animation: check-in .45s .2s ease both; }
+.success-section h1 { color: #163c70; font-size: 25px; line-height: 1.3; font-weight: 700; }
+.success-message { margin: 10px 0 28px; color: #718096; font-size: 12px; line-height: 1.7; }
+.success-message strong { color: #15945e; }
+.transaction-card { width: 100%; padding: 8px 17px; background: #f7fbff; border: 1px solid #dbe7f3; border-radius: 18px; text-align: left; }
+.transaction-row { min-height: 54px; padding: 9px 0; border-bottom: 1px solid #e1eaf2; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.transaction-row.last-row { border-bottom: 0; }
+.transaction-label { color: #718096; font-size: 11px; font-weight: 500; }
+.transaction-value { color: #1c5db3; font-size: 11px; font-weight: 700; text-align: right; }
+.home-button { width: 100%; height: 48px; margin-top: 30px; border: 0; border-radius: 13px; background: #246df2; color: #fff; font-family: "Poppins", sans-serif; font-size: 12px; font-weight: 600; cursor: pointer; }
+.home-button:hover { background: #1f63dd; }
+@keyframes pop-in { from { opacity: 0; transform: scale(.65); } to { opacity: 1; transform: scale(1); } }
+@keyframes check-in { from { opacity: 0; transform: scale(.4) rotate(-20deg); } to { opacity: 1; transform: scale(1) rotate(0); } }
+@media (max-width: 450px) { body { padding: 12px; } .mobile-screen { min-height: 650px; padding: 34px 18px 22px; } .transaction-row { gap: 8px; } }
+
+.success-actions { width: 100%; display: grid; gap: 10px; margin-top: 30px; }
+.success-actions .home-button { margin-top: 0; }
+.track-button { width: 100%; height: 48px; border: 1px solid #b9d4ee; border-radius: 13px; background: #f4f9ff; color: #1765c1; font-family: "Poppins", sans-serif; font-size: 12px; font-weight: 600; cursor: pointer; }
+.track-button:hover { background: #eaf3ff; }

@@ -1,0 +1,13 @@
+/* Shared visual language for every dashboard action screen. */
+body { background: linear-gradient(180deg, #e9f1fc, #f6f9fd) !important; }
+.app-container { background: #f7faff !important; box-shadow: 0 20px 45px rgba(17, 57, 107, .20) !important; }
+.top-header, .applications-header { border-bottom: 4px solid #f0a22c !important; box-shadow: 0 4px 12px rgba(19, 59, 110, .08) !important; }
+.top-header::after, .applications-header::after { content: "ONLINE BUS PASS SERVICES • ADMINISTRATION"; display: block; position: absolute; right: 18px; bottom: 4px; color: #8498b1; font: 700 6px Poppins, sans-serif; letter-spacing: .75px; }
+.top-header { position: relative !important; }
+.applications-header { position: relative; }
+.top-header .header-title p, .applications-header .header-title p { color: #d88215 !important; font-weight: 700 !important; letter-spacing: .8px; }
+.bottom-nav, .bottom-navigation { border-top: 3px solid #f0a22c !important; box-shadow: 0 -5px 17px rgba(21, 58, 105, .08) !important; }
+.nav-item.active { color: #145db7 !important; background: #e9f2ff !important; }
+.toast-message { border-left: 4px solid #f0a22c !important; }
+.route-tab.active, .management-tab.active, .application-tab.active { background: #155eb7 !important; color: #fff !important; }
+.add-route-btn, .add-plan-btn, .add-stop-btn, .approve-btn, .save-route-btn, .save-plan-btn, .save-stop-btn { background: linear-gradient(135deg, #0d438f, #286fca) !important; }

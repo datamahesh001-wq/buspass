@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BusPass Dashboard</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="dashboard.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
+    <link rel="stylesheet" href="../user-phone-frame.css">
+    <link rel="stylesheet" href="../user-design-system.css">
+    <script defer src="../user-phone-frame.js"></script>
+    <link rel="stylesheet" href="../user-premium.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- ================= SIDE MENU DRAWER (slide from left) ================= -->
+
+        <div class="menu-overlay" id="menuOverlay"></div>
+
+        <aside class="side-menu" id="sideMenu" aria-label="Main menu">
+
+            <div class="side-menu-header">
+
+                <div class="side-menu-user-icon"><i class="fa-solid fa-circle-user"></i></div>
+
+                <div class="side-menu-user">
+                    <span>Signed in as</span>
+                    <strong id="sideMenuUserName">User</strong>
+                </div>
+
+                <button class="side-menu-close" id="sideMenuClose" type="button">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+            <nav class="side-menu-nav">
+
+                <a href="dashboard.html" class="side-link active" data-nav>
+                    <i class="fa-solid fa-house"></i><span>Dashboard</span>
+                </a>
+
+                <a href="pass-type.html" class="side-link" data-nav>
+                    <i class="fa-solid fa-id-card"></i><span>Apply New Pass</span>
+                </a>
+
+                <a href="my-pass.html" class="side-link" data-nav>
+                    <i class="fa-regular fa-id-card"></i><span>My Pass</span>
+                </a>
+
+                <a href="renew-pass.html" class="side-link" data-nav>
+                    <i class="fa-solid fa-rotate"></i><span>Renew Pass</span>
+                </a>
+
+                <a href="application-tracking.html" class="side-link" data-nav>
+                    <i class="fa-solid fa-route"></i><span>Track Application</span>
+                </a>
+
+                <a href="download-pass.html" class="side-link" data-nav>
+                    <i class="fa-solid fa-download"></i><span>Download Pass</span>
+                </a>
+
+                <a href="history.html" class="side-link" data-nav>
+                    <i class="fa-solid fa-clock-rotate-left"></i><span>Transaction History</span>
+                </a>
+
+                <a href="profile.html" class="side-link" data-nav>
+                    <i class="fa-solid fa-user-pen"></i><span>Profile</span>
+                </a>
+
+                <button class="side-link" type="button" id="sideMenuHelpline">
+                    <i class="fa-solid fa-headset"></i><span>Helpline</span>
+                </button>
+
+            </nav>
+
+            <div class="side-menu-footer">
+                <button class="side-logout" type="button" id="sideMenuLogout">
+                    <i class="fa-solid fa-right-from-bracket"></i><span>Logout</span>
+                </button>
+            </div>
+
+        </aside>
+
+        <!-- ================= HEADER ================= -->
+
+        <header>
+
+            <div class="menu-logo">
+
+                <button class="menu-btn" type="button">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div class="logo">
+                    <img src="images/buslogo.png" alt="BusPass Logo">
+                    <div><h2>BusPass</h2><small>STATE TRANSPORT SERVICES</small></div>
+                </div>
+
+            </div>
+
+            <div class="welcome">
+                <span>Welcome back,</span>
+                <h3 id="headerUserName">User</h3>
+                <small>Government bus pass services</small>
+            </div>
+
+        </header>
+
+
+        <!-- ================= HERO ================= -->
+
+        <section class="hero">
+
+            <!-- Background -->
+            <div class="hero-copy"><span>ONLINE BUS PASS • DIGITAL SERVICES</span><h1>Move with confidence.</h1><p>Your pass, your route, your journey.</p></div><img
+                src="images/busimage.jpg"
+                alt="City Background"
+                class="city">
+        </section>
+
+
+        <!-- ================= CURRENT PASS ================= -->
+
+        <section class="pass-card">
+
+            <div class="card-header">
+
+                <h4>Current Pass Status</h4>
+
+                <span class="active">
+                    <i class="fa-solid fa-circle-check"></i> Active
+                </span>
+
+            </div>
+
+
+            <div class="pass-body">
+
+                <!-- Left Side -->
+
+                <div class="left">
+
+                    <img
+                        src="images/busstop.jpg"
+                        alt="Bus Stop">
+
+                    <div>
+
+                        <h3 id="passTitle">Student Monthly Pass</h3>
+
+                        <small id="passSubtitle">Complete your pass details</small>
+
+
+                        <div class="dates">
+
+                            <div>
+                                <span>Valid From</span>
+                                <h5 id="validFrom">--</h5>
+                            </div>
+
+                            <div>
+                                <span>Valid Till</span>
+                                <h5 id="validTill">--</h5>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Right Side -->
+
+                <div class="right">
+
+                    <img
+                        src="images/buslogo.png"
+                        alt="BusPass Logo">
+
+                    <a href="my-pass.html">
+                        View Details
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= QUICK ACTIONS ================= -->
+
+        <section class="quick-actions">
+
+            <h4>Quick Actions</h4>
+
+            <div class="grid">
+
+
+                <!-- Apply New Pass -->
+
+                <a href="pass-type.html" class="box">
+
+                    <i class="fa-solid fa-id-card"></i>
+
+                    <p>Apply New Pass</p>
+
+                </a>
+
+
+                <!-- Renew Pass -->
+
+                <a href="renew-pass.html" class="box">
+
+                    <i class="fa-solid fa-rotate"></i>
+
+                    <p>Renew Pass</p>
+
+                </a>
+
+
+
+                <!-- Download Pass -->
+
+                <a href="download-pass.html" class="box">
+
+                    <i class="fa-solid fa-download"></i>
+
+                    <p>Download</p>
+
+                </a>
+
+
+                <!-- Transaction History -->
+
+                <a href="history.html" class="box">
+
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+
+                    <p>Transaction<br>History</p>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SERVICE INFORMATION ================= -->
+
+        <section class="service-panel">
+
+            <div class="panel-heading">
+                <div>
+                    <span class="eyebrow">PASSENGER INFORMATION</span>
+                    <h4>Travel desk</h4>
+                </div>
+                <i class="fa-solid fa-bus-simple"></i>
+            </div>
+
+            <div class="service-grid">
+                <div class="service-item clickable" data-service="support" role="button" tabindex="0">
+                    <i class="fa-solid fa-headset"></i>
+                    <div>
+                        <strong>Passenger Support</strong>
+                        <span>Help with your bus pass</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right service-action"></i>
+                </div>
+
+                <div class="service-item clickable" data-service="route" role="button" tabindex="0">
+                    <i class="fa-solid fa-route"></i>
+                    <div>
+                        <strong>Route Assistance</strong>
+                        <span>Find your nearest stop</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right service-action"></i>
+                </div>
+            </div>
+
+            <div class="notice-strip">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>Keep your pass and valid ID ready while travelling.</span>
+            </div>
+
+        </section>
+
+
+        <!-- ================= HELPLINE ================= -->
+
+        <section class="helpline-card clickable" role="button" tabindex="0" id="helplineCard">
+            <div class="helpline-icon"><i class="fa-solid fa-phone-volume"></i></div>
+            <div>
+                <span>Online Bus Pass Passenger Helpline</span>
+                <strong>0866 257 0005</strong>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square helpline-arrow"></i>
+        </section>
+
+
+        <!-- ================= BOTTOM NAVIGATION ================= -->
+
+        <nav class="bottom-nav">
+
+
+            <!-- Home -->
+
+            <a href="dashboard.html" class="active-nav">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>Home</span>
+
+            </a>
+
+
+            <!-- My Pass -->
+
+            <a href="my-pass.html">
+
+                <i class="fa-regular fa-id-card"></i>
+
+                <span>My Pass</span>
+
+            </a>
+
+
+            <!-- History -->
+
+            <a href="history.html">
+
+                <i class="fa-solid fa-clock-rotate-left"></i>
+
+                <span>History</span>
+
+            </a>
+
+
+            <!-- Profile -->
+
+            <a href="profile.html">
+
+                <i class="fa-solid fa-user"></i>
+
+                <span>Profile</span>
+
+            </a>
+
+        </nav>
+
+    </div>
+
+    <script src="../popup.js"></script>
+
+    <script src="dashboard.js"></script>
+
+</body>
+
+</html>

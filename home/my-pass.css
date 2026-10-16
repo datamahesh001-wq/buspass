@@ -1,0 +1,29 @@
+/* =========================================================
+   MY PASS — extras on top of active-pass.css
+   ========================================================= */
+
+/* Action buttons row */
+.action-row { margin-top: 14px; display: flex; gap: 10px; }
+.action-btn { flex: 1; height: 46px; display: flex; align-items: center; justify-content: center; gap: 8px; border-radius: 14px; font: 700 12.5px 'DM Sans', sans-serif; cursor: pointer; transition: .2s ease; }
+.action-btn.primary { border: 0; background: linear-gradient(120deg, #0a5c34, #0e7a44); color: #fff; box-shadow: 0 12px 26px #0e7a4440; }
+.action-btn.primary:hover { filter: brightness(1.08); }
+.action-btn.secondary { border: 1.5px solid #bfe3d0; background: #fff; color: #0d5c3a; }
+.action-btn.secondary:hover { background: #effcf5; }
+
+/* Expired status variant */
+.status-strip.expired { border-color: #f3c8c8; background: #fdf1f1; }
+.status-strip.expired > i { color: #c0392b; }
+.status-strip.expired strong { color: #922b21; }
+.status-strip.expiring { border-color: #f0e0b0; background: #fdf9ec; }
+.status-strip.expiring > i { color: #b7791f; }
+.status-strip.expiring strong { color: #8a6116; }
+
+/* Empty state */
+.empty-box { margin-top: 60px; padding: 38px 24px; text-align: center; border: 1px solid #dbe6f2; border-radius: 20px; background: #fff; box-shadow: 0 10px 26px #315b8110; }
+.empty-icon { width: 66px; height: 66px; display: grid; place-items: center; margin: 0 auto 14px; border-radius: 50%; background: #eaf3ff; color: #216dbc; font-size: 27px; }
+.empty-box h3 { color: #173d70; font: 700 17px 'Space Grotesk', sans-serif; }
+.empty-box p { margin: 9px auto 18px; max-width: 250px; color: #7890aa; font-size: 10.5px; line-height: 1.55; }
+.empty-action { height: 42px; padding: 0 26px; border: 0; border-radius: 12px; background: linear-gradient(120deg, #0a5c34, #0e7a44); color: #fff; font: 700 12px 'DM Sans', sans-serif; cursor: pointer; box-shadow: 0 10px 22px #0e7a4438; }
+
+/* Expired pass badge variant */
+.pass-status.expired { background: #b03a2e; }

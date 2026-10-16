@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Profile - BusPass</title>
+
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="admin-profile.css?v=20260917-3"
+    >
+
+
+    <!-- Google Font -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="admin-gov-theme.css">
+  <link rel="stylesheet" href="iphone-admin-frame.css">
+  <link rel="stylesheet" href="admin-mobile-system.css">
+    <link rel="stylesheet" href="admin-premium.css">
+    <link rel="stylesheet" href="admin-dashboard-nav.css">
+        <style>
+            .iphone-app:has(.profile-content) .profile-card { display: flex !important; align-items: flex-start !important; gap: 12px !important; overflow: visible !important; padding: 18px !important; }
+            .iphone-app:has(.profile-content) .profile-card::before { display: none !important; }
+            .iphone-app:has(.profile-content) .profile-image-wrapper { position: relative !important; top: auto !important; left: auto !important; transform: none !important; flex: 0 0 58px !important; z-index: 3 !important; }
+            .iphone-app:has(.profile-content) .admin-main-details { flex: 1 1 0 !important; width: auto !important; min-width: 0 !important; margin: 0 !important; }
+            .iphone-app:has(.profile-content) .admin-name-row { display: flex !important; align-items: center !important; justify-content: space-between !important; gap: 8px !important; min-height: 30px !important; padding-right: 0 !important; }
+            .iphone-app:has(.profile-content) .admin-name-row > div { min-width: 0 !important; }
+            .iphone-app:has(.profile-content) .edit-profile-btn { position: static !important; display: grid !important; place-items: center !important; flex: 0 0 30px !important; width: 30px !important; height: 30px !important; padding: 0 !important; }
+            .iphone-app:has(.profile-content) .edit-profile-btn i { margin: 0 !important; line-height: 1 !important; }
+        </style>
+</head>
+
+
+<body>
+<div class="iphone-shell">
+  <div class="iphone-screen">
+    <div class="iphone-camera" aria-hidden="true"></div>
+    <div class="iphone-app">
+
+
+
+    <div class="app-container">
+
+
+        <!-- =====================================
+             TOP HEADER
+        ====================================== -->
+
+        <header class="top-header">
+
+
+            <!-- Menu -->
+
+            <button
+                class="menu-btn"
+                id="menuButton"
+                type="button"
+            >
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+            <!-- Header Content -->
+
+            <div class="header-content">
+
+                <h1>Admin Profile</h1>
+
+                <p>
+                    Manage your account & preferences
+                </p>
+
+            </div>
+
+
+            <!-- Notification -->
+
+            <button
+                class="notification-btn"
+                id="notificationButton"
+                type="button"
+            >
+
+                <i class="fa-regular fa-bell"></i>
+
+                <span class="notification-dot"></span>
+
+            </button>
+
+
+        </header>
+
+
+        <!-- =====================================
+             MAIN CONTENT
+        ====================================== -->
+
+        <main class="profile-content">
+
+
+            <!-- =================================
+                 PROFILE CARD
+            ================================== -->
+
+            <section class="profile-card">
+
+
+                <!-- Profile Image -->
+
+                <div class="profile-image-wrapper">
+
+                    <div class="profile-image">
+
+                        <img
+                            src="../image/buslogo1.png"
+                            alt="Admin Profile"
+                            id="profileImage"
+                        >
+
+                    </div>
+
+
+                    <button
+                        class="change-photo-btn"
+                        id="changePhotoButton"
+                        type="button"
+                        aria-label="Change profile photo"
+                    >
+                        <i class="fa-solid fa-camera"></i>
+                    </button>
+                    <input
+                        id="profilePhotoInput"
+                        class="profile-photo-input"
+                        type="file"
+                        accept="image/png,image/jpeg,image/webp"
+                        hidden
+                    >
+
+
+                </div>
+
+
+                <!-- Admin Details -->
+
+                <div class="admin-main-details">
+
+
+                    <div class="admin-name-row">
+
+                        <div>
+
+                            <h2 id="adminName">
+                                Mahesh Admin
+                            </h2>
+
+
+                            <div class="role-badge">
+
+                                <span></span>
+
+                                <p>
+                                    Super Admin
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            class="edit-profile-btn"
+                            id="editProfileButton"
+                            type="button"
+                        >
+
+                            <i class="fa-solid fa-pen"></i>
+
+                            Edit Profile
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- Email -->
+
+                    <div class="contact-item">
+
+                        <i class="fa-regular fa-envelope"></i>
+
+                        <span id="adminEmail">
+                            admin@buspass.com
+                        </span>
+
+                    </div>
+
+
+                    <!-- Phone -->
+
+                    <div class="contact-item">
+
+                        <i class="fa-solid fa-phone"></i>
+
+                        <span id="adminPhone">
+                            +91 98765 43210
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+            <section class="profile-quick-actions" aria-label="Profile actions">
+                <p class="profile-kicker">ACCOUNT CONTROLS</p>
+                <button class="profile-action-row" id="profileEditShortcut" type="button">
+                    <span class="profile-action-icon blue"><i class="fa-regular fa-pen-to-square"></i></span>
+                    <span><strong>Edit account</strong><small>Update contact information</small></span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                <button class="profile-action-row" id="profilePasswordShortcut" type="button">
+                    <span class="profile-action-icon green"><i class="fa-solid fa-shield-halved"></i></span>
+                    <span><strong>Security</strong><small>Change your password</small></span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                <a class="profile-action-row" href="admin-settings.html">
+                    <span class="profile-action-icon violet"><i class="fa-solid fa-gear"></i></span>
+                    <span><strong>Preferences</strong><small>Notifications and settings</small></span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+            </section>
+
+
+            <!-- =================================
+                 ACCOUNT INFORMATION
+            ================================== -->
+
+            <section class="profile-section">
+
+
+                <div class="section-heading">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <h3>
+                        Account Information
+                    </h3>
+
+                </div>
+
+
+                <div class="settings-card">
+
+
+                    <!-- Admin ID -->
+
+                    <div class="setting-row">
+
+                        <div class="setting-left">
+
+                            <i class="fa-solid fa-id-badge"></i>
+
+                            <span>
+                                Admin ID
+                            </span>
+
+                        </div>
+
+                        <div class="setting-right">
+
+                            <strong id="adminIdValue">
+                                ADM001
+                            </strong>
+
+                            <i class="fa-solid fa-lock"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Full Name -->
+
+                    <button
+                        class="setting-row editable-setting"
+                        data-field="fullName"
+                        type="button"
+                    >
+
+                        <div class="setting-left">
+
+                            <i class="fa-regular fa-user"></i>
+
+                            <span>
+                                Full Name
+                            </span>
+
+                        </div>
+
+
+                        <div class="setting-right">
+
+                            <strong id="fullNameValue">
+                                Mahesh Admin
+                            </strong>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </div>
+
+                    </button>
+
+
+                    <!-- Email Address -->
+
+                    <button
+                        class="setting-row editable-setting"
+                        data-field="email"
+                        type="button"
+                    >
+
+                        <div class="setting-left">
+
+                            <i class="fa-regular fa-envelope"></i>
+
+                            <span>
+                                Email Address
+                            </span>
+
+                        </div>
+
+
+                        <div class="setting-right">
+
+                            <strong id="emailValue">
+                                admin@buspass.com
+                            </strong>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </div>
+
+                    </button>
+
+
+                    <!-- Mobile Number -->
+
+                    <button
+                        class="setting-row editable-setting"
+                        data-field="mobile"
+                        type="button"
+                    >
+
+                        <div class="setting-left">
+
+                            <i class="fa-solid fa-phone"></i>
+
+                            <span>
+                                Mobile Number
+                            </span>
+
+                        </div>
+
+
+                        <div class="setting-right">
+
+                            <strong id="mobileValue">
+                                +91 98765 43210
+                            </strong>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </div>
+
+                    </button>
+
+
+                    <!-- Role -->
+
+                    <div class="setting-row">
+
+                        <div class="setting-left">
+
+                            <i class="fa-solid fa-shield-halved"></i>
+
+                            <span>
+                                Role
+                            </span>
+
+                        </div>
+
+
+                        <div class="setting-right">
+
+                            <strong>
+                                Super Admin
+                            </strong>
+
+                            <i class="fa-solid fa-lock"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Joined On -->
+
+                    <div class="setting-row">
+
+                        <div class="setting-left">
+
+                            <i class="fa-regular fa-calendar"></i>
+
+                            <span>
+                                Joined On
+                            </span>
+
+                        </div>
+
+
+                        <div class="setting-right">
+
+                            <strong>
+                                15 Jan 2024
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 SECURITY & ACCESS
+            ================================== -->
+
+            <section class="profile-section">
+
+
+                <div class="section-heading">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    <h3>
+                        Security & Access
+                    </h3>
+
+                </div>
+
+
+                <div class="settings-card">
+
+
+                    <button
+                        class="setting-row"
+                        id="changePasswordButton"
+                        type="button"
+                    >
+
+                        <div class="setting-left">
+
+                            <div class="setting-icon security-icon">
+
+                                <i class="fa-solid fa-lock"></i>
+
+                            </div>
+
+
+                            <div class="setting-text">
+
+                                <span>
+                                    Change Password
+                                </span>
+
+                                <small>
+                                    Update your account password
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="setting-right">
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </div>
+
+                    </button>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 PREFERENCES
+            ================================== -->
+
+            <section class="profile-section">
+
+
+                <div class="section-heading">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    <h3>
+                        Preferences
+                    </h3>
+
+                </div>
+
+
+                <div class="settings-card">
+
+
+                    <!-- Theme -->
+
+                    <button
+                        class="setting-row"
+                        id="themeButton"
+                        type="button"
+                    >
+
+                        <div class="setting-left">
+
+                            <div class="setting-icon">
+
+                                <i class="fa-solid fa-circle-half-stroke"></i>
+
+                            </div>
+
+
+                            <div class="setting-text">
+
+                                <span>
+                                    Theme Settings
+                                </span>
+
+                                <small id="themeStatus">
+                                    Light Mode
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="setting-right">
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </div>
+
+                    </button>
+
+
+                    <!-- Language -->
+
+                    <button
+                        class="setting-row"
+                        id="languageButton"
+                        type="button"
+                    >
+
+                        <div class="setting-left">
+
+                            <div class="setting-icon">
+
+                                <i class="fa-solid fa-globe"></i>
+
+                            </div>
+
+
+                            <div class="setting-text">
+
+                                <span>
+                                    Language
+                                </span>
+
+                                <small id="languageStatus">
+                                    English (India)
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="setting-right">
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </div>
+
+                    </button>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 LOGOUT BUTTON
+            ================================== -->
+
+        <section class="settings-group admin-management-links">
+            <h3>ADMIN MANAGEMENT</h3>
+            <div class="settings-list">
+                <a class="settings-row" href="admin-user-management.html"><span class="row-icon"><i class="fa-solid fa-users"></i></span><span class="row-text"><strong>User Management</strong><span>Students and employees</span></span><i class="fa-solid fa-chevron-right"></i></a>
+                <a class="settings-row" href="admin-payments.html"><span class="row-icon"><i class="fa-solid fa-credit-card"></i></span><span class="row-text"><strong>Payments</strong><span>Transactions and payment status</span></span><i class="fa-solid fa-chevron-right"></i></a>
+                <a class="settings-row" href="admin-pass-management.html"><span class="row-icon"><i class="fa-solid fa-ticket"></i></span><span class="row-text"><strong>Pass Management</strong><span>Approved, pending and expired passes</span></span><i class="fa-solid fa-chevron-right"></i></a>
+                <a class="settings-row" href="admin-settings.html"><span class="row-icon"><i class="fa-solid fa-gear"></i></span><span class="row-text"><strong>Settings</strong><span>Admin preferences and security</span></span><i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+        </section>
+
+
+
+            <button
+                class="logout-btn"
+                id="logoutButton"
+                type="button"
+            >
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Logout
+
+            </button>
+
+
+        </main>
+
+        <div class="modal-overlay logout-confirm-overlay" id="logoutConfirmModal" aria-hidden="true">
+            <div class="logout-confirm-card" role="dialog" aria-modal="true" aria-labelledby="logoutConfirmTitle">
+                <div class="logout-confirm-icon"><i class="fa-solid fa-right-from-bracket"></i></div>
+                <p class="logout-confirm-kicker">ADMIN SESSION</p>
+                <h2 id="logoutConfirmTitle">Log out of Admin?</h2>
+                <p class="logout-confirm-text">Your current Admin session will be closed.</p>
+                <div class="logout-confirm-actions">
+                    <button id="logoutCancelButton" type="button">Cancel</button>
+                    <button id="logoutConfirmButton" type="button">Logout</button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- =====================================
+             EDIT PROFILE MODAL
+        ====================================== -->
+
+        <div
+            class="modal-overlay"
+            id="editProfileModal"
+        >
+
+            <div class="modal-card">
+
+
+                <div class="modal-header">
+
+                    <div>
+
+                        <p>
+                            ADMIN ACCOUNT
+                        </p>
+
+                        <h2>
+                            Edit Profile
+                        </h2>
+
+                    </div>
+
+
+                    <button
+                        class="close-modal-btn"
+                        id="closeEditModal"
+                        type="button"
+                    >
+
+                        <i class="fa-solid fa-xmark"></i>
+
+                    </button>
+
+                </div>
+
+
+                <form id="editProfileForm">
+
+
+                    <div class="form-group">
+
+                        <label for="editFullName">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="editFullName"
+                            placeholder="Enter full name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="editEmail">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="editEmail"
+                            placeholder="Enter email address"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="editMobile">
+                            Mobile Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="editMobile"
+                            placeholder="Enter mobile number"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="modal-actions">
+
+                        <button
+                            class="cancel-btn"
+                            id="cancelEditButton"
+                            type="button"
+                        >
+
+                            Cancel
+
+                        </button>
+
+
+                        <button
+                            class="save-btn"
+                            type="submit"
+                        >
+
+                            <i class="fa-solid fa-check"></i>
+
+                            Save Changes
+
+                        </button>
+
+                    </div>
+
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             CHANGE PASSWORD MODAL
+        ====================================== -->
+
+        <div
+            class="modal-overlay"
+            id="passwordModal"
+        >
+
+            <div class="modal-card password-modal">
+
+
+                <div class="modal-header">
+
+                    <div>
+
+                        <p>
+                            SECURITY & ACCESS
+                        </p>
+
+                        <h2>
+                            Change Password
+                        </h2>
+
+                    </div>
+
+
+                    <button
+                        class="close-modal-btn"
+                        id="closePasswordModal"
+                        type="button"
+                    >
+
+                        <i class="fa-solid fa-xmark"></i>
+
+                    </button>
+
+                </div>
+
+
+                <form id="changePasswordForm">
+
+
+                    <div class="form-group">
+
+                        <label for="currentPassword">
+                            Current Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="currentPassword"
+                            placeholder="Enter current password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="newPassword">
+                            New Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="newPassword"
+                            placeholder="Enter new password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="confirmPassword">
+                            Confirm Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            placeholder="Confirm new password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="modal-actions">
+
+                        <button
+                            class="cancel-btn"
+                            id="cancelPasswordButton"
+                            type="button"
+                        >
+
+                            Cancel
+
+                        </button>
+
+
+                        <button
+                            class="save-btn"
+                            type="submit"
+                        >
+
+                            Update Password
+
+                        </button>
+
+                    </div>
+
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             BOTTOM NAVIGATION
+        ====================================== -->
+
+        <nav class="bottom-nav dashboard-nav" aria-label="Admin navigation">
+
+
+            <button
+                class="nav-item"
+                id="homeNav"
+                type="button"
+            >
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>Home</span>
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                id="applicationsNav"
+                type="button"
+            >
+
+                <i class="fa-regular fa-file-lines"></i>
+
+                <span>Applications</span>
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                id="managementNav"
+                type="button"
+            >
+
+                <i class="fa-solid fa-users-gear"></i>
+
+                <span>Management</span>
+
+            </button>
+
+
+            <button
+                class="nav-item active"
+                id="moreNav"
+                type="button"
+            >
+
+                <i class="fa-solid fa-bars"></i>
+
+                <span>More</span>
+
+            </button>
+
+
+        </nav>
+
+
+        <!-- =====================================
+             TOAST MESSAGE
+        ====================================== -->
+
+        <div
+            class="toast-message"
+            id="toastMessage"
+        >
+
+            <i
+                class="fa-solid fa-circle-check"
+                id="toastIcon"
+            ></i>
+
+            <span id="toastText"></span>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- JavaScript -->
+
+    <script src="admin-profile.js"></script>
+
+
+    </div>
+  </div>
+</div>
+<script src="admin-phone-status.js"></script>
+</body>
+
+</html>

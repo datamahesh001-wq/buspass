@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Select Pass Type - BusPass</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="pass-type.css">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="../user-phone-frame.css">
+    <link rel="stylesheet" href="../user-design-system.css">
+    <script defer src="../user-phone-frame.js"></script>
+    <link rel="stylesheet" href="../user-premium.css">
+</head>
+
+<body>
+
+    <main class="app-container">
+
+        <!-- ==============================
+             HEADER
+        =============================== -->
+
+        <header class="top-header">
+
+            <!-- Back Button -->
+            <a
+                class="back-btn"
+                id="backBtn"
+                href="dashboard.html"
+                aria-label="Go back"
+            >
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+
+
+            <!-- Bus Logo -->
+            <div class="official-mark">
+                <i class="fa-solid fa-landmark"></i>
+                <span>ONLINE PASS SERVICES</span>
+            </div>
+
+            <div class="bus-image-box">
+
+                <img
+                    src="images/busimage.jpg"
+                    alt="City bus"
+                    class="bus-image"
+                >
+
+            </div>
+
+        </header>
+
+
+        <!-- ==============================
+             PAGE TITLE
+        =============================== -->
+
+        <section class="page-title">
+
+            <span class="service-kicker">ONLINE BUS PASS DIGITAL SERVICES</span>
+            <h1>Select Pass Type</h1>
+
+            <p>
+                Select the travel category for your<br>
+                government bus pass application
+            </p>
+
+        </section>
+
+
+        <!-- Divider -->
+        <div class="top-divider"></div>
+
+
+        <!-- ==============================
+             PASS SECTION
+        =============================== -->
+
+        <section class="pass-section">
+
+            <div class="section-heading">
+                <span class="step-number">01</span>
+                <div><h2>Choose Pass Type</h2><p>Select one category to continue</p></div>
+            </div>
+
+
+            <!-- ==========================
+                 STUDENT PASS
+            =========================== -->
+
+            <button
+                type="button"
+                class="pass-card student-card"
+                id="studentPass"
+                data-pass="Student Pass"
+            >
+
+                <div class="pass-top">
+
+                    <!-- Icon -->
+                    <div class="pass-icon student-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+
+
+                    <!-- Information -->
+                    <div class="pass-info">
+
+                        <h3>Student Pass</h3>
+
+                        <p>
+                            For Students
+                        </p>
+
+                    </div>
+
+
+                    <!-- Radio -->
+                    <div
+                        class="radio-circle student-radio"
+                        aria-hidden="true"
+                    >
+                        <div class="radio-dot"></div>
+                    </div>
+
+                </div>
+
+
+                <!-- Requirements -->
+                <div class="requirements">
+
+                    <div class="requirement">
+                        <span>Valid Student ID</span>
+                        <i class="fa-regular fa-id-card"></i>
+                        <small>Mandatory</small>
+                    </div>
+
+                    <div class="requirement">
+                        <span>Institution Proof</span>
+                        <i class="fa-solid fa-school"></i>
+                        <small>Mandatory</small>
+                    </div>
+
+                    <div class="requirement">
+                        <span>Photo</span>
+                        <i class="fa-solid fa-camera"></i>
+                        <small>Mandatory</small>
+                    </div>
+
+                </div>
+
+            </button>
+
+
+            <!-- ==========================
+                 EMPLOYEE PASS
+            =========================== -->
+
+            <button
+                type="button"
+                class="pass-card employee-card"
+                id="employeePass"
+                data-pass="Employee Pass"
+            >
+
+                <div class="pass-top">
+
+                    <!-- Icon -->
+                    <div class="pass-icon employee-icon">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+
+
+                    <!-- Information -->
+                    <div class="pass-info">
+
+                        <h3>Employee Pass</h3>
+
+                        <p>
+                            For Government &amp; Private Employees
+                        </p>
+
+                    </div>
+
+
+                    <!-- Radio -->
+                    <div
+                        class="radio-circle employee-radio"
+                        aria-hidden="true"
+                    >
+                        <div class="radio-dot"></div>
+                    </div>
+
+                </div>
+
+
+                <!-- Requirements -->
+                <div class="requirements">
+
+                    <div class="requirement">
+                        <span>Employee ID</span>
+                        <i class="fa-regular fa-id-card"></i>
+                        <small>Mandatory</small>
+                    </div>
+
+                    <div class="requirement">
+                        <span>Office Proof</span>
+                        <i class="fa-solid fa-building"></i>
+                        <small>Mandatory</small>
+                    </div>
+
+                    <div class="requirement">
+                        <span>Photo</span>
+                        <i class="fa-solid fa-camera"></i>
+                        <small>Mandatory</small>
+                    </div>
+
+                </div>
+
+            </button>
+
+
+            <!-- ==========================
+                 NOTE
+            =========================== -->
+
+            <div class="note-box">
+
+                <i class="fa-solid fa-circle-info"></i><h4>Before you continue</h4>
+
+                <p>
+                    Please select the correct pass type
+                    to continue with your application.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             BOTTOM BUTTON
+        =============================== -->
+
+        <footer class="bottom-section">
+
+            <button
+                type="button"
+                class="continue-btn"
+                id="continueBtn"
+                disabled
+            >
+                Continue
+            </button>
+
+        </footer>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script src="../popup.js"></script>
+
+    <script src="application-state.js"></script>
+    <script src="pass-type.js"></script>
+
+</body>
+
+</html>

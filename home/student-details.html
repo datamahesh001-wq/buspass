@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Details - BusPass</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="student-details.css">
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../user-phone-frame.css">
+    <link rel="stylesheet" href="../user-design-system.css">
+    <script defer src="../user-phone-frame.js"></script>
+    <link rel="stylesheet" href="../user-premium.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         MAIN APP SCREEN
+         ========================== -->
+
+    <div class="app-container">
+
+
+        <!-- =========================
+             TOP HEADER
+        ========================== -->
+
+        <header class="top-header">
+
+            <!-- Back Button -->
+            <button type="button" class="back-btn" id="backBtn">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+            </button>
+
+
+            <!-- Pass Type -->
+
+            <div class="header-title">
+
+                <h1 id="selectedPassTitle">
+                    Student Pass
+                </h1>
+
+                <p>
+                    Application Form
+                </p>
+                
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             PROGRESS STEPS
+        ========================== -->
+
+        <div class="progress-container">
+
+            <!-- Progress Line -->
+            <div class="progress-line">
+
+                <div class="progress-active"></div>
+
+            </div>
+
+
+            <!-- Step 1 -->
+
+            <div class="step step-active">
+
+                <span>1</span>
+
+            </div>
+
+
+            <!-- Step 2 -->
+
+            <div class="step">
+
+                <span>2</span>
+
+            </div>
+
+
+            <!-- Step 3 -->
+
+            <div class="step">
+
+                <span>3</span>
+
+            </div>
+
+
+            <!-- Step 4 -->
+
+            <div class="step">
+
+                <span>4</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             STUDENT DETAILS CARD
+        ========================== -->
+
+        <main class="details-card">
+
+            <h2>
+                Student Details
+            </h2>
+
+            <!-- =========================
+                 FORM
+            ========================== -->
+
+            <form id="studentDetailsForm" class="details-form" autocomplete="off" novalidate>
+
+
+                <!-- =========================
+                     FULL NAME
+                ========================== -->
+
+                <div class="form-group full-width">
+
+                    <label for="fullName">
+                        Full Name
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        <input
+                            type="text"
+                            id="fullName"
+                            placeholder="Enter your full name"
+                            required autocomplete="new-password" data-lpignore="true">
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     DATE OF BIRTH
+                ========================== -->
+
+                <div class="form-group full-width">
+
+                    <label for="dob">
+                        Date of Birth
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-calendar-days"></i>
+
+                        <input
+                            type="date"
+                            id="dob"
+                            required autocomplete="off">
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     GENDER
+                ========================== -->
+
+                <div class="form-row">
+
+
+                    <div class="form-group half-width">
+
+                        <label for="gender">
+                            Gender
+                        </label>
+
+                        <div class="input-wrapper select-wrapper">
+
+                            <i class="fa-solid fa-user"></i>
+
+                            <select
+                                id="gender"
+                                required>
+
+                                <option value="">
+                                    Select Gender
+                                </option>
+
+                                <option value="Male">
+                                    Male
+                                </option>
+
+                                <option value="Female">
+                                    Female
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                            <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =========================
+                         MOBILE NUMBER
+                    ========================== -->
+
+                    <div class="form-group half-width">
+
+                        <label for="mobile">
+                            Mobile Number
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-phone"></i>
+
+                            <input
+                                type="tel"
+                                id="mobile"
+                                maxlength="10"
+                                placeholder="Enter mobile number"
+                                required autocomplete="new-password" data-lpignore="true">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     EMAIL ADDRESS
+                ========================== -->
+
+                <div class="form-group full-width">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            required autocomplete="new-password" data-lpignore="true">
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     SCHOOL AND COLLEGE DETAILS
+                ========================== -->
+
+                <h3 class="section-title">
+
+                    School and College Details
+
+                </h3>
+
+
+                <!-- COLLEGE NAME -->
+
+                <div class="form-group full-width">
+
+                    <label for="collegeName">
+                        Name of School / College
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-building-columns"></i>
+
+                        <input
+                            type="text"
+                            id="collegeName"
+                            placeholder="Enter school or college name"
+                            required autocomplete="off">
+
+                    </div>
+
+                </div>
+
+
+                <!-- STUDENT ID / ADMISSION NUMBER -->
+
+                <div class="form-group full-width">
+
+                    <label for="aadhaar">
+                        Student ID / Admission Number
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-id-card"></i>
+
+                        <input
+                            type="text"
+                            id="aadhaar"
+                            maxlength="30"
+                            placeholder="Enter student ID or admission number"
+                            required autocomplete="off">
+
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group half-width">
+
+                        <label for="classCourse">Course / Class</label>
+
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-book-open"></i>
+                            <input type="text" id="classCourse" placeholder="Enter course or class" required autocomplete="off">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     STUDENT PERSONAL DETAILS
+                ========================== -->
+
+                <h3 class="section-title">
+
+                    Student Personal Details
+
+                </h3>
+
+
+                <!-- FATHER NAME -->
+
+                <div class="form-group full-width">
+
+                    <label for="fatherName">
+                        Father Name
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        <input
+                            type="text"
+                            id="fatherName"
+                            placeholder="Enter father name"
+                            required autocomplete="off">
+
+                    </div>
+
+                </div>
+
+
+                <!-- MOTHER NAME -->
+
+                <div class="form-group full-width">
+
+                    <label for="motherName">
+                        Mother Name
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        <input
+                            type="text"
+                            id="motherName"
+                            placeholder="Enter mother name"
+                            required autocomplete="off">
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONTACT NUMBER -->
+
+                <div class="form-group full-width">
+
+                    <label for="contactNumber">
+                        Contact Number
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-phone"></i>
+
+                        <input
+                            type="tel"
+                            id="contactNumber"
+                            maxlength="10"
+                            placeholder="Enter contact number"
+                            required autocomplete="off">
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     STATE + DISTRICT
+                ========================== -->
+
+                <div class="form-row">
+
+
+                    <!-- STATE -->
+
+                    <div class="form-group half-width">
+
+                        <label for="state">
+                            State
+                        </label>
+
+                        <div class="input-wrapper select-wrapper">
+
+                            <i class="fa-solid fa-map"></i>
+
+                            <select
+                                id="state"
+                                required>
+
+                                <option value="">
+                                    Select State
+                                </option>
+
+                            </select>
+
+                            <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DISTRICT -->
+
+                    <div class="form-group half-width">
+
+                        <label for="district">
+                            District
+                        </label>
+
+                        <div class="input-wrapper select-wrapper">
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            <select
+                                id="district"
+                                required
+                                disabled>
+
+                                <option value="">
+                                    Select District
+                                </option>
+
+                            </select>
+
+                            <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     CITY/TOWN + PIN CODE
+                ========================== -->
+
+                <div class="form-row">
+
+
+                    <!-- CITY/TOWN -->
+
+                    <div class="form-group half-width">
+
+                        <label for="city">
+                            City/Town
+                        </label>
+
+                        <div class="input-wrapper select-wrapper">
+
+                            <i class="fa-solid fa-city"></i>
+
+                            <select
+                                id="city"
+                                required
+                                disabled>
+
+                                <option value="">
+                                    Select City/Town
+                                </option>
+
+                            </select>
+
+                            <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PIN CODE -->
+
+                    <div class="form-group half-width">
+
+                        <label for="pinCode">
+                            PIN Code
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            <input
+                                type="text"
+                                id="pinCode"
+                                maxlength="6"
+                                placeholder="Enter PIN code"
+                                required autocomplete="new-password" data-lpignore="true">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     PERMANENT ADDRESS
+                ========================== -->
+
+                <div class="form-group full-width">
+
+                    <label for="permanentAddress">
+                        Permanent Address
+                    </label>
+
+                    <div class="input-wrapper textarea-wrapper">
+
+                        <i class="fa-solid fa-house"></i>
+
+                        <textarea
+                            id="permanentAddress"
+                            placeholder="Enter your permanent address"
+                            required autocomplete="off"></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Hidden Submit -->
+                <button
+                    type="submit"
+                    id="hiddenSubmit"
+                    hidden>
+                </button>
+
+            </form>
+
+        </main>
+
+
+        <!-- =========================
+             BOTTOM BUTTONS
+        ========================== -->
+
+        <div class="bottom-buttons">
+
+            <button
+                type="button"
+                class="bottom-btn back-form-btn"
+                id="formBackBtn">
+
+                Back
+
+            </button>
+
+
+                <button
+                     type="button"
+                     class="bottom-btn next-btn"
+                     id="nextBtn">
+                            Next
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- JavaScript -->
+   
+    <link rel="stylesheet" href="student-details.css">
+    <script src="../popup.js"></script>
+    <script src="location-data.js"></script>
+    <script src="custom-dropdown.js"></script>
+    <script src="application-state.js"></script>
+    <script src="student-details.js"></script>
+
+</body>
+
+</html>

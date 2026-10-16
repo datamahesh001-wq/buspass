@@ -1,0 +1,30 @@
+/* The application cards scroll inside the fixed phone viewport. */
+.iphone-app:has(.page-header) { overflow: hidden !important; }
+
+.iphone-app:has(.page-header) > .app-container {
+  height: 100% !important;
+  min-height: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+
+.iphone-app:has(.page-header) > .app-container > .page-header {
+  flex: 0 0 auto;
+}
+
+.iphone-app:has(.page-header) > .app-container > .content {
+  flex: 1 1 auto;
+  min-height: 0 !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 104px !important;
+}
+
+.iphone-app:has(.page-header) > .app-container > .content::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}

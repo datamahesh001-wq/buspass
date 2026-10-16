@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Employee Documents - Bus Pass Application</title>
+
+    <link rel="stylesheet" href="empdoc-upload.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../user-phone-frame.css">
+    <link rel="stylesheet" href="../user-design-system.css">
+    <script defer src="../user-phone-frame.js"></script>
+    <link rel="stylesheet" href="../user-premium.css">
+</head>
+
+<body>
+
+<div class="app" data-documents-screen="true">
+
+    <!-- Header -->
+    <div class="header">
+
+        <button class="back-btn" onclick="goBack()">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <div class="header-content">
+            <h2>Employee Pass</h2>
+            <p>Application Form</p>
+        </div>
+
+    </div>
+
+
+    <!-- Progress -->
+    <div class="progress-container">
+
+        <div class="progress-step active">1</div>
+
+        <div class="progress-line active"></div>
+
+        <div class="progress-step active">2</div>
+
+        <div class="progress-line"></div>
+
+        <div class="progress-step">3</div>
+
+        <div class="progress-line"></div>
+
+        <div class="progress-step">4</div>
+
+    </div>
+
+
+    <!-- Documents Card -->
+    <div class="documents-card">
+
+        <h3>Documents Upload</h3>
+
+        <p class="subtitle">
+            Please Upload the required documents
+        </p>
+        <div class="verification-banner">
+            <i class="fa-solid fa-shield-halved"></i>
+            <div><strong>Upload → Review → Verify</strong><span>Check every document before continuing.</span></div>
+        </div>
+
+
+        <!-- Passport Photo -->
+        <div class="document-item" data-document-item>
+
+            <div class="document-image photo-icon">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="document-info">
+
+                <h4>Passport Size Photo</h4>
+
+                <p>
+                    Upload your recent passport<br>
+                    size photograph
+                </p>
+
+                <small>
+                    JPG, PNG (Max 2MB)
+                </small>
+
+            </div>
+
+            <div class="document-actions" data-document-actions>
+                <label class="upload-btn" title="Choose or replace document">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <span>Upload</span>
+                    <input type="file" accept=".jpg,.jpeg,.png" onchange="uploadFile(this, 'photo')" autocomplete="off">
+                </label>
+                <div class="document-status" data-document-status>Not uploaded</div>
+                <div class="document-action-row" data-document-controls></div>
+            </div>
+
+        </div>
+
+
+        <!-- Employee ID -->
+        <div class="document-item" data-document-item>
+
+            <div class="document-image id-icon">
+                <i class="fa-solid fa-id-card"></i>
+            </div>
+
+            <div class="document-info">
+
+                <h4>Employee ID Card</h4>
+
+                <p>
+                    Upload your valid Employee<br>
+                    ID card
+                </p>
+
+                <small>
+                    JPG, PNG (Max 2MB)
+                </small>
+
+            </div>
+
+            <div class="document-actions" data-document-actions>
+                <label class="upload-btn" title="Choose or replace document">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <span>Upload</span>
+                    <input type="file" accept=".jpg,.jpeg,.png" onchange="uploadFile(this, 'employee ID')" autocomplete="off">
+                </label>
+                <div class="document-status" data-document-status>Not uploaded</div>
+                <div class="document-action-row" data-document-controls></div>
+            </div>
+
+        </div>
+
+
+        <!-- Company / Organization Proof -->
+        <div class="document-item" data-document-item>
+
+            <div class="document-image aadhaar-icon">
+                <i class="fa-solid fa-address-card"></i>
+            </div>
+
+            <div class="document-info">
+
+                <h4>Company / Organization Proof</h4>
+
+                <p>
+                    Upload company or organization<br>
+                    proof
+                </p>
+
+                <small>
+                    JPG, PNG (Max 2MB)
+                </small>
+
+            </div>
+
+            <div class="document-actions" data-document-actions>
+                <label class="upload-btn" title="Choose or replace document">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <span>Upload</span>
+                    <input type="file" accept=".jpg,.jpeg,.png" onchange="uploadFile(this, 'company proof')" autocomplete="off">
+                </label>
+                <div class="document-status" data-document-status>Not uploaded</div>
+                <div class="document-action-row" data-document-controls></div>
+            </div>
+
+        </div>
+
+
+        <!-- Employment Proof -->
+        <div class="document-item" data-document-item>
+
+            <div class="document-image address-icon">
+                <i class="fa-solid fa-house"></i>
+            </div>
+
+            <div class="document-info">
+
+                <h4>Employment Proof</h4>
+
+                <p>
+                    Upload appointment letter or<br>
+                    employment proof
+                </p>
+
+                <small>
+                    JPG, PNG (Max 2MB)
+                </small>
+
+            </div>
+
+            <div class="document-actions" data-document-actions>
+                <label class="upload-btn" title="Choose or replace document">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <span>Upload</span>
+                    <input type="file" accept=".jpg,.jpeg,.png" onchange="uploadFile(this, 'employment proof')" autocomplete="off">
+                </label>
+                <div class="document-status" data-document-status>Not uploaded</div>
+                <div class="document-action-row" data-document-controls></div>
+            </div>
+
+        </div>
+
+
+        <!-- Bottom Buttons -->
+        <div class="bottom-buttons">
+
+            <button
+                type="button"
+                class="back-button"
+                onclick="goBack()">
+                Back
+            </button>
+
+            <button
+                type="button"
+                class="next-button"
+                onclick="goNext()">
+                Next
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="../popup.js"></script>
+
+<script src="application-state.js"></script>
+<script src="empdoc-upload.js"></script>
+
+</body>
+</html>

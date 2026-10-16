@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Employee Details - BusPass</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+        href="employee-details.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../user-phone-frame.css">
+    <link rel="stylesheet" href="../user-design-system.css">
+    <script defer src="../user-phone-frame.js"></script>
+    <link rel="stylesheet" href="../user-premium.css">
+</head>
+
+<body>
+
+    <main class="app-container">
+
+        <!-- =========================
+             HEADER
+        ========================== -->
+
+        <header class="top-header">
+
+            <button
+                type="button"
+                class="back-btn"
+                id="backBtn"
+                aria-label="Go back">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+            </button>
+
+            <div class="header-title">
+
+                <h1>Employee Pass</h1>
+
+                <p>Application Form</p>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             PROGRESS
+        ========================== -->
+
+        <div class="progress-container">
+
+            <div class="progress-line"></div>
+
+            <div class="progress-step active">
+                1
+            </div>
+
+            <div class="progress-step">
+                2
+            </div>
+
+            <div class="progress-step">
+                3
+            </div>
+
+            <div class="progress-step">
+                4
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             DETAILS CARD
+        ========================== -->
+
+        <section class="details-card">
+
+            <!-- PERSONAL DETAILS -->
+
+            <h2>Personal Details</h2>
+
+
+            <!-- Full Name -->
+
+            <div class="form-group">
+
+                <label for="fullName">
+                    Full Name
+                </label>
+
+                <div class="input-wrapper">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        placeholder="Enter Your Full Name" autocomplete="new-password" data-lpignore="true">
+
+                </div>
+
+            </div>
+
+
+            <!-- Date Of Birth -->
+
+            <div class="form-group">
+
+                <label for="dob">
+                    Date of Birth
+                </label>
+
+                <div class="input-wrapper">
+
+                    <i class="fa-regular fa-calendar"></i>
+
+                    <input
+                        type="date"
+                        id="dob" autocomplete="off">
+
+                </div>
+
+            </div>
+
+
+            <!-- Gender + Mobile -->
+
+            <div class="form-row">
+
+                <div class="form-group half-width">
+
+                    <label for="gender">
+                        Gender
+                    </label>
+
+                    <div class="input-wrapper select-wrapper">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        <select id="gender">
+
+                            <option value="">
+                                Select gender
+                            </option>
+
+                            <option value="Male">
+                                Male
+                            </option>
+
+                            <option value="Female">
+                                Female
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                        <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group half-width">
+
+                    <label for="mobile">
+                        Mobile Number
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-phone"></i>
+
+                        <input
+                            type="tel"
+                            id="mobile"
+                            maxlength="10"
+                            placeholder="Enter mobile number" autocomplete="new-password" data-lpignore="true">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Email -->
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email Address
+                </label>
+
+                <div class="input-wrapper">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter email address" autocomplete="new-password" data-lpignore="true">
+
+                </div>
+
+            </div>
+
+
+            <!-- ORGANIZATION DETAILS -->
+
+            <h2 class="section-title">
+                Organization Details
+            </h2>
+
+
+            <!-- Organization -->
+
+            <div class="form-group">
+
+                <label for="organization">
+                    Organization / Company Name
+                </label>
+
+                <div class="input-wrapper">
+
+                    <i class="fa-regular fa-building"></i>
+
+                    <input
+                        type="text"
+                        id="organization"
+                        placeholder="Enter organization / company name" autocomplete="new-password" data-lpignore="true">
+
+                </div>
+
+            </div>
+
+
+            <!-- Employee ID -->
+
+            <div class="form-group">
+
+                <label for="employeeId">
+                    Employee ID / Office ID
+                </label>
+
+                <div class="input-wrapper">
+
+                    <i class="fa-regular fa-id-card"></i>
+
+                    <input
+                        type="text"
+                        id="employeeId"
+                        placeholder="Enter employee / office ID" autocomplete="new-password" data-lpignore="true">
+
+                </div>
+
+            </div>
+
+
+            <!-- Department -->
+
+            <div class="form-group">
+
+                <label for="department">
+                    Department
+                </label>
+
+                <div class="input-wrapper">
+
+                    <i class="fa-solid fa-building-user"></i>
+
+                    <input
+                        type="text"
+                        id="department"
+                        placeholder="Enter department" autocomplete="new-password" data-lpignore="true">
+
+                </div>
+
+            </div>
+
+
+            <!-- Designation -->
+
+            <div class="form-group">
+
+                <label for="designation">
+                    Designation
+                </label>
+
+                <div class="input-wrapper">
+
+                    <i class="fa-solid fa-user-tie"></i>
+
+                    <input
+                        type="text"
+                        id="designation"
+                        placeholder="Enter your designation" autocomplete="new-password" data-lpignore="true">
+
+                </div>
+
+            </div>
+
+
+            <!-- ADDRESS DETAILS -->
+
+            <h2 class="section-title">
+                Address Details
+            </h2>
+
+
+            <!-- State + District -->
+
+            <div class="form-row">
+
+                <div class="form-group half-width">
+
+                    <label for="state">
+                        State
+                    </label>
+
+                    <div class="input-wrapper select-wrapper">
+
+                        <i class="fa-solid fa-building-columns"></i>
+
+                        <select id="state">
+
+                            <option value="">
+                                Select State
+                            </option>
+
+                        </select>
+
+                        <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group half-width">
+
+                    <label for="district">
+                        District
+                    </label>
+
+                    <div class="input-wrapper select-wrapper">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        <select id="district" disabled>
+
+                            <option value="">
+                                Select District
+                            </option>
+
+                        </select>
+
+                        <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- City/Town + Pin -->
+
+            <div class="form-row">
+
+                <div class="form-group half-width">
+
+                    <label for="city">
+                        City / Town
+                    </label>
+
+                    <div class="input-wrapper select-wrapper">
+
+                        <i class="fa-solid fa-city"></i>
+
+                        <select id="city" disabled>
+
+                            <option value="">
+                                Select City / Town
+                            </option>
+
+                        </select>
+
+                        <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group half-width">
+
+                    <label for="pinCode">
+                        PIN Code
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <input
+                            type="text"
+                            id="pinCode"
+                            maxlength="6"
+                            placeholder="Enter PIN Code" autocomplete="new-password" data-lpignore="true">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Permanent Address -->
+
+            <div class="form-group">
+
+                <label for="address">
+                    Permanent Address
+                </label>
+
+                <div class="input-wrapper address-wrapper">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    <input
+                        type="text"
+                        id="address"
+                        placeholder="Enter permanent address" autocomplete="off">
+
+                    <input
+                        type="checkbox"
+                        id="sameAddress">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             BUTTONS
+        ========================== -->
+
+        <div class="bottom-buttons">
+
+            <button
+                type="button"
+                class="bottom-btn back-form-btn"
+                id="backFormBtn">
+
+                Back
+
+            </button>
+
+
+            <button
+                type="button"
+                class="bottom-btn next-btn"
+                id="nextBtn">
+
+                Next
+
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <script src="../popup.js"></script>
+
+    <script src="location-data.js"></script>
+
+    <script src="custom-dropdown.js"></script>
+
+    <script src="application-state.js"></script>
+    <script src="employee-details.js"></script>
+
+</body>
+
+</html>

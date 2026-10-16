@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Applications - Admin</title><link rel="stylesheet" href="admin-applications.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">  <link rel="stylesheet" href="iphone-admin-frame.css">
+  <link rel="stylesheet" href="admin-mobile-system.css">
+    <link rel="stylesheet" href="admin-premium.css">
+    <link rel="stylesheet" href="admin-applications-scroll.css">
+</head><body>
+<div class="iphone-shell">
+  <div class="iphone-screen">
+    <div class="iphone-camera" aria-hidden="true"></div>
+    <div class="iphone-app">
+<div class="app-container">
+<header class="page-header"><button id="backButton" class="header-icon" type="button"><i class="fa-solid fa-arrow-left"></i></button><div><span>ADMIN PORTAL</span><h1>Applications</h1></div><button id="notificationButton" class="header-icon" type="button"><i class="fa-regular fa-bell"></i></button></header>
+<main class="content">
+<section class="intro-card"><div><span>STUDENT & EMPLOYEE DETAILS</span><h2>Manage applicants</h2><p>Open an application to review the exact details submitted by the user.</p></div><i class="fa-solid fa-clipboard-check"></i></section>
+<div class="type-tabs"><button class="type-tab active" data-type="all"><i class="fa-solid fa-users"></i> All</button><button class="type-tab" data-type="student"><i class="fa-solid fa-graduation-cap"></i> Students</button><button class="type-tab" data-type="employee"><i class="fa-solid fa-briefcase"></i> Employees</button></div>
+<div class="search-row"><div class="search-wrap"><i class="fa-solid fa-magnifying-glass"></i><input id="applicationSearch" placeholder="Search applicant" autocomplete="off"><button id="searchClearButton" type="button"><i class="fa-solid fa-xmark"></i></button></div><button id="filterButton" class="filter-button" type="button"><i class="fa-solid fa-sliders"></i></button></div>
+<div class="list-meta"><div><span>APPLICATIONS</span><strong id="applicationCount">0</strong></div><span id="activeFilterLabel">All</span></div>
+<section id="applicationsList" class="applications-list"></section>
+<div id="emptyState" class="empty-state"><i class="fa-regular fa-folder-open"></i><strong>No applications found</strong><span>Try another search or change the filter.</span></div>
+</main>
+<nav class="bottom-nav"><a href="admin-dashboard.html"><i class="fa-solid fa-house"></i><span>Home</span></a><a class="active" href="admin-applications.html"><i class="fa-regular fa-file-lines"></i><span>Applications</span></a><a href="admin-routes.html"><i class="fa-solid fa-route"></i><span>Management</span></a><a href="admin-profile.html"><i class="fa-solid fa-bars-staggered"></i><span>More</span></a></nav>
+<div id="filterOverlay" class="overlay"><div class="filter-sheet"><div class="sheet-head"><div><span>FILTER APPLICATIONS</span><h2>Application status</h2></div><button id="closeFilterButton" type="button"><i class="fa-solid fa-xmark"></i></button></div><div class="filter-options"><button class="filter-option active-filter" data-status="all" type="button">All Applications</button><button class="filter-option" data-status="pending" type="button">Pending Review</button><button class="filter-option" data-status="approved" type="button">Approved</button><button class="filter-option" data-status="rejected" type="button">Rejected</button></div></div></div>
+</div><script src="admin-applications.js"></script>    </div>
+  </div>
+</div>
+<script src="admin-phone-status.js"></script>
+<script src="admin-back-navigation.js"></script>
+</body></html>
